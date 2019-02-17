@@ -18,8 +18,8 @@ import paths from "./paths";
 }
 
 Svg.propTypes = {
-  width: PropTypes.integer,
-  height: PropTypes.integer,
+  width: PropTypes.string,
+  height: PropTypes.string,
   icon: PropTypes.string.isRequired
 }
 
