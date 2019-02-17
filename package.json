@@ -1,0 +1,36 @@
+{
+  "name": "stylesblitz",
+  "version": "1.0.0",
+  "description": "styleblitz client",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "final-form": "^4.11.1",
+    "next": "^8.0.1",
+    "next-apollo": "^2.0.8",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "react-final-form": "^4.0.2",
+    "styled-components": "^4.1.3"
+  },
+  "devDependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "sass-loader": "^7.1.0",
+    "@babel/core": "^7.3.3",
+    "@storybook/addon-actions": "^4.1.11",
+    "@storybook/addon-links": "^4.1.11",
+    "@storybook/addons": "^4.1.11",
+    "@storybook/react": "^4.1.11",
+    "babel-loader": "^8.0.5",
+    "node-sass": "^4.11.0"
+  }
+}

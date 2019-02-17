@@ -1,0 +1,268 @@
+@import "../global.scss";
+
+
+.inner-modal-wrapper {
+  margin: 0 auto;
+  margin-top: 48px;
+  width: 450px;
+  margin-bottom: 50px;
+  
+  h4 {
+    height: 29px;
+    font: normal normal normal 25px / normal Roboto;
+    letter-spacing: normal;
+    text-align: center;
+    color: #333333;
+    margin-bottom: 0;
+  }
+  
+  h6 {
+    height: 48px;
+    font: normal normal 300 16px / normal Roboto;
+    letter-spacing: normal;
+    color: #aaaaaa;
+    margin-top: 11px;
+    margin-bottom: 0;
+  }
+}
+
+form {
+  .username,
+  .password {
+    margin: 0 auto;
+    display: inline-block;
+    width: 350px;
+    height: 50px;
+    border-radius: 5px;
+    border: solid 1px #e6e6e6;
+    text-indent: 40px;
+
+    &:focus {
+      outline-width: 0;
+    }
+  }
+
+  .username {
+    background: url("/static/assets/svg/Email.svg") no-repeat;
+    background-position: left;
+    background-position-x: 12px;
+    background-size: 12px;
+  }
+
+  .password {
+    background: url("/static/assets/svg/Key.svg") no-repeat;
+    background-position: left;
+    background-position-x: 12px;
+    background-size: 12px;
+  }
+
+  .forget-password {
+    margin: 10px 46px 22px 46px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    label {
+      height: 14px;
+      font: normal normal 300 12px / normal Roboto;
+      letter-spacing: normal;
+      text-align: left;
+      color: #565b73;
+      input[type="checkbox"] {
+        visibility: visible;
+      }
+    }
+
+    .forget-password-text {
+      width: 96px;
+      height: 14px;
+      font: normal normal 300 12px / normal Roboto;
+      letter-spacing: normal;
+      text-decoration: none;
+      color: #565b73;
+    }
+  }
+
+  .login-button {
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    border: 0;
+    background-color: #ff9907;
+    box-shadow: 0 3px 15px -2px rgba(58, 58, 58, 0.09);
+    margin-right: 30px;
+    font: normal normal bold 14px / normal Kollektif;
+    letter-spacing: normal;
+    color: #ffffff;
+  }
+
+  .create-profile-button {
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    border: 0;
+    box-shadow: 0 5px 14px 0 rgba(0, 0, 0, 0.05);
+    color: #4a4a4a;
+    background-color: #ffffff;
+    font: normal normal normal 14px / normal Kollektif;
+    letter-spacing: normal;
+  }
+}
+
+// form {
+//   .username {
+//     margin: 0 auto;
+//     display: inline-block;
+//     width: 350px;
+//     height: 50px;
+//     border-radius: 5px;
+//     border: solid 1px #e6e6e6;
+//     text-indent: 40px;
+//     background: url("/static/assets/svg/Email.svg") no-repeat;
+//     background-position: left;
+//     background-position-x: 12px;
+//     background-size: 12px;
+
+//     &:focus {
+//       outline-width: 0;
+//     }
+//   }
+
+//   .reset-button {
+//     width: 150px;
+//     height: 40px;
+//     border-radius: 5px;
+//     border: 0;
+//     background-color: #ff9907;
+//     box-shadow: 0 3px 15px -2px rgba(58, 58, 58, 0.09);
+//     margin-right: 30px;
+//     margin-top: 29px;
+//     font: normal normal bold 14px / normal Kollektif;
+//     letter-spacing: normal;
+//     color: #ffffff;
+//   }
+// }
+
+
+// form {
+//   .username,
+//   .password,
+//   .name {
+//     margin: 0 auto;
+//     display: inline-block;
+//     width: 350px;
+//     height: 50px;
+//     border-radius: 5px;
+//     border: solid 1px #e6e6e6;
+//     text-indent: 40px;
+
+//     &:focus {
+//       outline-width: 0;
+//     }
+//   }
+
+//   .react-select {
+//     @include react-select(354px, 0);
+//   }
+
+//   // React-select in-built classes starts here
+//   .css-1aya2g8,
+//   .css-2o5izw {
+//     height: 50px;
+//     border-color: #e6e6e6;
+//     box-shadow: none;
+//     background: url("/static/assets/svg/WC.svg") no-repeat;
+//     background-color: #ffffff;
+//     background-position: left;
+//     background-position-x: 12px;
+//     background-size: 12px;
+//     text-indent: 30px;
+//   }
+
+//   .css-d8oujb {
+//     display: none;
+//   }
+
+//   .css-1wy0on6 {
+//     background: url("/static/assets/svg/ArrowDropDownCircle.svg");
+//     background-repeat: no-repeat;
+//     background-position: right;
+//     width: 30px;
+//     margin-right: 10px;
+//     svg {
+//       display: none;
+//     }
+//   }
+
+
+//   .name {
+//     background: url("/static/assets/svg/Person.svg") no-repeat;
+//     background-position: left;
+//     background-position-x: 12px;
+//     background-size: 12px;
+//   }
+
+//   .username {
+//     background: url("/static/assets/svg/Email.svg") no-repeat;
+//     background-position: left;
+//     background-position-x: 12px;
+//     background-size: 12px;
+//   }
+
+//   .password {
+//     background: url("/static/assets/svg/Key.svg") no-repeat;
+//     background-position: left;
+//     background-position-x: 12px;
+//     background-size: 12px;
+//   }
+
+//   .forget-password {
+//     margin: 12px 46px 12px 46px;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     label {
+//       height: 14px;
+//       font: normal normal 300 12px / normal Roboto;
+//       letter-spacing: normal;
+//       text-align: left;
+//       color: #565b73;
+//       input[type="checkbox"] {
+//         visibility: visible;
+//       }
+//     }
+
+//     .forget-password-text {
+//       width: 96px;
+//       height: 14px;
+//       font: normal normal 300 12px / normal Roboto;
+//       letter-spacing: normal;
+//       text-decoration: none;
+//       color: #565b73;
+//     }
+//   }
+
+//   .login-button {
+//     width: 150px;
+//     height: 40px;
+//     border-radius: 5px;
+//     border: 0;
+//     background-color: #ff9907;
+//     box-shadow: 0 3px 15px -2px rgba(58, 58, 58, 0.09);
+//     margin-right: 30px;
+//     font: normal normal bold 14px / normal Kollektif;
+//     letter-spacing: normal;
+//     color: #ffffff;
+//   }
+
+//   .create-profile-button {
+//     width: 150px;
+//     height: 40px;
+//     border-radius: 5px;
+//     border: 0;
+//     box-shadow: 0 5px 14px 0 rgba(0, 0, 0, 0.05);
+//     color: #4a4a4a;
+//     background-color: #ffffff;
+//     font: normal normal normal 14px / normal Kollektif;
+//     letter-spacing: normal;
+//   }
+// }

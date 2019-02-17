@@ -1,0 +1,19 @@
+$fontSize: 14px;
+$highZIndex: 2000;
+$midZIndex: 1000;
+$lowZIndex: 0;
+
+@mixin react-select($width, $margin-left) {
+  width: $width;
+  display: inline-block;
+  margin-left: $margin-left;
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #757575;
+}
