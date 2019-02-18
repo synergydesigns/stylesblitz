@@ -7,8 +7,6 @@ import AuthFooter from './AuthFooter'
 import { LoginModalWrapper } from './Styles'
 import { FormWithIcons } from '../Form'
 
-console.log(AuthFooter)
-
 class Login extends Component {
   initialValues = {
     username: '',

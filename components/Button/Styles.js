@@ -4,7 +4,12 @@ import { font, color } from '../global'
 
 
 export const ButtonWrapper = styled.button`
-  background-color: ${({background, primary}) => background || primary ? color.primary : color.secondary};
+  background-color: ${
+    ({ background, primary}) =>
+      background 
+        ? background 
+        : primary ? color.primary : color.secondary
+  };
   border-radius: 5px;
   border: 0px;
   box-shadow: ${props => props.boxShadow};

@@ -29,11 +29,10 @@ const Component = ({ heading, subHeading}) => {
       <LoginControlButtons>
         <Button 
           text='Reset'
-          primary={false}
-          background={color.secondary} />
+          primary={false} />
         <Button 
           text='Create a Profile'
-          primary={false}
+          primary={true}
           background='#fff'
           color='#4A4A4A' 
           boxShadow='0 5px 14px 0 rgba(0,0,0,0.05)'/>
