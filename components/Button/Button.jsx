@@ -1,19 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import './Button.scss'
+import { ButtonWrapper } from './Styles'
 
-const Button = (props) => {
+
+const Button = ({ handelClick, text, width, height, style, ...rest }) => {
   return (
-    <button 
-      className={props.extraClassName} 
-      onClick={props.onHandleClick} style={{
-      width: props.width,
-      height: props.height,
-      ...props.style
-    }}>
-      {props.text}
-    </button>
+    <ButtonWrapper
+      text={text}
+      width={width}
+      height={height}
+      onClick={handelClick}
+      primary={rest.primary}
+      color={rest.color}
+      background={rest.background}
+      boxShadow={rest.boxShadow}
+      style={{...style}} >
+      { text }
+    </ButtonWrapper>
   )
 }
 
@@ -21,8 +25,19 @@ Button.propTypes = {
   text: PropTypes.string.isRequired,
   width: PropTypes.string,
   height: PropTypes.string,
-  extraClassName: PropTypes.string,
-  onHandleClick: PropTypes.func
+  handelClick: PropTypes.func,
+  primary: PropTypes.bool,
+  background: PropTypes.string,
+  color: PropTypes.string,
+  boxShadow: PropTypes.string
+}
+
+Button.defaultProps = {
+  width: '150px' ,
+  height: '40px',
+  primary: true,
+  color: '#fff',
+  boxShadow: 'none'
 }
 
 export default Button

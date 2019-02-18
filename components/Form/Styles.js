@@ -32,11 +32,63 @@ label {
 `
 
 export const FormWrapper = styled.div`
-margin: 20px 10px auto;
+  margin: 20px 10px auto;
 
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+`
+
+export const CheckboxWrapper = styled.div`
+  position: relative;
+
+  input[type=checkbox] {
+    visibility: hidden;
+  }
+
+  span {
+    color: #565B73;
+    font: 200 14px/4px ${font.primary};
+    margin-left: 20px;
+    position: absolute;
+    top: 5px;
+    width: 200px;
+  }
+
+  label {
+    background: #ff9907;
+    border: 1px solid #ff9907;
+    cursor: pointer;
+    height: 12px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 12px;
+  }
+
+  label:after {
+    background: transparent;
+    border: 2px solid #ffffff;
+    border-top: none;
+    border-right: none;
+    border-radius: 2px;
+    content: '';
+    height: 3px;
+    left: 1px;
+    position: absolute;
+    opacity: 0;
+    top: 2px;
+    transform: rotate(-45deg);
+    width: 7px;
+  }
+
+  label:hover::after {
+    opacity: 0.5;
+  }
+
+  input[type='checkbox']:checked + label:after {
+    opacity: 1;
+  }
 `

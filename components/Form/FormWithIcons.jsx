@@ -1,16 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import  { Form, Field } from 'react-final-form'
 
-import { Button } from '../Button'
 import Svg from '../Svg'
 
 import { InputWrapperWithIcon, FormWrapper } from './Styles'
-import { color } from '../global'
 
 
-const FormWithIcons = ({ fields, onSubmit, initialValues }) => {
+const FormWithIcons = ({ fields, onSubmit, initialValues, Button, Header, Footer }) => {
   const GenerateForm =  ({ handleSubmit }) => {
     return  (
       <FormWrapper>
@@ -29,17 +26,8 @@ const FormWithIcons = ({ fields, onSubmit, initialValues }) => {
               </InputWrapperWithIcon>
             ))
           }
-          <Button 
-            text='Reset' 
-            width='150px' 
-            height='40px'
-            style={{ 
-              marginTop: '20px',
-              backgroundColor: color.secondary,
-              boxShadow: 'none',
-              border: 'none'
-            }}
-            extraClassName='reset-button'/>
+          {Button && <Button />}
+          {Footer && <Footer />}
         </form>
       </FormWrapper>
     )
@@ -55,7 +43,7 @@ FormWithIcons.propTypes = {
   fields: PropTypes.arrayOf(PropTypes.object).isRequired,
   onSubmit: PropTypes.func.isRequired,
   initialValues: PropTypes.object,
-  button: PropTypes.func
+  Button: PropTypes.func.isRequired
 }
 
 export default FormWithIcons

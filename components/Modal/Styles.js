@@ -50,6 +50,48 @@ export const AuthHeader = styled.div`
   }
 `
 
-export const ForgotPasswordWrapper = styled.div`
+export const ModalBodyWrapper = styled.div`
   margin-top: 50px;
+`
+
+export const ForgotPasswordWrapper = styled(ModalBodyWrapper)``
+
+export const LoginModalWrapper = styled(ModalBodyWrapper)``
+
+export const AuthFooterWrapper = styled.div`
+  position: relative;
+  width: 350px;
+`
+
+export const LoginControl = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+`
+
+export const LoginControlForgotPassword = styled.div`
+  color: #565B73;
+  font: 200 14px/4px ${font.primary};
+  top: 5px;
+  width: 200px;
+  text-align: left;
+
+  p {
+    line-height: 18px;
+    margin: 0px;
+    text-align: right;
+  }
+`
+
+export const LoginControlButtons = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+`
+
+export const Or = styled.h3`
+  color: #878787;
+  font: normal 14px/20px ${font.secondary};
+  text-align: center;
+  text-transform: uppercase;
 `
