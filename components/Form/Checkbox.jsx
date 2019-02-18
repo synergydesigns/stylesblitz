@@ -12,9 +12,9 @@ const Checkbox = ({ name, value, text = 'remember', id }) => {
         component="input"
         type="checkbox"
         value="true" />
-    <label htmlFor={id}>
-      { text && <span>{text}</span> }
-    </label>
+      <label htmlFor={id}>
+        { text && <span>{text}</span> }
+      </label>
     </CheckboxWrapper>
   )
 }

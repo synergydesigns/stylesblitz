@@ -17,15 +17,9 @@ class ForgotPassword extends Component {
   ]
 
   button = () => <Button 
-    text='Reset' 
-    width='150px' 
-    height='40px'
-    style={{ 
-      marginTop: '20px',
-      backgroundColor: color.secondary,
-      boxShadow: 'none',
-      border: 'none'
-    }} />
+    text='Reset'
+    primary={false} 
+    style={{ marginTop: '20px' }}/>
 
   render() {
     return (

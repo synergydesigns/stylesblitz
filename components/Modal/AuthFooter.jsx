@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import { Checkbox } from '../Form'
 import { Button } from '../Button'
@@ -47,14 +46,5 @@ const Component = ({ heading, subHeading}) => {
     </AuthFooterWrapper>
   )
 }
-
-// Component.propTypes = {
-//   heading: PropTypes.string,
-//   subHeading: PropTypes.string
-// }
-
-// Component.defaultProps = {
-//   subHeading: 'We make it easier for everyone to look beautiful'
-// }
 
 export default Component
