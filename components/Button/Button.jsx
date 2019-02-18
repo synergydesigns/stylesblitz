@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 
 import { ButtonWrapper } from './Styles'
 
-
 const Button = ({ handelClick, text, width, height, style, ...rest }) => {
   return (
     <ButtonWrapper

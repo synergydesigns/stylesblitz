@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 import { font, color } from '../global'
 
-
 export const ButtonWrapper = styled.button`
   background-color: ${
     ({ background, primary}) =>

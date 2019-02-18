@@ -1,92 +1,61 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
 import Select from 'react-select'
 
-import Modal from './Index'
-import Button from '../Button'
+import Modal from './Modal'
+import AuthHeader from './AuthHeader'
+import AuthFooter from './AuthFooter'
 
-import 'Modals.scss'
+import { LoginModalWrapper } from './Styles'
+import { FormWithIcons } from '../Form'
+import { font } from '../global'
 
-class Signup extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      name: '',
-      username: '',
-      gender: '',
-      password: '',
-      genderOptions: [
-        { value: 'female', label: 'Female' },
-        { value: 'male', label: 'Male' }
-      ],
-      selectedGenderOption: ''
-    }
-
-    this.onHandleChange = this.onHandleChange.bind(this)
-    this.onSelectGenderChange = this.onSelectGenderChange.bind(this)
-  }
-
-  onHandleChange(e) {
-    const value = e.target.value
-    this.setState({
-      [e.target.name]: value
-    })
-  }
-
-  onSelectGenderChange(selectedGenderOption) {
-    this.setState({
-      selectedGenderOption
-    })
-  }
-
-  render() {
-    return <Modal onHandleClick={this.props.onHandleClick}>
-      <h4>Welcome to StyleBlitz</h4>
-      <h6>
-        We make it easier for everyone to look beautiful
-      </h6>
-      <form>
-        <label>
-          <input onChange={this.onHandleChange} type='text' name='name' className='name' value={this.state.name} placeholder='name' />
-        </label>
-        <label>
-          <input onChange={this.onHandleChange} type='text' name='username' className='username' value={this.state.username} placeholder='username/email' />
-        </label>
-        <label>
-          <Select
-            className='react-select'
-            options={this.state.genderOptions}
-            selectedOption={this.state.selectedGenderOption}
-            onChange={this.onSelectGenderChange}
-            value={this.state.selectedGenderOption}
-          />
-        </label>
-        <label>
-          <input onChange={this.onHandleChange} type='password' name='password' className='password' value={this.state.password} placeholder='password' />
-        </label>
-        <div className='forget-password'>
-          <label>
-            <input type='checkbox' className='remember-me' name='remember-me' value='' />Remember me
-          </label>
-          <Link to='/' className='forget-password-text'>Forgot Password?</Link>
-        </div>
-        <Button extraClassName='login-button' text='Signup' /><Button extraClassName='create-profile-button' text='Login' onHandleClick={this.props.toggleLoginAndSignup} />
-        <p style={{
-          color: '#878787',
-          fontFamily: 'Kollektif',
-          fontSize: '12px'
-        }}>OR</p>
-        <Button text='Signup with Facebook' width='350px' height='40px' />
-      </form>
-    </Modal>
-  }
+const customStyles = {
+  input: styles => ({ ...styles,  width: '292px', paddingLeft: '40px' }),
+  placeholder: styles => ({ ...styles, color: '#878787', font: `300 12px/24px ${font.primary}` })
 }
 
-Signup.propTypes = {
-  onHandleClick: PropTypes.func,
-  toggleLoginAndSignup: PropTypes.func
+const ReactSelectAdapter = ({ input, ...rest }) => (
+  <Select styles={customStyles} {...input} {...rest} searchable />
+)
+
+class Signup extends Component {
+  initialValues = {
+    name: '',
+    username: '',
+    gender: '',
+    password: ''
+  }
+
+  genderOptions = [
+    { value: 'female', label: 'Female' },
+    { value: 'male', label: 'Male' }
+  ]
+
+  selectedGenderOption = ''
+
+  fields = [
+    { icon: 'person', value: 'name', placeholder: 'name', component: 'input'},
+    { icon: 'email', value: 'username', placeholder: 'username/email', component: 'input'},
+    { icon: 'gender', value: 'gender', placeholder: 'gender', component: ReactSelectAdapter, options: this.genderOptions },
+    { icon: 'key', value: 'password', placeholder: 'password', component: 'input'},
+  ]
+  
+  handleSubmit = () => {}
+
+  render() {
+    return (
+      <Modal onHandleClick={this.props.onHandleClick}>
+        <LoginModalWrapper>
+          <AuthHeader />
+          <FormWithIcons
+            fields={this.fields}
+            onSubmit={this.handleSubmit}
+            initialValues={this.initialValues}
+            Footer={AuthFooter} />
+        </LoginModalWrapper>
+      </Modal>
+    )
+  }
 }
 
 export default Signup

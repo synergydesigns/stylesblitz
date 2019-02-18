@@ -13,16 +13,23 @@ const FormWithIcons = ({ fields, onSubmit, initialValues, Button, Header, Footer
       <FormWrapper>
         <form onSubmit={handleSubmit} >
           {
-            fields.map(({ icon, value, placeholder, component, type = 'text'}) => (
+            fields.map(({ icon, value, placeholder, component, options, type = 'text'}) => (
               <InputWrapperWithIcon key={value}>
                 <label htmlFor={value}> 
                   <Svg icon={icon} width="12" height="12" fill="#757575"/>
                 </label>
-                <Field
-                  name={value}
-                  component={component}
-                  type={type}
-                  placeholder={placeholder} />
+                {
+                  options
+                   ?  <Field
+                        name={value}
+                        component={component}
+                        options={options} />
+                  :  <Field
+                        name={value}
+                        component={component}
+                        type={type}
+                        placeholder={placeholder} />
+                  }
               </InputWrapperWithIcon>
             ))
           }

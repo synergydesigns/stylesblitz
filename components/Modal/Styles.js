@@ -24,7 +24,7 @@ export const ModalBody = styled.div`
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 3px 30px 0 rgba(58,58,58,0.09);
-  height: 500px;
+  min-height: 500px;
   width: 450px;
   z-index: ${zIndex.modalOverlay};
 `
@@ -51,7 +51,7 @@ export const AuthHeader = styled.div`
 `
 
 export const ModalBodyWrapper = styled.div`
-  margin-top: 50px;
+  margin: 30px auto;
 `
 
 export const ForgotPasswordWrapper = styled(ModalBodyWrapper)``

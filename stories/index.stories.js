@@ -2,7 +2,7 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 import { Button } from '../components/Button'
-import { ForgotPassword, Login } from '../components/Modal'
+import { ForgotPassword, Login, Signup } from '../components/Modal'
 
 storiesOf('Button')
   .add('Button with class', () =>
@@ -13,3 +13,4 @@ storiesOf('Button')
 storiesOf('Modal')
   .add('Forgot password modal', () => <ForgotPassword /> )
   .add('Login  modal', () => <Login /> )
+  .add('Signup  modal', () => <Signup /> )

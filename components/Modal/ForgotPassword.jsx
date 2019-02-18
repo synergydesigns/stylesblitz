@@ -6,7 +6,6 @@ import { FormWithIcons } from '../Form'
 import { Button } from '../Button'
 
 import { ForgotPasswordWrapper } from './Styles'
-import { color } from '../global'
 
 
 class ForgotPassword extends Component {
