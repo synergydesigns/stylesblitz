@@ -1,17 +1,21 @@
 import styled, { css } from 'styled-components'
 import { font, color, zIndex } from '../global'
 
+export const placeholderColor = '#878787'
+
 export const InputWrapper = styled.div`
 position: relative;
+
 input {
   height: 50px;
   width: 350px;
   border: 1px solid #E6E6E6;
   border-radius: 5px 5px 0 0;
   outline: none;
+  color: ${placeholderColor};
 
   &::placeholder {
-    color: #878787;
+    color: ${placeholderColor};
     font: 300 12px/24px ${font.primary};
   }
 }
@@ -91,4 +95,10 @@ export const CheckboxWrapper = styled.div`
   input[type='checkbox']:checked + label:after {
     opacity: 1;
   }
+`
+
+export const SelectAdapterSvg = styled.div`
+  position: relative;
+  top: -3px;
+  margin-right: 8px;
 `

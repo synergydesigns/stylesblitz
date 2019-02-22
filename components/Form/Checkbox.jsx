@@ -1,7 +1,7 @@
 import React from 'react'
 import { Field } from 'react-final-form'
 
-import { InputWrapper, CheckboxWrapper } from './Styles'
+import { CheckboxWrapper } from './Styles'
 
 const Checkbox = ({ name, value, text = 'remember', id }) => {
   return (
