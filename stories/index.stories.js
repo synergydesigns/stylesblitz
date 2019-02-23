@@ -3,6 +3,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Button } from '../components/Button'
 import { ForgotPassword, Login, Signup } from '../components/Modal'
+import { Logo, Header } from '../components/Nav'
 
 storiesOf('Button')
   .add('Button with class', () =>
@@ -14,3 +15,8 @@ storiesOf('Modal')
   .add('Forgot password modal', () => <ForgotPassword /> )
   .add('Login  modal', () => <Login /> )
   .add('Signup  modal', () => <Signup /> )
+
+
+storiesOf('Navigation')
+  .add('Logo', () => <Logo /> )
+  .add('Header', () => <Header /> )
