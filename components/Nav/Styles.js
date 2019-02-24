@@ -24,10 +24,14 @@ export const LogoWrapper = styled.div`
 `
 
 export const HeaderWrapper = styled.div`
-  display: inline-flex;
-  height: 40px;
-  justify-content: space-between;
-  width: 1100px;
+    align-items: center;
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
 `
 
 export const NavList = styled.ul`
@@ -37,9 +41,16 @@ export const NavList = styled.ul`
   list-style-type: none;
   margin: 0px;
   width: 300px;
+  color: ${({ color }) => color};
 
   li {
-    color: ${({ color }) => color};
+    color: inherit;
     font: normal 16px/20px ${font.tertiary};
   }
+`
+export const NavWrapper = styled.div`
+  display: inline-flex;
+  height: 40px;
+  justify-content: space-between;
+  width: 1100px;
 `

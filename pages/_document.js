@@ -1,53 +1,24 @@
-const cssLoaderConfig = require('@zeit/next-css/css-loader-config')
+import Document from 'next/document'
+import { ServerStyleSheet } from 'styled-components'
 
-module.exports = (nextConfig = {}) => {
-  return Object.assign({}, nextConfig, {
-    webpack(config, options) {
-      if (!options.defaultLoaders) {
-        throw new Error(
-          'This plugin is not compatible with Next.js versions below 5.0.0 https://err.sh/next-plugins/upgrade'
-        )
+export default class MyDocument extends Document {
+  static async getInitialProps (ctx) {
+    const sheet = new ServerStyleSheet()
+    const originalRenderPage = ctx.renderPage
+
+    try {
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
+        })
+
+      const initialProps = await Document.getInitialProps(ctx)
+      return {
+        ...initialProps,
+        styles: <>{initialProps.styles}{sheet.getStyleElement()}</>
       }
-
-      const { dev, isServer } = options
-      const {
-        cssModules,
-        cssLoaderOptions,
-        postcssLoaderOptions,
-        sassLoaderOptions = {}
-      } = nextConfig
-
-      options.defaultLoaders.sass = cssLoaderConfig(config, {
-        extensions: ['scss', 'sass'],
-        cssModules,
-        cssLoaderOptions,
-        postcssLoaderOptions,
-        dev,
-        isServer,
-        loaders: [
-          {
-            loader: 'sass-loader',
-            options: sassLoaderOptions
-          }
-        ]
-      })
-
-      config.module.rules.push(
-        {
-          test: /\.scss$/,
-          use: options.defaultLoaders.sass
-        },
-        {
-          test: /\.sass$/,
-          use: options.defaultLoaders.sass
-        }
-      )
-
-      if (typeof nextConfig.webpack === 'function') {
-        return nextConfig.webpack(config, options)
-      }
-
-      return config
+    } finally {
+      sheet.seal()
     }
-  })
+  }
 }

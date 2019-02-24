@@ -20,7 +20,7 @@ const Head = props => (
     <link rel="mask-icon" href="/static/favicon-mask.svg" color="#49B882" />
     <link rel="icon" href="/static/favicon.ico" />
     <link rel="stylesheet" href="/static/css/reset.css" />
-    <link href="https://fonts.googleapis.com/css?family=Lato|Source+Sans+Pro" rel="stylesheet"></link>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Source+Sans+Pro:200,300,400" rel="stylesheet" />
     <meta property="og:url" content={props.url || defaultOGURL} />
     <meta property="og:title" content={props.title || ''} />
     <meta

@@ -40,4 +40,8 @@ storiesOf('Common')
     image="./static/images/thumbnail/barber.png"
     name="barbing"/>
   )
+  .add('Header', () => <Common.Footer 
+    image="./static/images/thumbnail/barber.png"
+    name="barbing"/>
+  )
 

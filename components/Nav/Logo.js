@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 
 import { LogoWrapper } from './Styles';
 
-const Logo = () => {
+const Logo = ({ color }) => {
   return (
-    <LogoWrapper>
+    <LogoWrapper color={color}>
       <h1><span>style</span>blitz</h1>
     </LogoWrapper>
   )

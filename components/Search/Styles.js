@@ -46,7 +46,7 @@ export const ProviderInputWrapper = styled.div`
     outline: none;
     padding-left: 50px;
     position: relative;
-    width: 309px;
+    width: 350px;
     text-transform: capitalize;
     font: normal 16px/19px  ${font.secondary};
 

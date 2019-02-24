@@ -48,7 +48,7 @@ class Provider extends Component {
                 width="200px"
                 height="80px"
                 text="Search"
-                style={{ borderRadius: '100px', 	fontSize: '24px' }}
+                style={{ borderRadius: '100px', marginRight:'-20px',	fontSize: '24px' }}
               />
             </ProviderFormWrapper>
           )}

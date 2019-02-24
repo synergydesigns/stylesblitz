@@ -1,19 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React from 'react'
 
-import App from './components/App';
-import ListingPage from './components/ListingPage';
-import registerServiceWorker from './registerServiceWorker';
+import { Jumbotron } from '../components/Home'
+import Head from '../components/head'
 
-const route = (
-  <Router>
-    <Switch>
-      <Route exact path='/' component={App} />
-      <Route exact path='/listing' component={ListingPage} />
-    </Switch>
-  </Router>
-)
+class Home extends React.Component {
+  static async getInitialProps({ req }) {
+    const userAgent = req ? req.headers['user-agent'] : navigator.userAgent
+    return { userAgent }
+  }
 
-ReactDOM.render(route, document.getElementById('root'));
-registerServiceWorker();
+  render() {
+    return (
+      <div>
+        <Head title="homepage" />
+        <Jumbotron />
+      </div>
+    )
+  }
+}
+
+export default Home
+
+
