@@ -12,7 +12,7 @@ class Jumbotron extends Component {
         <Background>
           <div className="overlay" />
           <ImageWrapper
-            height="600px"
+            height="500px"
             width="100%"
             image="/static/images/hipster-mum-236831-unsplash.jpg" />
         </Background>

@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { Jumbotron } from '../components/Home'
+import HomeComponents from '../components/Home'
 import Head from '../components/head'
+import Common from '../components/Common'
 
 class Home extends React.Component {
   static async getInitialProps({ req }) {
@@ -13,7 +14,11 @@ class Home extends React.Component {
     return (
       <div>
         <Head title="homepage" />
-        <Jumbotron />
+        <HomeComponents.Jumbotron />
+        <HomeComponents.Popular/>
+        <HomeComponents.Featured/>
+        <HomeComponents.Join/>
+        <Common.Footer />
       </div>
     )
   }

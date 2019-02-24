@@ -4,15 +4,18 @@ import propTypes from 'prop-types'
 import { 
   PopularItemWrapper, 
   ImageWrapper,
+  PopularItemHeader,
+  PopularItemOverlay
 } from './Styles'
 
 
 export const PopularListItem = ({ name, image }) => {
   return(
     <PopularItemWrapper>
+      <PopularItemHeader>
         <h1>{ name }</h1>
-      <div>
-      </div>
+      </PopularItemHeader>
+      <PopularItemOverlay />
       <ImageWrapper
         image={image}
         height="100%"

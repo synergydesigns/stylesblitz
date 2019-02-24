@@ -34,6 +34,7 @@ export const ImageWrapper = styled.span`
 
 export const FeaturedServiceWrapper = styled.div`
   width: 1200px;
+  margin: 20px auto;
   
   .react-tabs {
     display: flex;
@@ -106,34 +107,45 @@ export const PopularItemWrapper = styled.div`
   position: relative;
   width: 250px;
 
-  div {
-    align-items: center;
-    background-color: #000000;
-    border: none;
-    height: 250px;
-    opacity: 0.37;
-    position: relative;
-    width: 250px;
-    z-index: 2;
-  }
-
-  h1 {
-    color: ${color.white};
-    font: bold 24px/30px ${font.secondary};
-    left: 50%;
-    margin-left: -50px;
-    margin-top: -50px;
-    position: absolute;
-    text-transform: capitalize;
-    top: 60%;
-    z-index: 3;
-  }
-
   span {
     position: absolute;
     top: 0;
     z-index: 1;
   }
+`
+export const PopularItemHeader = styled.div`
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  z-index: 3;  
+  
+  h1 {
+    color: ${color.white};
+    cursor: pointer;
+    font: bold 24px/30px ${font.secondary};
+    text-transform: capitalize;
+
+    &:hover {
+      border: 2px solid ${color.white};
+      padding: 5px 20px;
+      transition: .2s;
+      font-size: 18px;
+    }
+  }
+`
+export const PopularItemOverlay = styled.div`
+  align-items: center;
+  background-color: #000000;
+  border: none;
+  height: 250px;
+  opacity: 0.37;
+  position: absolute;
+  top: 0px;
+  width: 250px;
+  z-index: 2;
 `
 
 export const FooterWrapper = styled.div`
@@ -141,7 +153,7 @@ export const FooterWrapper = styled.div`
   display: flex;
   justify-content: center;
   height: 413px;
-  width: 1440px;
+  width: 100%;
   background-color: ${color.darkBlue};
 
   & > div {
