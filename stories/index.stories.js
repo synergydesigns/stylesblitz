@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react'
 import { Button } from '../components/Button'
 import { ForgotPassword, Login, Signup } from '../components/Modal'
 import { Logo, Header } from '../components/Nav'
+import Search from '../components/Search'
 
 storiesOf('Button')
   .add('Button with class', () =>
@@ -20,3 +21,12 @@ storiesOf('Modal')
 storiesOf('Navigation')
   .add('Logo', () => <Logo /> )
   .add('Header', () => <Header /> )
+
+
+storiesOf('Search')
+  .add('Provider Search', () => <Search.Provider /> )
+
+storiesOf('Common')
+  .add('Provider Snippet', () => <Search.Provider /> )
+  .add('Header', () => <Header /> )
+

@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components'
-import { font, color, zIndex } from '../global'
+import styled from 'styled-components'
+import { font } from '../global'
 
 export const placeholderColor = '#878787'
 
