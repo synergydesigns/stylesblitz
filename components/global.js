@@ -4,7 +4,8 @@ export const color = {
   secondary: '#FF9907',
   black: '#333333',
   lightGray: '#aaaaaa',
-  white: '#ffffff'
+  white: '#ffffff',
+  darkBlue: '#0D112B'
 }
 
 export const zIndex = {

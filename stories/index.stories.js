@@ -34,5 +34,10 @@ storiesOf('Common')
   .add('Featured Service', () => <Common.FeaturedService /> )
   .add('Popular List Item', () => <Common.PopularListItem 
     image="./static/images/thumbnail/barber.png"
-    name="barbing"/> )
+    name="barbing"/>
+  )
+  .add('Footer', () => <Common.Footer 
+    image="./static/images/thumbnail/barber.png"
+    name="barbing"/>
+  )
 

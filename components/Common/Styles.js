@@ -135,3 +135,39 @@ export const PopularItemWrapper = styled.div`
     z-index: 1;
   }
 `
+
+export const FooterWrapper = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 413px;
+  width: 1440px;
+  background-color: ${color.darkBlue};
+
+  & > div {
+    width: 850px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+`
+
+export const FooterSection = styled.div`
+  h1 {
+    color: ${color.white};
+    font: bold 16px/30px ${font.secondary};
+    margin: 5px 0;
+    text-transform: capitalize;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    color: ${color.white};
+    font: 300 14px/20px ${font.primary};
+    text-transform: capitalize;
+  }
+`
