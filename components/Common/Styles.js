@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import { font } from '../global'
-import Provider from '../Search/Provider';
+import { font, color } from '../global'
 
 export const ProviderSnippetWrapper = styled.div`
   display: flex;
@@ -99,5 +98,40 @@ export const KeyValue = styled.div`
     color: #6D6D6D;
     font: 300 18px/22px ${font.primary};
     margin: 0;
+  }
+`
+
+export const PopularItemWrapper = styled.div`
+  height: 250px;
+  position: relative;
+  width: 250px;
+
+  div {
+    align-items: center;
+    background-color: #000000;
+    border: none;
+    height: 250px;
+    opacity: 0.37;
+    position: relative;
+    width: 250px;
+    z-index: 2;
+  }
+
+  h1 {
+    color: ${color.white};
+    font: bold 24px/30px ${font.secondary};
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    position: absolute;
+    text-transform: capitalize;
+    top: 60%;
+    z-index: 3;
+  }
+
+  span {
+    position: absolute;
+    top: 0;
+    z-index: 1;
   }
 `

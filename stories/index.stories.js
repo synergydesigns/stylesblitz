@@ -18,11 +18,9 @@ storiesOf('Modal')
   .add('Login  modal', () => <Login /> )
   .add('Signup  modal', () => <Signup /> )
 
-
 storiesOf('Navigation')
   .add('Logo', () => <Logo /> )
   .add('Header', () => <Header /> )
-
 
 storiesOf('Search')
   .add('Provider Search', () => <Search.Provider /> )
@@ -34,4 +32,7 @@ storiesOf('Common')
     location="Victoria Island, lagos" /> 
   )
   .add('Featured Service', () => <Common.FeaturedService /> )
+  .add('Popular List Item', () => <Common.PopularListItem 
+    image="./static/images/thumbnail/barber.png"
+    name="barbing"/> )
 
