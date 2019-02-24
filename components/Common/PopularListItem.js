@@ -1,16 +1,15 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
-import { 
-  PopularItemWrapper, 
+import {
+  PopularItemWrapper,
   ImageWrapper,
   PopularItemHeader,
   PopularItemOverlay
 } from './Styles'
 
-
 export const PopularListItem = ({ name, image }) => {
-  return(
+  return (
     <PopularItemWrapper>
       <PopularItemHeader>
         <h1>{ name }</h1>

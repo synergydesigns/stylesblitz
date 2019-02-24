@@ -75,7 +75,7 @@ export const PopularListItemWrapper = styled.div`
 `
 
 export const SectionHeader = styled.h1`
-	color: ${color.black};
+  color: ${color.black};
   font: bold 30px/40px ${font.tertiary};
   margin: 20px  auto;
   text-align: center;
@@ -89,7 +89,7 @@ export const FeatureWrapper = styled.section`
 `
 
 export const JoinWrapper = styled.section`
-	height: 345px;
+  height: 345px;
   position: relative;
   margin: 40px auto 9px;
   width: 900px;

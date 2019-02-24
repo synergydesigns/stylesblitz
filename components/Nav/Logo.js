@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { LogoWrapper } from './Styles';
+import { LogoWrapper } from './Styles'
 
 const Logo = ({ color }) => {
   return (

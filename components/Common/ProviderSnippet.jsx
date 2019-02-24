@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ProviderSnippetWrapper, ImageWrapper } from'./Styles'
+import { ProviderSnippetWrapper, ImageWrapper } from './Styles'
 
 const ProviderSnippet = ({ image, location, provider, className }) => {
   return (
     <ProviderSnippetWrapper className={className}>
-      <ImageWrapper 
-        image={image} 
-        width="70px" 
+      <ImageWrapper
+        image={image}
+        width="70px"
         height="70px"
         borderRadius="100px" />
       <div>
@@ -18,11 +18,11 @@ const ProviderSnippet = ({ image, location, provider, className }) => {
   )
 }
 
-
-ProviderSnippet.proptypes = {
+ProviderSnippet.propTypes = {
   provider: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired
+  image: PropTypes.string.isRequired,
+  className: PropTypes.string
 }
 
 export default ProviderSnippet

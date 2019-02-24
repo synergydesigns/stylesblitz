@@ -4,11 +4,9 @@ import { font, color } from '../global'
 
 export const ButtonWrapper = styled.button`
   background-color: ${
-    ({ background, primary}) =>
-      background 
-        ? background 
-        : primary ? color.primary : color.secondary
-  };
+  ({ background, primary }) =>
+    background || (primary ? color.primary : color.secondary)
+};
   border-radius: 5px;
   border: 0px;
   box-shadow: ${props => props.boxShadow};
@@ -22,7 +20,7 @@ export const ButtonWrapper = styled.button`
   transition: .6s;
 
   &:hover {
-    background-color: ${props => props.primary ? color.secondary : color.primary };
+    background-color: ${props => props.primary ? color.secondary : color.primary};
     transition: .6s;
     color: #fff;
   }

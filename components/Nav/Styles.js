@@ -4,7 +4,7 @@ import { color, font } from '../global'
 
 export const LogoWrapper = styled.div`
   display: inline-block;
-  width: 154px;	
+  width: 154px;
   text-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
   text-transform: uppercase;
 

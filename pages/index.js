@@ -5,12 +5,12 @@ import Head from '../components/head'
 import Common from '../components/Common'
 
 class Home extends React.Component {
-  static async getInitialProps({ req }) {
+  static async getInitialProps ({ req }) {
     const userAgent = req ? req.headers['user-agent'] : navigator.userAgent
     return { userAgent }
   }
 
-  render() {
+  render () {
     return (
       <div>
         <Head title="homepage" />
@@ -25,5 +25,3 @@ class Home extends React.Component {
 }
 
 export default Home
-
-

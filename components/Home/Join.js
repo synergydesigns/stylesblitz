@@ -1,10 +1,7 @@
 import React from 'react'
 
-import {
-  JoinWrapper,
-  SectionHeader,
-} from './Styles'
-import { ImageWrapper } from '../Common/Styles' 
+import { JoinWrapper } from './Styles'
+import { ImageWrapper } from '../Common/Styles'
 import { Button } from '../Button'
 
 const Featured = () => {

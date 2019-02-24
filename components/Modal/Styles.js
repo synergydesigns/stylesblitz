@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { font, color, zIndex } from '../global'
 
 export const ModalWrapper = styled.div`

@@ -2,7 +2,7 @@ import React from 'react'
 
 import {
   FeatureWrapper,
-  SectionHeader,
+  SectionHeader
 } from './Styles'
 import Common from '../Common'
 

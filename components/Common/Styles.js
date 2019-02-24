@@ -23,13 +23,13 @@ export const ProviderSnippetWrapper = styled.div`
 
 export const ImageWrapper = styled.span`
   display: inline-block;
-  height: ${({height}) => height};
-  min-width: ${({width}) => width};
-  width: ${({width}) => width};
-  background-image: url(${({image}) => image});
+  height: ${({ height }) => height};
+  min-width: ${({ width }) => width};
+  width: ${({ width }) => width};
+  background-image: url(${({ image }) => image});
   background-position: center;
   background-size: cover;
-  border-radius: ${({borderRadius}) => borderRadius || 0};
+  border-radius: ${({ borderRadius }) => borderRadius || 0};
 `
 
 export const FeaturedServiceWrapper = styled.div`

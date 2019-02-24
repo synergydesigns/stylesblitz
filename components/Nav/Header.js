@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import { HeaderWrapper } from './Styles'
 import Nav from './Nav'
 
-const Header  = () => {
+const Header = () => {
   return (
     <HeaderWrapper>
       <Nav />
