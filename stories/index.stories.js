@@ -5,6 +5,7 @@ import { Button } from '../components/Button'
 import { ForgotPassword, Login, Signup } from '../components/Modal'
 import { Logo, Header } from '../components/Nav'
 import Search from '../components/Search'
+import Common from '../components/Common'
 
 storiesOf('Button')
   .add('Button with class', () =>
@@ -27,6 +28,10 @@ storiesOf('Search')
   .add('Provider Search', () => <Search.Provider /> )
 
 storiesOf('Common')
-  .add('Provider Snippet', () => <Search.Provider /> )
-  .add('Header', () => <Header /> )
+  .add('Provider Snippet', () => <Common.ProviderSnippet 
+    image="./static/images/sample/1.jpg"
+    provider="Dewee Fashion house"
+    location="Victoria Island, lagos" /> 
+  )
+  .add('Featured Service', () => <Common.FeaturedService /> )
 
