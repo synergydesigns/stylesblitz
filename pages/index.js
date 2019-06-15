@@ -1,8 +1,9 @@
 import React from 'react'
+import MobileDetect from 'mobile-detect'
+import PropTypes from 'prop-types'
 
-import HomeComponents from '../components/Home'
-import Head from '../components/head'
-import Common from '../components/Common'
+import DesktopIndex from '../desktop/pages/index'
+import MobileIndex from '../mobile/pages/index'
 
 class Home extends React.Component {
   static async getInitialProps ({ req }) {
@@ -11,17 +12,15 @@ class Home extends React.Component {
   }
 
   render () {
-    return (
-      <div>
-        <Head title="homepage" />
-        <HomeComponents.Jumbotron />
-        <HomeComponents.Popular/>
-        <HomeComponents.Featured/>
-        <HomeComponents.Join/>
-        <Common.Footer />
-      </div>
-    )
+    const md = new MobileDetect(this.props.userAgent)
+    return md.mobile()
+      ? <MobileIndex />
+      : <DesktopIndex />
   }
+}
+
+Home.propTypes = {
+  userAgent: PropTypes.string.isRequired
 }
 
 export default Home
