@@ -1,7 +1,7 @@
 import React from 'react'
 
 import HomeComponents from '../components/Home'
-import Head from '../../../shared/components/head'
+import Head from '../../shared/components/head'
 import Common from '../components/Common'
 
 class Home extends React.Component {

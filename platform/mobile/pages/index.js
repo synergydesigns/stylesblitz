@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Head from '../../desktop/components/head'
+import Head from '../../shared/components/head'
 
 class Home extends React.Component {
   render () {
