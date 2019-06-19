@@ -2,12 +2,16 @@
 import React from 'react'
 import NextHead from 'next/head'
 import { string } from 'prop-types'
+import 'antd-mobile/dist/antd-mobile.css'
+
+import GlobalStyle from './Style.js'
 
 const defaultDescription = ''
 const defaultOGURL = ''
 const defaultOGImage = ''
 
 const Head = props => (
+  <>
   <NextHead>
     <meta charSet="UTF-8" />
     <title>{props.title || ''}</title>
@@ -34,8 +38,9 @@ const Head = props => (
     <meta property="og:image" content={props.ogImage || defaultOGImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <style></style>
   </NextHead>
+  <GlobalStyle />
+  </>
 )
 
 Head.propTypes = {

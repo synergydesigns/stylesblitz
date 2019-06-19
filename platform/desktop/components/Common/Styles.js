@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { font, color } from '../global'
+import { font, color } from '../../../shared/global'
 
 export const ProviderSnippetWrapper = styled.div`
   display: flex;

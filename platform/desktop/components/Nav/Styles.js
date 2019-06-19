@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { color, font } from '../global'
+import { color, font } from '../../../shared/global'
 
 export const LogoWrapper = styled.div`
   display: inline-block;

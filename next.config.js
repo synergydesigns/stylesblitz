@@ -1,5 +1,7 @@
-module.exports = {
-  target: "serverless",
+const withCSS = require('@zeit/next-css')
+
+module.exports = withCSS({
+  target: 'serverless',
   webpack: config => {
     config.node = {
       fs: 'empty'
@@ -7,4 +9,4 @@ module.exports = {
 
     return config
   }
-}
+})

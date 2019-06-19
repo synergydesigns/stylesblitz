@@ -3,16 +3,15 @@ import React from 'react'
 import { Checkbox } from '../Form'
 import { Button } from '../Button'
 
-import { 
+import {
   AuthFooterWrapper,
-  LoginControl, 
+  LoginControl,
   LoginControlForgotPassword,
   LoginControlButtons,
   Or
 } from './Styles'
-import { color } from '../global'
 
-const Component = ({ heading, subHeading}) => {
+const Component = () => {
   return (
     <AuthFooterWrapper>
       <LoginControl>
@@ -27,18 +26,18 @@ const Component = ({ heading, subHeading}) => {
         </LoginControlForgotPassword>
       </LoginControl>
       <LoginControlButtons>
-        <Button 
+        <Button
           text='Reset'
           primary={false} />
-        <Button 
+        <Button
           text='Create a Profile'
           primary={true}
           background='#fff'
-          color='#4A4A4A' 
+          color='#4A4A4A'
           boxShadow='0 5px 14px 0 rgba(0,0,0,0.05)'/>
       </LoginControlButtons>
       <Or>or</Or>
-      <Button 
+      <Button
         text='Signin With Facebook'
         primary={true}
         width='100%' />
