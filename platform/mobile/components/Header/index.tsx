@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 
 import {
   HeaderWrapper,
@@ -6,7 +6,7 @@ import {
 } from './Style'
 import Logo from '../../../shared/icons/Logo'
 
-const Header = () => (
+const Header: React.SFC = () => (
   <HeaderWrapper>
     <Logo />
     <HeaderButton>get started</HeaderButton>
