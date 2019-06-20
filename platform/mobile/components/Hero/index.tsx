@@ -3,7 +3,7 @@ import React from 'react'
 import HeroDot from '../../../shared/icons/HeroDot'
 import { HeroContainer, HeroHeading, HeroSubHeader, HeroImage } from './Style'
 
-const Hero = () => (
+const Hero: React.SFC = () => (
   <HeroContainer>
     <HeroDot />
     <HeroHeading> No hassle,</HeroHeading>

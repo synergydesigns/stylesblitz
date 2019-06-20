@@ -14,6 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/next": "^8.0.5",
     "antd-mobile": "^2.2.14",
     "final-form": "^4.11.1",
     "jsdom": "^15.1.1",

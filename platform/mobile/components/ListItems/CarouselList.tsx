@@ -17,13 +17,13 @@ type Slider = {
 }
 
 type Props = {
-  items?: Array<Slider>
-  itemHeight?: number
-  itemWidth?: number
-  headerText?: string
-  itemsCount?: number
-  marginTop?: number
-  showBorder?: boolean
+  items: Array<Slider>
+  itemHeight: number
+  itemWidth: number
+  headerText: string
+  itemsCount: number
+  marginTop: number
+  showBorder: boolean
 }
 
 const CarouselList: React.SFC<Props> = ({ items, itemHeight, itemWidth, ...props }) => {
@@ -52,8 +52,8 @@ const CarouselList: React.SFC<Props> = ({ items, itemHeight, itemWidth, ...props
       </Style.CarouselListHeader>
       <Swiper {...params}>
         { 
-          items.map(({ name, subHeader, image }) => (
-            <Style.Item>
+          items.map(({ name, subHeader, image }, index) => (
+            <Style.Item key={index}>
               <img  src={image} />
               <h1>{name}</h1>
               <h3>{subHeader}</h3>
@@ -65,42 +65,6 @@ const CarouselList: React.SFC<Props> = ({ items, itemHeight, itemWidth, ...props
     </Style.CarouselListWrapper>
     
   )
-}
-
-CarouselList.defaultProps = {
-  itemWidth: 270,
-  itemHeight: 250,
-  headerText: 'services',
-  itemsCount: 108,
-  marginTop: 60,
-  showBorder: true,
-  items: [
-    {
-      name: 'nail polish',
-      subHeader: '32 vendors',
-      image: '/static/images/thumbnail/cream.jpg'
-    },
-    {
-      name: 'facial treatment',
-      subHeader: '11 vendors',
-      image: '/static/images/thumbnail/nails.jpg'
-    },
-    {
-      name: 'madonna spa',
-      subHeader: '67 vendors',
-      image: '/static/images/thumbnail/cream.jpg'
-    },
-    {
-      name: 'massage',
-      subHeader: '30 vendors',
-      image: '/static/images/thumbnail/nails.jpg'
-    },
-    {
-      name: 'hair grooming',
-      subHeader: '18 vendors',
-      image: '/static/images/thumbnail/cream.jpg'
-    },
-  ]
 }
 
 export default CarouselList
