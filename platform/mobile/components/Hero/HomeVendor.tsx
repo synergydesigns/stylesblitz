@@ -4,10 +4,7 @@ import { HomeVendorButton, HomeVendorWrapper, HeroImage } from './Style'
 import DynamicLines from '../../../shared/icons/DynamicLines'
 import ArrowRight from '../../../shared/icons/ArrowRight'
 
-
 const HomeVendor: React.SFC = () => {
-
-
   return (
     <HomeVendorWrapper>
       <DynamicLines />

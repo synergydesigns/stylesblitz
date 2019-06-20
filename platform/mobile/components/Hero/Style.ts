@@ -9,9 +9,15 @@ export const HeroContainer = styled.section`
   top: 0px;
   background: ${color.white};
 
-  svg {
+  & > svg {
     position: absolute;
     top: 145px;
+  }
+
+  .input-wrapper {
+    position: absolute;
+    bottom: -60px;
+    width: 100%;
   }
 `
 

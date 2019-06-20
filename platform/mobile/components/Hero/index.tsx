@@ -2,6 +2,7 @@ import React from 'react'
 
 import HeroDot from '../../../shared/icons/HeroDot'
 import { HeroContainer, HeroHeading, HeroSubHeader, HeroImage } from './Style'
+import HomeInput from '../Common//HomeInput'
 
 const Hero: React.SFC = () => (
   <HeroContainer>
@@ -15,6 +16,9 @@ const Hero: React.SFC = () => (
     <HeroImage src="/static/images/mobile/hero/image2.png" top="130px" />
     <HeroImage src="/static/images/mobile/hero/image3.png" top="190px" />
     <HeroImage src="/static/images/mobile/hero/image4.png" top="194px" />
+    <div className="input-wrapper">
+      <HomeInput />
+    </div>
   </HeroContainer>
 )
 

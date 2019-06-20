@@ -7,6 +7,7 @@ export default createGlobalStyle`
   }
   body {
     font-size: 1.6rem;
+    background: #ffffff;
   }
   /* Relative Type Scale */
   /* https://blog.envylabs.com/responsive-typographic-scales-in-css-b9f60431d1c4 */

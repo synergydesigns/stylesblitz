@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { color } from '../../../shared/global'
 
 export const HeaderWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 85px;
   left: 0px;

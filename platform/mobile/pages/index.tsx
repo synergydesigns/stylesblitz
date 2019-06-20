@@ -5,6 +5,7 @@ import Hero from '../components/Hero'
 import HomeVendorHero from '../components/Hero/HomeVendor'
 import Header from '../components/Header'
 import CarouselList from '../components/ListItems/CarouselList'
+import Footer from '../components/Common/Footer'
 
 
 const items = [
@@ -60,7 +61,7 @@ const services = {
   itemHeight: 250,
   headerText: 'services',
   itemsCount: 108,
-  marginTop: 60,
+  marginTop: 120,
   showBorder: true,
   items: [
     {
@@ -101,6 +102,7 @@ const Home: React.SFC = () => (
     <CarouselList { ...popular } />
     <CarouselList { ...categories } />
     <HomeVendorHero />
+    <Footer />
   </>
 )
 
