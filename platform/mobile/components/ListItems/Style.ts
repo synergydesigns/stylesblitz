@@ -12,11 +12,11 @@ export const CarouselListWrapper = styled.div<{ height: number }>`
     width: 90%;
   }
 `
-export const CarouselListHeader = styled.div`
+export const CarouselListHeader = styled.div<{ marginTop: number }>`
   text-transform: capitalize;
   display: flex;
   justify-content: space-between;
-  margin: 60px 20px 25px 20px;
+  margin: ${({ marginTop }) => `${marginTop}px 20px 25px 20px`};
 
   h1 {
     font: bold 18px/22px ${font.secondary};
@@ -61,12 +61,13 @@ export const Item = styled.div`
   text-transform: capitalize;
 
   h1 {
-    font: bold 16px/22px ${font.primary};
+    font: bold 16px/22px ${font.semiPrimary};
     margin-top: 12px;
   }
 
   h3 {
     font: normal 14px/19px ${font.primary};
+     margin-top: 8px;
   }
 `
 
@@ -75,9 +76,6 @@ export const ItemImage = styled.div<{ src: string, width: number, height: number
   height: ${({ height }) => `${height}px`};
   min-width: ${({ width }) => `${width}px`};
   width: ${({ width }) => `${width}px`};
-  /* background-image: url(${({ src }) => src});
-  background-position: center;
-  background-size: cover; */
   z-index: 3;
   right: 0;
   display: block;

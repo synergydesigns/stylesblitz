@@ -20,8 +20,10 @@ type Props = {
   items?: Array<Slider>
   itemHeight?: number
   itemWidth?: number
-  headerText?: string,
+  headerText?: string
   itemsCount?: number
+  marginTop?: number
+  showBorder?: boolean
 }
 
 const CarouselList: React.SFC<Props> = ({ items, itemHeight, itemWidth, ...props }) => {
@@ -38,7 +40,7 @@ const CarouselList: React.SFC<Props> = ({ items, itemHeight, itemWidth, ...props
 
   return (
     <Style.CarouselListWrapper height={itemHeight}>
-      <Style.CarouselListHeader>
+      <Style.CarouselListHeader marginTop={props.marginTop} >
         <Style.CarouselListHeaderTitle>
           <h1>{props.headerText}</h1>
           <Style.CarouselListTooltip>
@@ -59,7 +61,7 @@ const CarouselList: React.SFC<Props> = ({ items, itemHeight, itemWidth, ...props
           ))
         }
       </Swiper>
-      <hr />
+      {props.showBorder && <hr />}
     </Style.CarouselListWrapper>
     
   )
@@ -67,33 +69,35 @@ const CarouselList: React.SFC<Props> = ({ items, itemHeight, itemWidth, ...props
 
 CarouselList.defaultProps = {
   itemWidth: 270,
-  itemHeight: 230,
+  itemHeight: 250,
   headerText: 'services',
   itemsCount: 108,
+  marginTop: 60,
+  showBorder: true,
   items: [
     {
       name: 'nail polish',
-      subHeader: '12 vendors',
+      subHeader: '32 vendors',
       image: '/static/images/thumbnail/cream.jpg'
     },
     {
       name: 'facial treatment',
-      subHeader: '12 vendors',
-      image: '/static/images/thumbnail/cream.jpg'
+      subHeader: '11 vendors',
+      image: '/static/images/thumbnail/nails.jpg'
     },
     {
       name: 'madonna spa',
-      subHeader: '12 vendors',
+      subHeader: '67 vendors',
       image: '/static/images/thumbnail/cream.jpg'
     },
     {
       name: 'massage',
-      subHeader: '12 vendors',
-      image: '/static/images/thumbnail/cream.jpg'
+      subHeader: '30 vendors',
+      image: '/static/images/thumbnail/nails.jpg'
     },
     {
       name: 'hair grooming',
-      subHeader: '12 vendors',
+      subHeader: '18 vendors',
       image: '/static/images/thumbnail/cream.jpg'
     },
   ]

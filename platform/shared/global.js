@@ -17,6 +17,7 @@ export const zIndex = {
 
 export const font = {
   primary: '"Nunito SemiBold", sans-serif',
+  semiPrimary: '"Nunito", sans-serif',
   secondary: 'Montserrat, sans-serif',
   tertiary: 'Kollektif Lato, sans-serif'
 }
