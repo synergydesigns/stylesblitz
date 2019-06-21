@@ -2,6 +2,7 @@ import React from 'react';
 import { FootLinks, FooterWrapper, FooterSocial } from './Style';
 import ArrowRight from '../../../shared/icons/ArrowRight'
 import HomeInput from './HomeInput'
+import NavBar from './NavBar'
 
 const Footer: React.SFC = () => (
   <FooterWrapper>
@@ -29,6 +30,7 @@ const Footer: React.SFC = () => (
       <img src="/static/images/mobile/social/instagram.png" />
     </FooterSocial>
     <p>2019 LookBlitz. All rights reserved</p>
+    <NavBar />
   </FooterWrapper>
 )
 

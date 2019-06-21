@@ -1,14 +1,14 @@
-import React from 'react'
+import * as React from 'react'
 import MobileDetect from 'mobile-detect'
 import { NextContext } from 'next'
 
-import MobileIndex from '../platform/mobile/pages/index'
+import MobileSearch from '../platform/mobile/pages/search'
 
 type Props = {
   userAgent: string
 }
 
-class Home extends React.Component <Props>{
+class Search extends React.Component <Props>{
   static async getInitialProps ({ req }: NextContext) {
     const userAgent = req ? req.headers['user-agent'] : navigator.userAgent
     return { userAgent }
@@ -16,8 +16,8 @@ class Home extends React.Component <Props>{
 
   render () {
     const md = new MobileDetect(this.props.userAgent)
-    return md.mobile() ? <MobileIndex /> : ''
+    return md.mobile() ? <MobileSearch /> : ''
   }
 }
 
-export default Home
+export default Search

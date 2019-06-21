@@ -1,11 +1,10 @@
 import * as React from 'react'
 
-import Head from '../../shared/components/head'
 import Hero from '../components/Hero'
 import HomeVendorHero from '../components/Hero/HomeVendor'
 import Header from '../components/Header'
 import CarouselList from '../components/ListItems/CarouselList'
-import Footer from '../components/Common/Footer'
+import Layout from '../components/Common/Layout'
 
 
 const items = [
@@ -95,14 +94,14 @@ const services = {
 
 const Home: React.SFC = () => (
   <>
-    <Head title="homepage" />
-    <Header />
-    <Hero />
-    <CarouselList { ...services } />
-    <CarouselList { ...popular } />
-    <CarouselList { ...categories } />
-    <HomeVendorHero />
-    <Footer />
+    <Layout title="homepage">
+      <Header />
+      <Hero />
+      <CarouselList { ...services } />
+      <CarouselList { ...popular } />
+      <CarouselList { ...categories } />
+      <HomeVendorHero />
+    </Layout>
   </>
 )
 

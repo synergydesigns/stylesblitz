@@ -77,3 +77,14 @@ export const HomeInputWrapper = styled.div`
     }
   }
 `
+
+export const NavBarWrapper = styled.div`
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+  .am-tab-bar-bar  {
+    background: ${color.primary}
+  }
+`
