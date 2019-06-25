@@ -4,7 +4,7 @@ import ArrowRight from '../../../shared/icons/ArrowRight'
 import HomeInput from './HomeInput'
 import NavBar from './NavBar'
 
-const Footer: React.SFC = () => (
+const Footer: React.FC = () => (
   <FooterWrapper>
     <h1>Newsletter subscription</h1>
     <HomeInput>

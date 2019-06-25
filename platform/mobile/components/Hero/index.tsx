@@ -4,7 +4,7 @@ import HeroDot from '../../../shared/icons/HeroDot'
 import { HeroContainer, HeroHeading, HeroSubHeader, HeroImage } from './Style'
 import HomeInput from '../Common//HomeInput'
 
-const Hero: React.SFC = () => (
+const Hero: React.FC = () => (
   <HeroContainer>
     <HeroDot />
     <HeroHeading> No hassle,</HeroHeading>

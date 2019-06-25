@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DynamicLines: React.SFC = () => (
+const DynamicLines: React.FC = () => (
   <svg width="198" height="103" viewBox="0 0 198 103" fill="none" xmlns="http://www.w3.org/2000/svg">
     <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="4" y="-128" width="218" height="226">
     <path d="M153.321 -118.673C182.665 -140.347 197.965 -115.905 201.946 -100.975C207.686 -67.6624 219.658 3.49558 221.632 21.6298C224.1 44.2975 180.944 78.8205 159.132 92.1519C137.319 105.483 72.4942 91.6755 25.5788 63.3156C-21.3366 34.9557 25.4475 -9.13139 33.6709 -57.5668C41.8943 -106.002 47.0637 -93.9349 85.4807 -102.321C123.898 -110.708 116.64 -91.5794 153.321 -118.673Z" fill="#C4C4C4"/>

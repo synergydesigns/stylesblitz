@@ -26,7 +26,7 @@ type Props = {
   showBorder: boolean
 }
 
-const CarouselList: React.SFC<Props> = ({ items, itemHeight, itemWidth, ...props }) => {
+const CarouselList: React.FC<Props> = ({ items, itemHeight, itemWidth, ...props }) => {
   const params = {
     slidesPerView: 2,
     spaceBetween: 10,

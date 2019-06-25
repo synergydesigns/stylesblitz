@@ -8,7 +8,7 @@ type Props = {
   title: string
 }
 
-const Layout: React.SFC<Props> = ({ title, children}) => (
+const Layout: React.FC<Props> = ({ title, children}) => (
   <>
     <Head title={title} />
     {children}

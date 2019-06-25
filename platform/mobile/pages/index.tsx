@@ -92,7 +92,7 @@ const services = {
 }
 
 
-const Home: React.SFC = () => (
+const Home: React.FC = () => (
   <>
     <Layout title="homepage">
       <Header />

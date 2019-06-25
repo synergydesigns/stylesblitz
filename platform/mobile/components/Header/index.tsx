@@ -6,7 +6,7 @@ import {
 } from './Style'
 import Logo from '../../../shared/icons/Logo'
 
-const Header: React.SFC = () => (
+const Header: React.FC = () => (
   <HeaderWrapper>
     <Logo />
     <HeaderButton>get started</HeaderButton>
