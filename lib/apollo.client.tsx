@@ -33,7 +33,7 @@ export default (App: any) => {
       const {
         Component,
         router,
-        ctx: { req, res }
+        ctx: { req, res, query }
       } = ctx
       const apollo = initApollo(
         {},
@@ -82,10 +82,13 @@ export default (App: any) => {
 
       // Extract query data from the Apollo's store
       const apolloState = apollo.cache.extract()
+      const userAgent = req ? req.headers['user-agent'] : navigator.userAgent
 
       return {
         ...appProps,
-        apolloState
+        apolloState,
+        query,
+        userAgent
       }
     }
 
