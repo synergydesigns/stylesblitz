@@ -1,17 +1,16 @@
-
 import React from 'react'
 import NextHead from 'next/head'
 import { string } from 'prop-types'
-import GlobalStyle from './Style.js'
+import GlobalStyle from './HeadStyle'
 
 import 'antd-mobile/dist/antd-mobile.css'
-import 'react-id-swiper/src/styles/css/swiper.css'
+import 'react-id-swiper/lib/styles/css/swiper.css'
 
 const defaultDescription = ''
 const defaultOGURL = ''
 const defaultOGImage = ''
 
-const Head = props => (
+const Head = (props: any) => (
   <>
     <NextHead>
       <meta charSet="UTF-8" />

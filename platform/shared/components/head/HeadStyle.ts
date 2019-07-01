@@ -4,10 +4,17 @@ export default createGlobalStyle`
   /* Base 10 typography scale courtesty of @wesbos 1.6rem === 16px */
   html {
     font-size: 10px;
+    box-sizing: border-box;
   }
   body {
     font-size: 1.6rem;
     background: #ffffff;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
   }
   /* Relative Type Scale */
   /* https://blog.envylabs.com/responsive-typographic-scales-in-css-b9f60431d1c4 */
