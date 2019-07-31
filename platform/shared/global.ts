@@ -9,6 +9,7 @@ interface Color {
   white: string
   darkBlue: string
   yellow: string
+  starGreen: string
 }
 
 export const color: Color = {
@@ -20,7 +21,8 @@ export const color: Color = {
   darkGray: '#D1D1D1',
   white: '#ffffff',
   darkBlue: '#0D112B',
-  yellow: '#FFE975'
+  yellow: '#FFE975',
+  starGreen: '#59C957'
 }
 
 interface ZIndex {
