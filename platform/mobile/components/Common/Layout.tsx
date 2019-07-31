@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Head from '../../../shared/components/head'
+
 import Footer from './Footer'
 
 type Props = {
