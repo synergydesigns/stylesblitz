@@ -58,7 +58,7 @@ const StarRating: React.FC<Props> = ({ rating: initialRating, fontSize, color, .
 }
 
 StarRating.defaultProps = {
-  fontSize: '20px',
+  fontSize: '12px',
   rating: 0,
   getRating: () => {}
 }
