@@ -1,9 +1,8 @@
 import React from 'react'
-import { Flex } from 'antd-mobile'
+import { Flex, WingBlank } from 'antd-mobile'
 
 import { Clock } from 'shared/icons'
 import { Image } from '../Image'
-import { H1 } from '../Text'
 import { ServiceListItemContainer, ServiceListItemDetails } from './ServiceStyle'
 
 interface Props {

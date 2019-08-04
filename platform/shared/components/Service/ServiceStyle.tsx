@@ -2,11 +2,18 @@ import styled from 'styled-components'
 import { font, color } from 'globals'
 
 export const ServiceListItemContainer = styled.div`
-  width: 320px;
-  height: 60px;
+  width: 100%;
+  height: 75px;
   position: relative;
   display: flex;
   align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #E5E5E5;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
 `
 
 export const ServiceListItemDetails = styled.div`
@@ -46,7 +53,7 @@ export const ServiceListItemDetails = styled.div`
     border: none;
     position: absolute;
     right: 0px;
-    bottom: 0px;
+    bottom: 15px;
     cursor: pointer;
   }
 `

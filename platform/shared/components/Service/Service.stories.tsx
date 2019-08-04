@@ -11,6 +11,6 @@ storiesOf('Shared|Service/ListItem', module)
   .add('service list', () => <ListItem 
     image="https://picsum.photos/id/237/200/300"
     name="Weavon Fixing"
-    price="12000"
-    duration="3"
+    price={12000}
+    duration={3}
   /> )
