@@ -13,3 +13,7 @@ ProfileImage.defaultProps = {
   width: '60px',
   height: '60px'
 }
+
+export const Image = styled(ProfileImage)`
+  border-radius: 0px;
+`

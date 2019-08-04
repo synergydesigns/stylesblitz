@@ -16,5 +16,9 @@ module.exports = ({ config, mode }) => {
     }
   );
   config.resolve.extensions.push('.ts', '.tsx');
+  config.resolve.alias.globals = path.resolve(__dirname, '../platform/shared/global.ts')
+  config.resolve.alias.platform = path.resolve(__dirname, '../platform')
+  config.resolve.alias.shared = path.resolve(__dirname, '../platform/shared')
+  config.resolve.alias.lib = path.resolve(__dirname, '../platform/shared/lib')
   return config;
 };
