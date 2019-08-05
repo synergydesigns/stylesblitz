@@ -7,6 +7,7 @@ export const HeroContainer = styled.section`
   height: 295px;
   left: 0px;
   top: 0px;
+  margin-top: -85px;
   background: ${color.white};
 
   & > svg {
@@ -18,6 +19,10 @@ export const HeroContainer = styled.section`
     position: absolute;
     bottom: -60px;
     width: 100%;
+    
+    input {
+      padding-left: 20px;
+    }
   }
 `
 

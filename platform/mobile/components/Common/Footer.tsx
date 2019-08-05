@@ -1,18 +1,12 @@
 import React from 'react';
 import { FootLinks, FooterWrapper, FooterSocial } from './Style';
-import ArrowRight from '../../../shared/icons/ArrowRight'
+import Arrow from '../../../shared/icons/Arrow'
 import HomeInput from './HomeInput'
-import NavBar from './NavBar'
 
 const Footer: React.FC = () => (
   <FooterWrapper>
     <h1>Newsletter subscription</h1>
-    <HomeInput>
-      <input type="text" placeholder="Enter your email" />
-      <button>
-        <ArrowRight />
-      </button>
-    </HomeInput>
+    <HomeInput />
     <FootLinks>
       <h1>the company</h1>
       <ul>
@@ -30,7 +24,6 @@ const Footer: React.FC = () => (
       <img src="/static/images/mobile/social/instagram.png" />
     </FooterSocial>
     <p>2019 LookBlitz. All rights reserved</p>
-    <NavBar />
   </FooterWrapper>
 )
 

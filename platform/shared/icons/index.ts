@@ -1,5 +1,5 @@
 export {default as Hamburger } from './Hamburger'
-export {default as ArrowRight } from './ArrowRight'
+export {default as Arrow } from './Arrow'
 export {default as DynamicLines } from './DynamicLines'
 export {default as HeroDot } from './HeroDot'
 export {default as Home } from './Home'

@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 
 export const Masonry = styled.div<{ columnCount?: number, maxWidth?: string }>`
-  margin: 1.5em auto;
-  max-width: ${({ maxWidth }) => maxWidth};
-  column-gap: .5em;
+  max-width: ${({ maxWidth }) => "350px"};
+  column-gap: 1px;
+  row-gap: 3px;
   column-count: ${({ columnCount }) => columnCount};
+  position: relative;
 `
 
 Masonry.defaultProps = {
@@ -13,10 +14,10 @@ Masonry.defaultProps = {
 }
 
 export const MasonryItem = styled.div`
-  display: inline-block;
   background: #fff;
-  display: inline-block;
+  display: flex;
   width:  100%; 
+  margin-bottom: 1px;
 
   & > img, div {
     width: 100%;

@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { HomeVendorButton, HomeVendorWrapper, HeroImage } from './Style'
 import DynamicLines from '../../../shared/icons/DynamicLines'
-import ArrowRight from '../../../shared/icons/ArrowRight'
+import Arrow from '../../../shared/icons/Arrow'
 
 const HomeVendor: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const HomeVendor: React.FC = () => {
       <h3>We’ve got you</h3>
       <HomeVendorButton>
         <p>Try a Free Account</p>
-        <ArrowRight />
+        <Arrow />
       </HomeVendorButton>
 
       <HeroImage src="/static/images/mobile/hero/clipper.png" top="95px" />

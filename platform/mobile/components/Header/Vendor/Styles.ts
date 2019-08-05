@@ -2,7 +2,13 @@ import styled from 'styled-components'
 import { color, font } from 'globals'
 
 export const VendProfileHeader = styled.div`
-  /* font: 16px; */
+  padding-top: 50px;
+  
+  .profile-header__back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
 `
 
 export const TextWithIcon = styled.div`
