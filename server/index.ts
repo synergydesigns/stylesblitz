@@ -13,7 +13,7 @@ app.prepare().then(() => {
 
   server.get('/vendors/:vendorId', (req: any, res: any) => {
     const { params, query } = req
-    return app.render(req, res, '/vendors', { params, search: query })
+    return app.render(req, res, '/vendors/[vendorId]', { params, search: query })
   })
 
   server.get('*', (req: any, res: any) => {

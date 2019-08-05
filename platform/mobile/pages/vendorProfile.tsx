@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Tabs, WhiteSpace, Badge, Flex } from 'antd-mobile'
+
 import { color } from 'globals'
 import * as Icon from 'shared/icons'
 

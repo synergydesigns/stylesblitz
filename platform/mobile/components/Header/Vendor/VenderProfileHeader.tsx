@@ -1,18 +1,20 @@
 import React from 'react'
 import { Flex, WhiteSpace, WingBlank } from 'antd-mobile'
+import Link from 'next/link';
 
 import { ProfileImage } from 'shared/components/Image'
 import { H1 } from 'shared/components/Text'
 import StarRating from 'shared/components/StarRating'
 import { Location, Arrow } from 'shared/icons'
-
-import { VendProfileHeader, TextWithIcon } from './Styles'
 import ProfileDropDown from './ProfileDropDown'
+import { VendProfileHeader, TextWithIcon } from './Styles'
 
 const VendorProfileHeader: React.FC = ({ url, alt }) => {
   return (
     <VendProfileHeader>
-      <Arrow className="profile-header__back" />
+      <Link href="/">
+        <Arrow className="profile-header__back" />
+      </Link>
       <Flex justify="center" align="center">
         <ProfileImage image={url} alt={alt}/>
       </Flex>

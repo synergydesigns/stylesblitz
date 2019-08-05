@@ -11,11 +11,11 @@ type Props = {
 }
 
 const Layout: React.FC<Props> = ({ title, children, ...props }) => (
-  <>
+  <main>
     <Head title={title} />
     {children}
     {props.showFooter && <Footer />}
-  </>
+  </main>
 )
 
 Layout.defaultProps = {
