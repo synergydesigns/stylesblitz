@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Masonry = styled.div<{ columnCount?: number, maxWidth?: string }>`
-  max-width: ${({ maxWidth }) => "350px"};
+  max-width: ${({ maxWidth }) => maxWidth};
   column-gap: 1px;
   row-gap: 3px;
   column-count: ${({ columnCount }) => columnCount};

@@ -13,6 +13,7 @@ interface Props {
   width?: string
   height?: string
   className?: string
+  fill?: string
 }
 
 const getAngleDegree = (angle: string) => {

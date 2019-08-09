@@ -5,10 +5,21 @@ export default createGlobalStyle`
   html {
     font-size: 10px;
     box-sizing: border-box;
+    height: 100%;
+    margin: 0;
   }
   body {
     font-size: 1.6rem;
     background: #ffffff;
+    height: 100%;
+    margin: 0;
+  }
+  
+
+  main,
+  #__next {
+    height: 100%;
+    margin: 0;
   }
 
   *,
