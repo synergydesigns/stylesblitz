@@ -63,7 +63,6 @@ const CarouselList: React.FC<Props> = ({ items, itemHeight, itemWidth, ...props 
       </Swiper>
       {props.showBorder && <hr />}
     </Style.CarouselListWrapper>
-    
   )
 }
 

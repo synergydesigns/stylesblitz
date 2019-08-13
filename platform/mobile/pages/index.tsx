@@ -4,7 +4,7 @@ import Hero from '../components/Hero'
 import HomeVendorHero from '../components/Hero/HomeVendor'
 import Header from '../components/Header'
 import CarouselList from '../components/ListItems/CarouselList'
-import Layout from '../components/Common/Layout'
+import Layout from './layout'
 
 
 const items = [
@@ -95,7 +95,6 @@ const services = {
 const Home: React.FC = () => (
   <>
     <Layout title="homepage">
-      <Header />
       <Hero />
       <CarouselList { ...services } />
       <CarouselList { ...popular } />

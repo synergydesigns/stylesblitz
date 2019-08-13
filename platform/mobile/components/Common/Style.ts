@@ -47,7 +47,8 @@ export const FooterSocial = styled.div`
 export const HomeInputWrapper = styled.div`
   display: flex;
   align-items: center;
-  input {
+
+  & > input[type=text] {
     width: 100%;
     height: 53px;
     left: 20px;
@@ -57,7 +58,6 @@ export const HomeInputWrapper = styled.div`
     outline: none;
     font: normal 16px/19px ${font.semiPrimary};
     padding-left: 20px;
-
   }
 
   button {

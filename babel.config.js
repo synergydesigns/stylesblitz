@@ -1,7 +1,7 @@
 
 module.exports = (api) => {
   api.cache(true)
-  const presets = ['next/babel', '@zeit/next-typescript/babel', '@babel/preset-typescript']
+  const presets = ['next/babel', '@zeit/next-typescript/babel']
   return {
     presets,
     plugins: [
@@ -9,6 +9,7 @@ module.exports = (api) => {
     ],
     env: {
       test: {
+        presets: ['@babel/preset-typescript'],
         plugins: ['require-context-hook', 'macros']
       }
     }

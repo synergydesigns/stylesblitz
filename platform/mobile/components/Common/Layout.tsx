@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Head from '../../../shared/components/head'
+
 import Footer from './Footer'
 
 type Props = {
@@ -8,12 +9,11 @@ type Props = {
   title: string
 }
 
-const Layout: React.FC<Props> = ({ title, children}) => (
-  <>
+const Layout: React.FC<Props> = ({ title, children, ...props }) => (
+  <main>
     <Head title={title} />
     {children}
-    <Footer />
-  </>
+  </main>
 )
 
 export default Layout
