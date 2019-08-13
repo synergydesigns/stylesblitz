@@ -4,6 +4,7 @@ import Layout from '../components/Common/Layout'
 import  { MainWrapper, HeaderSpace } from './styles/MobileGlobalStyle'
 import Header from '../components/Header'
 import NavBar from '../components/Common/NavBar'
+import Footer from '../components/Common/Footer'
 
 interface Props {
   showFooter: boolean
@@ -23,6 +24,7 @@ const MobileLayout: React.FC<Props> = ({ children, ...props }) => {
       }
       <MainWrapper>
         {children}
+        {props.showFooter && <Footer />}
       </MainWrapper>
       {props.showNav && <NavBar />}
     </Layout>
