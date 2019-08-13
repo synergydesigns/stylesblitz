@@ -8,6 +8,7 @@ module.exports = ({ config, mode }) => {
       options: {
         presets: [['react-app', { flow: false, typescript: true }]],
       },
+      exclude: /stories.(ts|tsx)$/
     },
     {
       test: /\.scss$/,
