@@ -8,6 +8,7 @@ import Layout from './layout';
 import VendorProfileHeader from '../components/Header/Vendor/VenderProfileHeader'
 import ServiceListing from '../components/Service/ServiceListing'
 import VendorGallery from '../components/Gallery/VendorGallery'
+import VendorReview from '../components/Review/VendorReview'
 
 const tabs = [
   { title: <Icon.Service /> },
@@ -25,13 +26,15 @@ const VendorProfile: React.FC = () => (
     <WhiteSpace size="xl" />
     <Tabs
       tabs={tabs}
-      initialPage={2}
+      initialPage={1}
       tabBarUnderlineStyle={{ borderColor: color.primary, top: 0, bottom: 'inherit' }}
     >
       <Flex justify="center">
         <ServiceListing />
       </Flex>
-      <Flex justify="center">reviews</Flex>
+      <Flex justify="center">
+        <VendorReview />
+      </Flex>
       <Flex justify="center">
         <VendorGallery />
       </Flex>

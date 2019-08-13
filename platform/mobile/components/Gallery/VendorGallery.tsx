@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 
+import shortId from 'lib/utils/shortId';
 import { Masonry, MasonryItem } from 'shared/components/Masonry'
 import { H1 } from 'shared/components/Text'
 import { VendorGalleryWrapper } from './GalleryStyle'
@@ -32,8 +33,8 @@ const vendorGallery: React.FC = () => {
       <WhiteSpace size="lg" />
       <Masonry columnCount={2}>
         {
-          assets.map((asset) =>
-            <MasonryItem>
+          assets.map((asset, index) =>
+            <MasonryItem key={shortId(index)}>
               <img src={asset.url} />
             </MasonryItem>
           )

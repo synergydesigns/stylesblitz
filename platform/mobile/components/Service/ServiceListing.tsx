@@ -1,6 +1,7 @@
 import React from 'react';
 import { WhiteSpace } from 'antd-mobile';
 
+import shortId from 'lib/utils/shortId';
 import { ListItem } from 'shared/components/Service'
 import { ServiceListingWrapper } from './ServiceListenStyle'
 import { H1 } from 'shared/components/Text'
@@ -46,7 +47,7 @@ const ServiceListing: React.FC = () => {
       <CategoryCarousel categories={categories} />
       <WhiteSpace size="xl" />
       {
-        services.map((item) => <ListItem { ...item } />)
+        services.map((item, index) => <ListItem { ...item } key={shortId(index)} />)
       }
     </ServiceListingWrapper>
   )

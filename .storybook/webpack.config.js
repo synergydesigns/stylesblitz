@@ -20,5 +20,8 @@ module.exports = ({ config, mode }) => {
   config.resolve.alias.platform = path.resolve(__dirname, '../platform')
   config.resolve.alias.shared = path.resolve(__dirname, '../platform/shared')
   config.resolve.alias.lib = path.resolve(__dirname, '../platform/shared/lib')
+  config.resolve.alias.interface = path.resolve(__dirname, '../platform/shared/interface')
+  config.resolve.alias['reset-styles'] = path.resolve(__dirname, '../platform/shared/components/head/HeadStyle')
+
   return config;
 };

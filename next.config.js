@@ -9,6 +9,14 @@ module.exports = withTypescript(withCSS({
       fs: 'empty',
     }
 
+    config.module.rules.push(
+      {
+        exclude: [/node_modules\/(?!(swiper|dom7)\/).*/, /\.test\.js(x)?$/],
+        test: /\.js(x)?$/,
+        use: [{ loader: 'babel-loader' }],
+      },
+    );
+
     config.resolve.alias.globals = path.resolve(__dirname, 'platform/shared/global.ts')
     config.resolve.alias.platform = path.resolve(__dirname, 'platform')
     config.resolve.alias.shared = path.resolve(__dirname, 'platform/shared')
