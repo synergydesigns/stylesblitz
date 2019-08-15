@@ -1,9 +1,10 @@
 const express = require('express')
 const next = require('next')
-const bodyParser = require('body-parser')
 
 const port = parseInt(process.env.PORT || '3000', 10)
 const dev = process.env.NODE_ENV !== 'production'
+
+console.log(dev)
 const app = next({ dev })
 const handle = app.getRequestHandler()
 

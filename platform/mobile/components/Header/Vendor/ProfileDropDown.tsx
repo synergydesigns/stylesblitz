@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
-import { Flex, WhiteSpace, SegmentedControl, WingBlank } from 'antd-mobile'
+import Flex from 'antd-mobile/lib/flex'
+import WhiteSpace from 'antd-mobile/lib/white-space'
+import SegmentedControl from 'antd-mobile/lib/segmented-control'
+import WingBlank from 'antd-mobile/lib/wing-blank'
 
 import { Chevron } from 'shared/icons'
 import { H3 } from 'shared/components/Text'

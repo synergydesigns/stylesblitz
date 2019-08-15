@@ -1,5 +1,5 @@
 import React from 'react'
-import { TabBar } from 'antd-mobile'
+import TabBar from 'antd-mobile/lib/tab-bar'
 import { withRouter, SingletonRouter } from 'next/router'
 
 import {

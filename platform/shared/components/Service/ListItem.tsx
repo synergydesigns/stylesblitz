@@ -1,5 +1,6 @@
 import React from 'react'
-import { Flex, WingBlank } from 'antd-mobile'
+import WingBlank from 'antd-mobile/lib/wing-blank'
+import Flex from 'antd-mobile/lib/flex'
 
 import { Clock } from 'shared/icons'
 import { Image } from '../Image'

@@ -1,5 +1,7 @@
 import React, { SF, useState } from 'react'
-import { ImagePicker, WingBlank, SegmentedControl } from 'antd-mobile'
+import ImagePicker from 'antd-mobile/lib/image-picker'
+import SegmentedControl from 'antd-mobile/lib/segmented-control'
+import WingBlank from 'antd-mobile/lib/wing-blank'
 
 const CustomImagePicker: React.SF = () => {
   const [files, setFiles] = useState([])

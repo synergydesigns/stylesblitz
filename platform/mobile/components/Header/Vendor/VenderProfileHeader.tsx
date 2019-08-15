@@ -1,11 +1,13 @@
 import React from 'react'
-import { Flex, WhiteSpace, WingBlank } from 'antd-mobile'
+import Flex from 'antd-mobile/lib/flex'
+import WhiteSpace from 'antd-mobile/lib/white-space'
+import WingBlank from 'antd-mobile/lib/wing-blank'
 import Link from 'next/link';
 
 import { ProfileImage } from 'shared/components/Image'
+import { Location, Arrow } from 'shared/icons'
 import { H1 } from 'shared/components/Text'
 import StarRating from 'shared/components/StarRating'
-import { Location, Arrow } from 'shared/icons'
 import ProfileDropDown from './ProfileDropDown'
 import { VendProfileHeader, TextWithIcon } from './Styles'
 
