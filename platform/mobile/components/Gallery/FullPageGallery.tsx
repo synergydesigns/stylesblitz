@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 
 import shortId from '../../../shared/lib/utils/shortId'
 import { FullPageGalleryWrapper } from './GalleryStyle'
-import { Arrow } from '../../../shared/icons'
+import { Arrow, Rotate } from '../../../shared/icons'
 
 const Swiper = dynamic(() => import('react-id-swiper'), { ssr: false });
 
@@ -48,8 +48,8 @@ const params = {
   }
 }
 
-const FullPageGallery: React.FC<> = () => {
-  const [swiper, updateSwiper] = useState(params)
+const FullPageGallery: React.FC = () => {
+  const [swiper, updateSwiper] = useState<any>(params)
   const [index, setIndex] = useState(0)
 
   const goNext = () => {
@@ -75,7 +75,7 @@ const FullPageGallery: React.FC<> = () => {
         { 
           assets.map(({ url }, index) => (
             <div className="image-wrapper" key={shortId(index)}>
-              <div class="swiper-zoom-container">
+              <div className="swiper-zoom-container">
                 <img className="swiper-slide swiper-lazy image-wrapper__image" data-src={url} />
                 <div className="swiper-lazy-preloader" />
               </div>
@@ -88,7 +88,7 @@ const FullPageGallery: React.FC<> = () => {
           <Arrow fill={index === 0 ? 'gray' : '#ffffff'} />
         </div>
         <div onClick={goNext} className="gallery-navigation__next">
-          <Arrow fill={index === assets.length - 1 ? 'gray' : '#ffffff'} rotate="down" />
+          <Arrow fill={index === assets.length - 1 ? 'gray' : '#ffffff'} rotate={Rotate.DOWN} />
         </div>
       </div>
     </FullPageGalleryWrapper>

@@ -4,7 +4,7 @@ import WhiteSpace from 'antd-mobile/lib/white-space'
 import SegmentedControl from 'antd-mobile/lib/segmented-control'
 import WingBlank from 'antd-mobile/lib/wing-blank'
 
-import { Chevron } from 'shared/icons'
+import { Chevron, Rotate } from 'shared/icons'
 import { H3 } from 'shared/components/Text'
 import {
   FullProfile,
@@ -13,8 +13,12 @@ import {
   ProfileInfo
 } from './Styles'
 
+interface IOpening {
+  days: string
+  time: string
+}
 
-const Opening: React.Fc = () => {
+const Opening: React.FC<IOpening> = () => {
   return (
     <OpeningContainer>
       <WingBlank>
@@ -34,8 +38,13 @@ const OpeningHours: React.FC = () => {
   )
 }
 
+interface ITextWithIcon {
+  text: string
+  angle: Rotate
+  onClick: () => void
+}
 
-const TextWithIcon: React.FC<{ text: string, angle: string}> = ({ text, angle, onClick }) => {
+const TextWithIcon: React.FC<ITextWithIcon> = ({ text, angle, onClick }) => {
   return (
     <FullProfile onClick={onClick}>
       <p>{text}</p>
@@ -45,14 +54,14 @@ const TextWithIcon: React.FC<{ text: string, angle: string}> = ({ text, angle, o
 }
 
 const ProfileDropDown: React.FC = () => {
-  const [showOpenings, setShowOpenings] = useState<{ initialState: boolean}>(false)
+  const [showOpenings, setShowOpenings] = useState<boolean>(false)
 
   const handleShowOpenings = () => setShowOpenings(!showOpenings)
 
   return (
     <>
       {
-        (!showOpenings && <TextWithIcon onClick={handleShowOpenings} text="full profile" angle="down"/>)
+        (!showOpenings && <TextWithIcon onClick={handleShowOpenings} text="full profile" angle={Rotate.DOWN}/>)
       }
       {
         (showOpenings &&
@@ -64,7 +73,7 @@ const ProfileDropDown: React.FC = () => {
             <WhiteSpace size="md" />
             <OpeningHours />
             <WhiteSpace size="xl" />
-            <TextWithIcon onClick={handleShowOpenings} text="close" angle="up" />
+            <TextWithIcon onClick={handleShowOpenings} text="close" angle={Rotate.UP} />
           </ProfileInfo>
         )
       }

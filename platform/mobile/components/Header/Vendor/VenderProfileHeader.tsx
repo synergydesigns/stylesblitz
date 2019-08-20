@@ -11,14 +11,14 @@ import StarRating from 'shared/components/StarRating'
 import ProfileDropDown from './ProfileDropDown'
 import { VendProfileHeader, TextWithIcon } from './Styles'
 
-const VendorProfileHeader: React.FC = ({ url, alt }) => {
+const VendorProfileHeader: React.FC<{ url?: string, alt?: string }> = ({ url, alt }) => {
   return (
     <VendProfileHeader>
       <Link href="/">
         <Arrow className="profile-header__back" />
       </Link>
       <Flex justify="center" align="center">
-        <ProfileImage image={url} alt={alt}/>
+        <ProfileImage image={url} />
       </Flex>
       <WhiteSpace />
       <Flex justify="center">

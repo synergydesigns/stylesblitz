@@ -11,20 +11,19 @@ const defaultOGImage = ''
 
 interface Props {
   title: string,
-  description: string,
-  url: string,
-  ogImage: string
+  description?: string,
+  url?: string,
+  ogImage?: string
 }
 
 const Head: React.FC<Props> = (props: any) => {
-
   useEffect(() => {
     if ('addEventListener' in document) {
       document.addEventListener('DOMContentLoaded', function() {
-        FastClick.attach(document.body);
+        (window as any).FastClick.attach(document.body);
       }, false);
     }
-    if(!window.Promise) {
+    if(!(window as any).Promise) {
       document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
     }
   })

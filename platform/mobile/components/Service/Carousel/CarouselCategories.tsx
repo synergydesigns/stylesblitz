@@ -1,20 +1,19 @@
 import React from 'react'
 import dynamic from 'next/dynamic';
 
-const Swiper = dynamic(
-  () => import('react-id-swiper'),
-  {
-    ssr: false
-  }
-);
 import { font } from 'globals'
 import shortId from 'lib/utils/shortId'
 import getTextWidth from 'lib/utils/getTextWidth'
-import ICategory from 'shared/interface/categories'
+import { Category } from 'shared/interface/categories'
 import { CategoryList } from '../ServiceListenStyle'
 
+const Swiper = dynamic(() => import('react-id-swiper'), { ssr: false });
 
-const CarouselCategories: React.FC<{ categories: ICategory.Categories }> = ({ categories }) => {
+interface Props {
+  categories: Category[]
+}
+
+const CarouselCategories: React.FC<Props> = ({ categories }) => {
   const textWidths =  categories.map(({name}) => React.useMemo(() => getTextWidth(name), [name]));
 
   const params = {

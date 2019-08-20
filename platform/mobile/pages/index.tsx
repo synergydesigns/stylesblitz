@@ -93,15 +93,13 @@ const services = {
 
 
 const Home: React.FC = () => (
-  <>
-    <Layout title="homepage">
-      <Hero />
-      <CarouselList { ...services } />
-      <CarouselList { ...popular } />
-      <CarouselList { ...categories } />
-      <HomeVendorHero />
-    </Layout>
-  </>
+  <Layout title="homepage">
+    <Hero />
+    <CarouselList { ...services } />
+    <CarouselList { ...popular } />
+    <CarouselList { ...categories } />
+    <HomeVendorHero />
+  </Layout>
 )
 
 export default Home

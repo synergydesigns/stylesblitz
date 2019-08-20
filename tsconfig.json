@@ -1,32 +1,49 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "alwaysStrict": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": false,
-    "jsx": "react",
+    "target": "es5",
     "lib": [
       "dom",
-      "es2017"
+      "dom.iterable",
+      "esnext"
     ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "noEmit": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "esnext"
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "platform/*": [
+        "platform/*"
+      ],
+      "shared/*": [
+        "platform/shared/*"
+      ],
+      "lib/*": [
+        "platform/shared/lib/*"
+      ],
+      "interface/*": [
+        "platform/shared/interface/*"
+      ],
+      "globals": [
+        "platform/shared/global.ts"
+      ]
+    }
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "**/*.stories.ts",
+    "**/*.stories.tsx"
   ],
   "include": [
-    "platform/**/*.ts",
-    "platform/**/*.tsx"
-  ],
-  "noImplicitAny": true
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }

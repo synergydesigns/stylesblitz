@@ -9,8 +9,8 @@ import { ServiceListItemContainer, ServiceListItemDetails } from './ServiceStyle
 interface Props {
   image: string
   name: string
-  price: Int
-  duration: Int
+  price: number
+  duration: number
 }
 
 const ServiceListItem: React.FC<Props> = ({ image, name, price, duration }) => {
@@ -18,7 +18,7 @@ const ServiceListItem: React.FC<Props> = ({ image, name, price, duration }) => {
     <ServiceListItemContainer>
       <Image image={image} width="100px" height="60px" />
       <ServiceListItemDetails>
-        <h1 className="service-listitem__title" size="14px">{ name }</h1>
+        <h1 className="service-listitem__title">{ name }</h1>
         <div className="service-listitem__time">
           <Clock />
           <p>{duration} hrs</p>

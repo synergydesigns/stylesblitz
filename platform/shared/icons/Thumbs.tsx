@@ -1,6 +1,6 @@
 import React from 'react';
 
-import RotateIcon, { Props } from './RotateIcon'
+import RotateIcon, { Props, Rotate } from './RotateIcon'
 
 const Thumbs: React.FC<Props> = (props) => (
   <RotateIcon {...props}>
@@ -14,7 +14,7 @@ const Thumbs: React.FC<Props> = (props) => (
 )
 
 Thumbs.defaultProps = {
-  rotate: 'up',
+  rotate: Rotate.DOWN,
   height: '16',
   width: '16',
   fill: '#999999'

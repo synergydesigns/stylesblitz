@@ -3,7 +3,7 @@ import { Flex } from "antd-mobile";
 
 import StarRating from "../StarRating";
 import { ReviewContainer, ReviewText, ReviewerImage } from "./ReviewStyle";
-import { Thumbs } from "shared/icons";
+import { Thumbs, Rotate } from "shared/icons";
 import { ProfileImage } from "../Image";
 import Reply from "./Reply";
 
@@ -36,11 +36,11 @@ const Review: React.FC<Prop> = () => {
             </Flex.Item>
             <div className="reply-helpful">
               <div className="reply-helpful__count">
-                <Thumbs rotate="down" />
+                <Thumbs rotate={Rotate.DOWN} />
                 <p>helpful (8)</p>
               </div>
               <div className="reply-helpful__count">
-                <Thumbs rotate="down" />
+                <Thumbs rotate={Rotate.DOWN} />
                 <p>helpful (8)</p>
               </div>
             </div>

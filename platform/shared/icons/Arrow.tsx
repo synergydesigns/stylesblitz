@@ -1,6 +1,6 @@
 import React from 'react';
 
-import RotateIcon, { Props } from './RotateIcon'
+import RotateIcon, { Props, Rotate } from './RotateIcon'
 
 const Arrow: React.FC<Props> = (props) => (
   <RotateIcon {...props}>
@@ -14,7 +14,7 @@ const Arrow: React.FC<Props> = (props) => (
 )
 
 Arrow.defaultProps = {
-  rotate: 'up',
+  rotate: Rotate.UP,
   height: '16',
   width: '19',
   fill: '#E0115'

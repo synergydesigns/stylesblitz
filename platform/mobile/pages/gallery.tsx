@@ -8,6 +8,7 @@ const Gallery: React.FC = () => (
     showHeader={false}
     showFooter={false}
     showNav={false}
+    title="Gallery"
   >
     <FullPageGallery />
   </Layout>

@@ -26,12 +26,12 @@ const tabs = [
 const VendorProfile: React.FC = () => {
   const [loading, data] = useGetUser()
 
-  console.log(loading, data)
   return (
     <Layout
       showHeader={false}
       showFooter={false}
       showNav={false}
+      title="Vendor profile page"
     >
       <VendorProfileHeader />
       <WhiteSpace size="xl" />

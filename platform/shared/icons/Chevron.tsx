@@ -1,6 +1,6 @@
 import React from 'react'
 
-import RotateIcon from './RotateIcon'
+import RotateIcon, { Props, Rotate } from './RotateIcon'
 
 const Chevron: React.FC<Props> = (props) => (
   <RotateIcon {...props}>
@@ -11,7 +11,7 @@ const Chevron: React.FC<Props> = (props) => (
 )
 
 Chevron.defaultProps = {
-  rotate: 'down',
+  rotate: Rotate.DOWN,
   width: '10',
   height: '6',
 }

@@ -1,8 +1,7 @@
 const withCSS = require('@zeit/next-css')
-const withTypescript = require('@zeit/next-typescript')
 const path = require('path')
 
-module.exports = withTypescript(withCSS({
+module.exports = withCSS({
   target: 'serverless',
   webpack: (config, { dev }) => {
     config.node = {
@@ -29,4 +28,4 @@ module.exports = withTypescript(withCSS({
 
     return config
   }
-}))
+})
