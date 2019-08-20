@@ -7,14 +7,16 @@ import NavBar from '../components/Common/NavBar'
 import Footer from '../components/Common/Footer'
 
 interface Props {
-  showFooter: boolean
-  showHeader: boolean
-  showNav: boolean
+  showFooter?: boolean
+  showHeader?: boolean
+  showNav?: boolean
+  children: React.ReactNode
+  title: string
 }
 
 const MobileLayout: React.FC<Props> = ({ children, ...props }) => {
   return (
-    <Layout showHeader={props.showHeader} showFooter={props.showFooter}>
+    <Layout title={props.title}>
       { props.showHeader && (
           <Fragment>
             <Header />

@@ -1,22 +1,24 @@
 import React from 'react'
-import { Flex, WhiteSpace, WingBlank } from 'antd-mobile'
+import Flex from 'antd-mobile/lib/flex'
+import WhiteSpace from 'antd-mobile/lib/white-space'
+import WingBlank from 'antd-mobile/lib/wing-blank'
 import Link from 'next/link';
 
 import { ProfileImage } from 'shared/components/Image'
+import { Location, Arrow } from 'shared/icons'
 import { H1 } from 'shared/components/Text'
 import StarRating from 'shared/components/StarRating'
-import { Location, Arrow } from 'shared/icons'
 import ProfileDropDown from './ProfileDropDown'
 import { VendProfileHeader, TextWithIcon } from './Styles'
 
-const VendorProfileHeader: React.FC = ({ url, alt }) => {
+const VendorProfileHeader: React.FC<{ url?: string, alt?: string }> = ({ url, alt }) => {
   return (
     <VendProfileHeader>
       <Link href="/">
         <Arrow className="profile-header__back" />
       </Link>
       <Flex justify="center" align="center">
-        <ProfileImage image={url} alt={alt}/>
+        <ProfileImage image={url} />
       </Flex>
       <WhiteSpace />
       <Flex justify="center">

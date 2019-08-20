@@ -4,7 +4,7 @@ import Head from '../../../shared/components/head'
 
 import Footer from './Footer'
 
-type Props = {
+interface Props {
   children: React.ReactNode
   title: string
 }

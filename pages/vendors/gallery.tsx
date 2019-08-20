@@ -1,7 +1,7 @@
 import * as React from 'react'
-import Gallery from 'platform/mobile/pages/gallery'
+import Gallery from '../../platform/mobile/pages/gallery'
 
-const GalleryPage: React.FC<Props> = (props) => {
+const GalleryPage: React.FC = () => {
   return (
     <Gallery />
   )

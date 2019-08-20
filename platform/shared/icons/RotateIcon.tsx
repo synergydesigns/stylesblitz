@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components'
 
-enum Rotate {
+export enum Rotate {
   RIGHT = 'right',
   LEFT = 'left',
   UP = 'up',
   DOWN = 'down',
 }
 
-interface Props {
-  rotate: Rotate
+export interface Props {
+  rotate?: Rotate
   width?: string
   height?: string
   className?: string
@@ -51,7 +51,7 @@ const Chevron: React.FC<Props> = (props) => (
 
 
 Chevron.defaultProps = {
-  rotate: 'down',
+  rotate: Rotate.DOWN,
   width: '10',
   height: '6',
   className: ''

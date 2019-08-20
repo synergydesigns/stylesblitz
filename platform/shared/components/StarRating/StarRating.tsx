@@ -4,16 +4,16 @@ import shortId from 'lib/utils/shortId'
 import { StarRatingWrapper } from './StarRatingStyle'
 
 interface Props {
-  rating?: int
-  fontSize?: string,
+  rating?: number
+  fontSize?: string
   color?: string
   defaultColor?: string
-  getRating?: () => int
+  getRating?: (number) => number
 }
 
 const StarRating: React.FC<Props> = ({ rating: initialRating, fontSize, color, ...props }) => {
-  const [rating, setRating] = useState<{rating: int}>(initialRating)
-  const [tempRating, setTempRating] = useState<{rating: int}>(initialRating)
+  const [rating, setRating] = useState<number>(initialRating)
+  const [tempRating, setTempRating] = useState<number>(initialRating)
 
   const rate = (rating) =>  () => {
     setRating(rating)
@@ -54,13 +54,13 @@ const StarRating: React.FC<Props> = ({ rating: initialRating, fontSize, color, .
     )
   }
 
-  return stars
+  return <>{stars}</>
 }
 
 StarRating.defaultProps = {
   fontSize: '12px',
   rating: 0,
-  getRating: () => {}
+  getRating: (number) => number
 }
 
 export default StarRating

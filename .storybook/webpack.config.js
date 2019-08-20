@@ -7,8 +7,7 @@ module.exports = ({ config, mode }) => {
       loader: require.resolve('babel-loader'),
       options: {
         presets: [['react-app', { flow: false, typescript: true }]],
-      },
-      exclude: /stories.(ts|tsx)$/
+      }
     },
     {
       test: /\.scss$/,

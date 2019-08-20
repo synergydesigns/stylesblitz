@@ -1,3 +1,3 @@
-import StarRating from './StarRating.tsx'
+import StarRating from './StarRating'
 
 export default StarRating

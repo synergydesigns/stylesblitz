@@ -1,5 +1,6 @@
 import React from 'react'
-import { Flex, WingBlank } from 'antd-mobile';
+import WingBlank from 'antd-mobile/lib/wing-blank';
+import Flex from 'antd-mobile/lib/flex';
 
 import { ProfileImage } from "../Image";
 import { ReplyContainer, ReviewText, ReviewerImage } from './ReviewStyle'

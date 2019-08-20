@@ -1,5 +1,9 @@
 import * as React from 'react'
-import { Tabs, WhiteSpace, Badge, Flex } from 'antd-mobile'
+import Flex from 'antd-mobile/lib/flex'
+import WhiteSpace from 'antd-mobile/lib/white-space'
+import SegmentedControl from 'antd-mobile/lib/tabs'
+import WingBlank from 'antd-mobile/lib/wing-blank'
+import Tabs from 'antd-mobile/lib/tabs'
 
 import { color } from 'globals'
 import * as Icon from 'shared/icons'
@@ -10,36 +14,44 @@ import ServiceListing from '../components/Service/ServiceListing'
 import VendorGallery from '../components/Gallery/VendorGallery'
 import VendorReview from '../components/Review/VendorReview'
 
+import useGetUser from 'shared/graphql/users/getUser'
+import { userData, userDataVariables } from 'shared/types/userData'
+
 const tabs = [
   { title: <Icon.Service /> },
   { title: <Icon.Review /> },
   { title: <Icon.Gallery /> },
 ];
 
-const VendorProfile: React.FC = () => (
-  <Layout
-    showHeader={false}
-    showFooter={false}
-    showNav={false}
-  >
-    <VendorProfileHeader />
-    <WhiteSpace size="xl" />
-    <Tabs
-      tabs={tabs}
-      initialPage={1}
-      tabBarUnderlineStyle={{ borderColor: color.primary, top: 0, bottom: 'inherit' }}
+const VendorProfile: React.FC = () => {
+  const [loading, data] = useGetUser()
+
+  return (
+    <Layout
+      showHeader={false}
+      showFooter={false}
+      showNav={false}
+      title="Vendor profile page"
     >
-      <Flex justify="center">
-        <ServiceListing />
-      </Flex>
-      <Flex justify="center">
-        <VendorReview />
-      </Flex>
-      <Flex justify="center">
-        <VendorGallery />
-      </Flex>
-    </Tabs>    
-  </Layout>
-)
+      <VendorProfileHeader />
+      <WhiteSpace size="xl" />
+      <Tabs
+        tabs={tabs}
+        initialPage={1}
+        tabBarUnderlineStyle={{ borderColor: color.primary, top: 0, bottom: 'inherit' }}
+      >
+        <Flex justify="center">
+          <ServiceListing />
+        </Flex>
+        <Flex justify="center">
+          <VendorReview />
+        </Flex>
+        <Flex justify="center">
+          <VendorGallery />
+        </Flex>
+      </Tabs>    
+    </Layout>
+  )
+}
 
 export default VendorProfile

@@ -1,11 +1,10 @@
 import React from 'react'
 import cookie from 'cookie'
-import PropTypes from 'prop-types'
 import { getDataFromTree } from 'react-apollo'
 import Head from 'next/head'
-import { NextContext } from 'next'
+import { NextPageContext } from 'next'
 import { ApolloClient, NormalizedCacheObject } from 'apollo-boost';
-import { NextAppContext } from 'next/app';
+import { AppContext } from 'next/app';
 
 import initApollo from './init.apollo'
 import isBrowser from './isBrowser'
@@ -14,20 +13,17 @@ function parseCookies (req?: any, options = {}) {
   return cookie.parse(req ? req.headers.cookie || '' : document.cookie, options)
 }
 
-interface CustomContext extends NextContext {
+interface CustomContext extends NextPageContext {
   apolloClient: ApolloClient<NormalizedCacheObject>
 }
 
-interface CustomNextContext extends NextAppContext {
+interface CustomNextContext extends AppContext {
   ctx: CustomContext
 }
 
 export default (App: any) => {
   return class WithData extends React.Component {
     static displayName = `WithData(${App.displayName})`
-    static propTypes = {
-      apolloState: PropTypes.object.isRequired
-    }
 
     static async getInitialProps (ctx: CustomNextContext) {
       const {
