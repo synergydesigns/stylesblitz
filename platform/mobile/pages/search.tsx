@@ -1,12 +1,12 @@
-import * as React from 'react'
-import Layout from '../components/Common/Layout'
+import React from 'react'
 
-const Search: React.FC = () => (
-  <>
-    <Layout title="search">
-      <h1>Search</h1>
-    </Layout>
-  </>
+import Layout from './layout'
+import Search from '../components/Search'
+
+const SearchPage: React.FC = () => (
+  <Layout title="Search" showHeader={false} showFooter={false} showNav={true}>
+    <Search />
+  </Layout>
 )
 
-export default Search
+export default SearchPage

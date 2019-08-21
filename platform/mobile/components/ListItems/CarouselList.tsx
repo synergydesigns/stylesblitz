@@ -21,7 +21,7 @@ type Props = {
   itemHeight: number
   itemWidth: number
   headerText: string
-  itemsCount: number
+  itemsCount: number | null
   marginTop: number
   showBorder: boolean
 }
@@ -43,12 +43,12 @@ const CarouselList: React.FC<Props> = ({ items, itemHeight, itemWidth, ...props 
       <Style.CarouselListHeader marginTop={props.marginTop} >
         <Style.CarouselListHeaderTitle>
           <h1>{props.headerText}</h1>
-          <Style.CarouselListTooltip>
+          {props.itemsCount || props.itemsCount === 0 && <Style.CarouselListTooltip>
             {props.itemsCount}
             <div className='arrow-left' />
-          </Style.CarouselListTooltip>
+          </Style.CarouselListTooltip>}
         </Style.CarouselListHeaderTitle>
-        <h3>show more</h3>
+        {props.itemsCount && <h3>show more</h3>}
       </Style.CarouselListHeader>
       <Swiper {...params}>
         { 

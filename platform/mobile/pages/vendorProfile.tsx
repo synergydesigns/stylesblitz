@@ -14,9 +14,6 @@ import ServiceListing from '../components/Service/ServiceListing'
 import VendorGallery from '../components/Gallery/VendorGallery'
 import VendorReview from '../components/Review/VendorReview'
 
-import useGetUser from 'shared/graphql/users/getUser'
-import { userData, userDataVariables } from 'shared/types/userData'
-
 const tabs = [
   { title: <Icon.Service /> },
   { title: <Icon.Review /> },
@@ -24,8 +21,6 @@ const tabs = [
 ];
 
 const VendorProfile: React.FC = () => {
-  const [loading, data] = useGetUser()
-
   return (
     <Layout
       showHeader={false}
