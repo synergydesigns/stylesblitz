@@ -81,7 +81,7 @@ const searchResultMock = {
   ]
 }
 
-const recentSearch = ['Acrylic Nail Fixing', 'Wig'];
+const recentSearch = ['Acrylic Nail Fixing', 'Wig']
 
 
 const Search: React.FC = () => {
@@ -92,12 +92,15 @@ const Search: React.FC = () => {
 
   const handleSearch = (value: string) => {
     setDataSource(searchResultMock.items.filter((item) => item.name.includes(value)).map(item => item.name))
+
     setSearchResult(searchResultMock.items.filter((item) => item.name.includes(value)))
-  };
+  }
+
   const onSelected = (value: any) => {
     setSearchResult(searchResultMock.items.filter((item) => item.name.includes(value)))
-  };
-  const recentSearchList = recentSearch.map((s, i) => <li key={i}>{s}</li>);
+  }
+
+  const recentSearchList = recentSearch.map((s, i) => <li key={i}>{s}</li>)
 
   return (
     <>
