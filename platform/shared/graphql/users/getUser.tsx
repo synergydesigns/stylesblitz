@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useQuery } from '@apollo/react-hooks';
-import { Query } from 'react-apollo'
 import gql from 'graphql-tag';
 
 import { userData, userDataVariables } from '../../types/userData'
