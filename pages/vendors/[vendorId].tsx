@@ -12,7 +12,6 @@ interface Props {
 
 const Vendor: React.FC<Props> = (props) => {
   const md = new MobileDetect(props.userAgent)
-
   return md.mobile() ? <MobileVendor /> : <div>desktop</div>
 }
 
