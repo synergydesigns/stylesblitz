@@ -1,4 +1,7 @@
 import styled from 'styled-components'
+import Drawer from 'antd/lib/drawer'
+
+import { color } from '../../../shared/global'
 
 export const SearchWrapper = styled.div`
   width: 320px;
@@ -152,6 +155,7 @@ export const FilterSort = styled.div`
       font-size: 14px;
       line-height: 19px;
       color: #505050;
+      cursor: pointer;
 
       &:nth-child(2) {
         background-color: #505050;
@@ -183,5 +187,90 @@ export const FilterSort = styled.div`
     color: #C5C5C5;
     text-align: center;
     margin-top: 16px;
+  }
+`
+export const FilterSearchWrapper = styled.div`
+  width: 268px;
+  height: 40px;
+  margin: 0 auto;
+  margin-top: 0;
+
+  .auto-complete {
+    color: #505050;
+    background: #f5f5f5;
+    width: 268px;
+    margin: 0 auto;
+    border: none;
+  }
+
+  .ant-select-selection__rendered {
+    background: #f5f5f5;
+  }
+
+  .ant-input, .ant-select-search__field, .ant-input:focus, .ant-select-search__field:focus {
+    height: 40px;
+    color: #505050;
+    background-color: #f5f5f5;
+    border: none;
+    outline: 0;
+    border-radius: 0;
+    padding-left: 20px;
+    box-shadow: none;
+  }
+
+  .ant-select-selection__clear {
+    margin-top: -4px;
+  }
+
+  .anticon {
+    background: #f5f5f5;
+    font-size: 16px;
+  }
+
+  .ant-select-dropdown-menu-item-active:not(.ant-select-dropdown-menu-item-disabled) {
+    background: #000;
+  }
+  .ant-select-dropdown-menu-item-active {
+    background: red;
+  }
+  .ant-select-dropdown-menu-item {
+    background: #f5f5f5;
+  }
+  .ant-select-dropdown-menu .ant-select-dropdown-menu-item-active {
+    background-color: green;
+  }
+`
+
+export const DrawerWrapper = styled(Drawer)`
+  .ant-drawer-content-wrapper {
+    .ant-drawer-body {
+      padding: 0;
+    }
+  }
+`
+
+export const Button = styled.button`
+  width: 120px;
+  height: 50px;
+  background-color: ${color.primary};
+  color: #fff;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 22px;
+  margin: 0 auto;
+  margin-top: 28px;
+`
+
+export const DateTimePickerWrapper = styled.div`
+  margin-left: 17px;
+  margin-top: 20px;
+  input {
+    padding-left: 10px;
+    background: #f5f5f5;
   }
 `
