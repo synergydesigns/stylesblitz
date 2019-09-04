@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache, NormalizedCacheObject } from 'apollo-boost'
 import { setContext } from 'apollo-link-context'
 import { createHttpLink } from 'apollo-link-http'
-import fetch from 'isomorphic-unfetch'
+import isoFetch from 'isomorphic-unfetch'
 
 import isBrowser from './isBrowser'
 
@@ -12,27 +12,18 @@ interface Options {
   fetchOptions?: any
 }
 
-// Polyfill fetch() on the server (used by apollo-client)
-if (!isBrowser) {
-  (global as any).fetch = fetch
-}
-
 function create (initialState: any, { getToken, fetchOptions }: Options) {
   const httpLink = createHttpLink({
     uri: 'http://127.0.0.1:3001/graphql',
-    credentials: 'include',
-    fetchOptions: {
-      ...fetchOptions,
-      mode: 'no-cors'
-    }
+    fetch: isBrowser ? fetch : isoFetch
   })
 
-  const authLink = setContext((_, { headers }) => {
+  const authLink = setContext((g, h) => {
     const token = getToken()
     return {
-      headers: {
-        ...headers,
-        authorization: token ? `Bearer ${token}` : ''
+      headers: { 
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${token}`
       }
     }
   })
@@ -68,6 +59,9 @@ export default function initApollo (initialState: any, options: Options) {
   // Reuse client on the client-side
   if (!apolloClient) {
     apolloClient = create(initialState, options)
+    if (isBrowser) {
+      (window as any).__APOLLO_CLIENT__ = apolloClient;
+    }
   }
 
   return apolloClient
