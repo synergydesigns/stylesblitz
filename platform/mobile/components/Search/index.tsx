@@ -2,13 +2,31 @@ import React, { useState } from 'react'
 import AutoComplete from 'antd/lib/auto-complete'
 import Input from 'antd/lib/input'
 import Rate from 'antd/lib/rate'
+import Modal from 'antd-mobile/lib/modal'
+import List from 'antd-mobile/lib/list'
+import MobileIcon from 'antd-mobile/lib/icon'
 import Router from 'next/router'
 
+import Filter from './Filter'
 import Arrow from '../../../shared/icons/Arrow'
 import Chevron from '../../../shared/icons/Chevron'
 import CarouselList from '../ListItems/CarouselList'
-import { FilterSort, RecentSearchWrapper, SearchResultWrapper, SearchWrapper } from './SearchStyle'
+import {
+  FilterSort,
+  RecentSearchWrapper,
+  SearchResultWrapper,
+  SearchWrapper,
+  SortListItemWrapper,
+} from './SearchStyle'
 
+const Item = List.Item;
+const sortList = [
+  { key: 'Recommeded', active: true },
+  { key: 'Higest Rating', active: false },
+  { key: 'Lowest Price', active: false },
+  { key: 'Higest Price', active: false },
+  { key: 'Newly Added', active: false }
+]
 const services = {
   itemWidth: 270,
   itemHeight: 250,
@@ -82,13 +100,20 @@ const searchResultMock = {
 }
 
 const recentSearch = ['Acrylic Nail Fixing', 'Wig']
-
+interface ICalendar {
+  visible: boolean;
+  startTime?: string;
+  endTime?: string;
+}
 
 const Search: React.FC = () => {
   const data: string[] = []
   const result: { price: number; name: string; image: string; rating: number; }[] = []
   const [ dataSource, setDataSource ] = useState(data)
   const [ searchResult, setSearchResult ] = useState(result)
+  const [ visible, setVisible ] = useState(false)
+  const [ openDrawer, setOpenDrawer ] = useState(false)
+  const [ sortListData, setSortListData ] = useState(sortList)
 
   const handleSearch = (value: string) => {
     setDataSource(searchResultMock.items.filter((item) => item.name.includes(value)).map(item => item.name))
@@ -100,7 +125,17 @@ const Search: React.FC = () => {
     setSearchResult(searchResultMock.items.filter((item) => item.name.includes(value)))
   }
 
+  const showModal = () => setVisible(true)
+
+  const showDrawer = () => setOpenDrawer(true)
+
   const recentSearchList = recentSearch.map((s, i) => <li key={i}>{s}</li>)
+
+  const setActive = (i) => {
+    const data = sortListData.map(item => ({ ...item, active: false }))
+    data[i].active = true
+    setSortListData(data)
+  }
 
   return (
     <>
@@ -126,14 +161,39 @@ const Search: React.FC = () => {
         <>
           <FilterSort>
             <div>
-              <span>Filter</span>
+              <span onClick={showDrawer}>Filter</span>
               <span />
-              <span>
+              <span onClick={showModal}>
                 Sort<div><Chevron /></div>
               </span>
             </div>
             <div>{searchResult.length} Services Found</div>
           </FilterSort>
+          <Modal
+            visible={visible}
+            transparent
+            maskClosable={false}
+            onClose={() => setVisible(false)}
+            footer={[]}
+            closable={true}
+          >
+            <div style={{ overflow: 'scroll' }}>
+              <div>
+                <List>
+                  {
+                    sortListData.map((s, i) => (
+                      <SortListItemWrapper active={s.active} key={s.key}>
+                        <Item thumb={s.active && <MobileIcon className="mobile-icon" type='check' />} onClick={() => setActive(i)}>
+                          <span>{s.key}</span>
+                        </Item>
+                      </SortListItemWrapper>)
+                    )
+                  }
+                </List>
+              </div>
+            </div>
+          </Modal>
+          <Filter openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />
           <SearchResultWrapper>
             {
               searchResult.map(({image, name, price, rating}, index) => (
