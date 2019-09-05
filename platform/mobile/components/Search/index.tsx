@@ -15,7 +15,8 @@ import {
   FilterSort,
   RecentSearchWrapper,
   SearchResultWrapper,
-  SearchWrapper
+  SearchWrapper,
+  SortListItemWrapper,
 } from './SearchStyle'
 
 const Item = List.Item;
@@ -130,6 +131,12 @@ const Search: React.FC = () => {
 
   const recentSearchList = recentSearch.map((s, i) => <li key={i}>{s}</li>)
 
+  const setActive = (i) => {
+    const data = sortListData.map(item => ({ ...item, active: false }))
+    data[i].active = true
+    setSortListData(data)
+  }
+
   return (
     <>
       <SearchWrapper>
@@ -175,13 +182,11 @@ const Search: React.FC = () => {
                 <List>
                   {
                     sortListData.map((s, i) => (
-                      <Item style={{ border: 'none' }} key={s.key} thumb={s.active && <MobileIcon style={{ marginTop: '7px', color: '#E0115F' }} type='check' />} onClick={() => {
-                        const data = sortListData.map(item => ({ ...item, active: false }))
-                        data[i].active = true
-                        setSortListData(data)
-                      }}>
-                        <span style={{ marginLeft: !s.active && '38px', fontSize: '14px', color: '#505050' }}>{s.key}</span>
-                      </Item>)
+                      <SortListItemWrapper active={s.active} key={s.key}>
+                        <Item thumb={s.active && <MobileIcon className="mobile-icon" type='check' />} onClick={() => setActive(i)}>
+                          <span>{s.key}</span>
+                        </Item>
+                      </SortListItemWrapper>)
                     )
                   }
                 </List>

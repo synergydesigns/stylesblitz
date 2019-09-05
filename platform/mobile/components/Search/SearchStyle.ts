@@ -274,3 +274,15 @@ export const DateTimePickerWrapper = styled.div`
     background: #f5f5f5;
   }
 `
+export const SortListItemWrapper = styled.div<{ active: boolean }>`
+  .mobile-icon {
+    margin-top: 7px;
+    color: #E0115F;
+  }
+
+  span {
+    margin-left: ${({ active }) => !active && '38px'};
+    font-size: 14px;
+    color: #505050;
+  }
+`
