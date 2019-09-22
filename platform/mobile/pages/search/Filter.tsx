@@ -6,8 +6,8 @@ import TimePicker from 'antd/lib/time-picker'
 import DatePicker from 'antd/lib/date-picker'
 import moment from 'moment'
 
+import Location from 'shared/icons/Location'
 
-import Location from '../../../shared/icons/Location'
 import {
   Button,
   DrawerWrapper,

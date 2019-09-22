@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-import { HomeVendorButton, HomeVendorWrapper, HeroImage } from './Style'
-import DynamicLines from '../../../shared/icons/DynamicLines'
-import Arrow from '../../../shared/icons/Arrow'
+import DynamicLines from 'shared/icons/DynamicLines'
+import Arrow from 'shared/icons/Arrow'
+import { HomeVendorButton, HomeVendorWrapper, HeroImage } from './HomeStyle'
 
 const HomeVendor: React.FC = () => {
   return (

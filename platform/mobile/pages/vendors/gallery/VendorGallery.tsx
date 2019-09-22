@@ -5,7 +5,7 @@ import WhiteSpace from 'antd-mobile/lib/white-space';
 import shortId from 'lib/utils/shortId';
 import { Masonry, MasonryItem } from 'shared/components/Masonry'
 import { H1 } from 'shared/components/Text'
-import { VendorGalleryWrapper } from './GalleryStyle'
+import { VendorGalleryWrapper } from '../../gallery/GalleryStyle'
 
 const assets = [
   'https://picsum.photos/id/237/200/300',

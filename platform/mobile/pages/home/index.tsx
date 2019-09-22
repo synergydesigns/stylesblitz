@@ -1,10 +1,10 @@
 import * as React from 'react'
 
-import Hero from '../components/Hero'
-import HomeVendorHero from '../components/Hero/HomeVendor'
-import Header from '../components/Header'
-import CarouselList from '../components/ListItems/CarouselList'
-import Layout from './layout'
+import Hero from './HomeHero'
+import HomeVendorHero from './HomeVendor'
+import Header from '../../components/Header'
+import CarouselList from '../../components/ListItems/CarouselList'
+import Layout from '../layout'
 
 
 const items = [

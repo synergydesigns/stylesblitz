@@ -8,11 +8,11 @@ import Tabs from 'antd-mobile/lib/tabs'
 import { color } from 'globals'
 import * as Icon from 'shared/icons'
 
-import Layout from './layout';
-import VendorProfileHeader from '../components/Header/Vendor/VenderProfileHeader'
-import ServiceListing from '../components/Service/ServiceListing'
-import VendorGallery from '../components/Gallery/VendorGallery'
-import VendorReview from '../components/Review/VendorReview'
+import Layout from '../../layout';
+import VendorProfileHeader from './VenderProfileHeader'
+import ServiceListing from '../service/ServiceListing'
+import VendorGallery from '../gallery/VendorGallery'
+import VendorReview from '../reviews/VendorReview'
 
 const tabs = [
   { title: <Icon.Service /> },

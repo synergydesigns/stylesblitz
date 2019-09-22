@@ -9,7 +9,7 @@ import { Location, Arrow } from 'shared/icons'
 import { H1 } from 'shared/components/Text'
 import StarRating from 'shared/components/StarRating'
 import ProfileDropDown from './ProfileDropDown'
-import { VendProfileHeader, TextWithIcon } from './Styles'
+import { VendProfileHeader, TextWithIcon } from './VendorStyles'
 
 const VendorProfileHeader: React.FC<{ url?: string, alt?: string }> = ({ url, alt }) => {
   return (

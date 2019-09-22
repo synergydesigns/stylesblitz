@@ -2,7 +2,7 @@ import React from 'react'
 import MobileDetect from 'mobile-detect'
 import { NextPageContext } from 'next'
 
-import MobileIndex from '../platform/mobile/pages/index'
+import MobileIndex from '../platform/mobile/pages/home/index'
 
 type Props = {
   userAgent: string

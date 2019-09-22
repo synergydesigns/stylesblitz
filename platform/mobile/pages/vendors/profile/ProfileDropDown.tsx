@@ -11,7 +11,7 @@ import {
   OpeningHoursContainer,
   OpeningContainer,
   ProfileInfo
-} from './Styles'
+} from './VendorStyles'
 
 interface IOpening {
   days: string

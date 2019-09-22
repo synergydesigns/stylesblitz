@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import dynamic from 'next/dynamic';
 
-import shortId from '../../../shared/lib/utils/shortId'
+import shortId from 'lib/utils/shortId'
+import { Arrow, Rotate } from 'shared/icons'
 import { FullPageGalleryWrapper } from './GalleryStyle'
-import { Arrow, Rotate } from '../../../shared/icons'
 
 const Swiper = dynamic(() => import('react-id-swiper'), { ssr: false });
 

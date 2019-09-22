@@ -1,8 +1,8 @@
 import React from 'react'
 
-import HeroDot from '../../../shared/icons/HeroDot'
-import { HeroContainer, HeroHeading, HeroSubHeader, HeroImage } from './Style'
-import HomeInput from '../Common//HomeInput'
+import HeroDot from 'shared/icons/HeroDot'
+import HomeInput from '../../components/Common/HomeInput'
+import { HeroContainer, HeroHeading, HeroSubHeader, HeroImage } from './HomeStyle'
 
 const Hero: React.FC = () => (
   <HeroContainer>

@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import  { FullPageGallery } from  '../components/Gallery'
-import Layout from './layout'
+import FullPageGallery from  './FullPageGallery'
+import Layout from '../layout'
 
 const Gallery: React.FC = () => (
   <Layout

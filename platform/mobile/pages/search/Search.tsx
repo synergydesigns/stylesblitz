@@ -10,7 +10,7 @@ import Router from 'next/router'
 import Filter from './Filter'
 import Arrow from '../../../shared/icons/Arrow'
 import Chevron from '../../../shared/icons/Chevron'
-import CarouselList from '../ListItems/CarouselList'
+import CarouselList from '../../components/ListItems/CarouselList'
 import {
   FilterSort,
   RecentSearchWrapper,
