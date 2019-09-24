@@ -1,5 +1,11 @@
 const withCSS = require('@zeit/next-css')
+const lessToJS = require('less-vars-to-js')
 const path = require('path')
+const fs = require('fs')
+
+const themeVariables = lessToJS(
+  fs.readFileSync(path.resolve(__dirname, './static/themes/antd-defaults.less'), 'utf8')
+)
 
 module.exports = withCSS({
   target: 'serverless',
@@ -17,6 +23,15 @@ module.exports = withCSS({
         exclude: [/node_modules\/(?!(swiper|dom7)\/).*/, /\.test\.js(x)?$/],
         test: /\.js(x)?$/,
         use: [{ loader: 'babel-loader' }]
+      },
+      {
+        test: /\.less$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          { loader: 'less-loader', options: { modifyVars: themeVariables } }
+        ],
+        include: /node_modules/
       }
     )
 
