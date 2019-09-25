@@ -3,10 +3,18 @@
   "plugins": [
     [
       "import", {
-        "libraryName": "antd-mobile",
-        "style": true,
+        "libraryName": "antd",
+        "style": false,
         "libraryDirectory": "lib"
       }
+    ],
+    [
+      "import", {
+        "libraryName": "antd-mobile",
+        "style": false,
+        "libraryDirectory": "lib"
+      },
+      "antd-mobile"
     ]
   ]
 }
