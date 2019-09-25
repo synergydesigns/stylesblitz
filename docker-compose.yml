@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  lookblitz:
+    container_name: lookblitz-client
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/var/www/lookblitz
+      - ./var/www/lookblitz/node_modules
+    networks:
+      - lookblitz_network
+    ports:
+     - "3000:3000"
+    command: "yarn dev"
+networks:
+  lookblitz_network:
+    driver: bridge
