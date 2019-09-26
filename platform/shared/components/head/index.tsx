@@ -2,8 +2,6 @@ import React, { useEffect } from 'react'
 import NextHead from 'next/head'
 import GlobalStyle from './HeadStyle'
 
-import 'antd-mobile/dist/antd-mobile.css'
-import 'antd/dist/antd.css'
 import 'react-id-swiper/lib/styles/css/swiper.css'
 
 const defaultDescription = ''

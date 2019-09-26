@@ -14,9 +14,26 @@ module.exports = withCSS(withLESS({
     javascriptEnabled: true,
     modifyVars: themeVariables // make your antd custom effective
   },
-  webpack: (config, { dev }) => {
-    config.node = {
-      fs: 'empty'
+  webpack: (config, { isServer, dev }) => {
+    if (isServer) {
+      const antStyles = /(antd|antd-mobile)\/.*?\/style.*?/
+      const origExternals = [...config.externals]
+      config.externals = [
+        (context, request, callback) => {
+          if (request.match(antStyles)) return callback()
+          if (typeof origExternals[0] === 'function') {
+            origExternals[0](context, request, callback)
+          } else {
+            callback()
+          }
+        },
+        ...(typeof origExternals[0] === 'function' ? [] : origExternals),
+      ]
+
+      config.module.rules.unshift({
+        test: antStyles,
+        use: 'null-loader',
+      })
     }
 
     if (dev) {
