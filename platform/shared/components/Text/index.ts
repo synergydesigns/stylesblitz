@@ -34,7 +34,7 @@ H1.defaultProps = {
   lineHeight:'1.2em',
   weight:'bold',
   font: fonts.secondary,
-  backgroundColor: colors.yellow,
+  backgroundColor: colors.secondary,
   showBackGround: false,
   color: colors.black
 }

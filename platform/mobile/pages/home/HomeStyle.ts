@@ -51,7 +51,7 @@ export const HeroHeading = styled.h1`
   &::before {
     display: block;
     content: '';
-    background: ${color.yellow};
+    background: ${color.secondary};
     position: absolute;
     z-index: -1;
     bottom: -3px;
@@ -74,7 +74,7 @@ export const HeroSubHeader = styled.h2`
 export const HomeVendorWrapper = styled.div`
   width: 100%;
   height: 240px;
-  background: ${color.yellow};
+  background: ${color.secondary};
   color: ${color.black};
   padding: 40px 20px;
   position: relative;

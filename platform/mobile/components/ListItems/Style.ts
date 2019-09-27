@@ -8,7 +8,7 @@ export const CarouselListWrapper = styled.div<{ height: number }>`
   }
 
   hr {
-    border: 1px solid ${color.yellow};
+    border: 1px solid ${color.secondary};
     width: 90%;
   }
 `

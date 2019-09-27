@@ -70,7 +70,7 @@ const FullPageGallery: React.FC = () => {
     <FullPageGalleryWrapper>
       <div className="gallery-navigation__back">
         <Arrow fill="#ffffff"/>
-      </div>
+    </div>
       <Swiper {...params} getSwiper={updateSwiper}>
         { 
           assets.map(({ url }, index) => (

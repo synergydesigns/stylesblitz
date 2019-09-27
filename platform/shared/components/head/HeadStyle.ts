@@ -1,6 +1,20 @@
 import { createGlobalStyle } from 'styled-components';
+import 'antd-mobile/dist/antd-mobile.css'
+import 'antd/dist/antd.css'
+import 'react-id-swiper/lib/styles/css/swiper.css';
 
 export default createGlobalStyle`
+
+  @font-face {
+    font-family: 'Pangram';
+    src: url('/static/fonts/AvenirNextLTPro-Bold.otf');
+    src: url('/static/fonts/AvenirNextLTPro-BoldCn.otf');
+    src: url('/static/fonts/AvenirNextLTPro-Demi.otf');
+    src: url('/static/fonts/AvenirNextLTPro-DemiCn.otf');
+    src: url('/static/fonts/AvenirNextLTPro-lt.otf');
+    src: url('/static/fonts/AvenirNextLTPro-Regular.otf');
+  }
+
   /* Base 10 typography scale courtesty of @wesbos 1.6rem === 16px */
   html {
     font-size: 10px;

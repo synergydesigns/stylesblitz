@@ -17,9 +17,9 @@ interface Color {
 
 export const color: Color = {
   color: '#073C87',
-  primary: '#E0115F',
-  secondary: '#FF9907',
-  black: '#243C58',
+  primary: '#3477DC',
+  secondary: '#F96A6A',
+  black: '#323645',
   pitchBlack: '#505050',
   lightGray: '#aaaaaa',
   darkGray: '#D1D1D1',
@@ -45,12 +45,10 @@ interface Font {
   primary: string,
   semiPrimary: string
   secondary: string
-  tertiary: string
 }
 
 export const font: Font = {
-  primary: 'Nunito SemiBold, sans-serif',
+  primary: '"Avenir Next", sans-serif',
   semiPrimary: 'Nunito, sans-serif',
   secondary: 'Montserrat, sans-serif',
-  tertiary: 'Kollektif, Lato, sans-serif'
 }
