@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { font, color } from '../../../shared/global'
+import styled from 'styled-components';
+import { font, color } from '../../../shared/global';
 
 export const FooterWrapper = styled.footer`
   padding: 30px 20px 60px 20px;
@@ -12,7 +12,7 @@ export const FooterWrapper = styled.footer`
   & > p {
     font: normal 16px/33px ${font.semiPrimary}
   }
-`
+`;
 
 export const FootLinks = styled.div`
   margin-top: 20px;
@@ -27,7 +27,7 @@ export const FootLinks = styled.div`
     font: normal 16px/32px ${font.semiPrimary};
     margin-bottom: 10px;
   }
-`
+`;
 
 export const FooterSocial = styled.div`
   margin: 30px 0px;
@@ -42,7 +42,7 @@ export const FooterSocial = styled.div`
   img {
     margin-right: 10px;
   }
-`
+`;
 
 export const HomeInputWrapper = styled.div`
   display: flex;
@@ -76,7 +76,7 @@ export const HomeInputWrapper = styled.div`
       }
     }
   }
-`
+`;
 
 export const NavBarWrapper = styled.div`
   position: fixed;
@@ -87,4 +87,4 @@ export const NavBarWrapper = styled.div`
   .am-tab-bar-bar  {
     background: ${color.primary}
   }
-`
+`;

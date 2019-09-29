@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-import shortId from 'lib/utils/shortId'
-import { StarRatingWrapper } from './StarRatingStyle'
+import shortId from 'lib/utils/shortId';
+import { StarRatingWrapper } from './StarRatingStyle';
 
 interface Props {
   rating?: number
@@ -11,30 +11,32 @@ interface Props {
   getRating?: (number) => number
 }
 
-const StarRating: React.FC<Props> = ({ rating: initialRating, fontSize, color, ...props }) => {
-  const [rating, setRating] = useState<number>(initialRating)
-  const [tempRating, setTempRating] = useState<number>(initialRating)
+const StarRating: React.FC<Props> = ({
+  rating: initialRating, fontSize, color, ...props
+}) => {
+  const [rating, setRating] = useState<number>(initialRating);
+  const [tempRating, setTempRating] = useState<number>(initialRating);
 
-  const rate = (rating) =>  () => {
-    setRating(rating)
-    setTempRating(rating)
-    props.getRating(rating)
-  }
+  const rate = userRating => () => {
+    setRating(userRating);
+    setTempRating(userRating);
+    props.getRating(userRating);
+  };
 
-  const starOver = (newRating) => () => {
-    setRating(newRating)
-    setTempRating(rating)
-  }
+  const starOver = newRating => () => {
+    setRating(newRating);
+    setTempRating(rating);
+  };
 
   const starOut = () => {
-    setRating(tempRating)
-  }
-  
-  let stars = []
-    
-  for(let i = 0; i < 5; i++) {
+    setRating(tempRating);
+  };
+
+  const stars = [];
+
+  for (let i = 0; i < 5; i += 1) {
     let starClass = '';
-    
+
     if (rating > i && rating !== 0) {
       starClass += ' is-selected';
     }
@@ -48,19 +50,22 @@ const StarRating: React.FC<Props> = ({ rating: initialRating, fontSize, color, .
         className={starClass}
         onClick={rate(i + 1)}
         onMouseOver={starOver(i + 1)}
-        onMouseOut={starOut}>
+        onFocus={starOver(i + 1)}
+        onMouseOut={starOut}
+        onBlur={starOut}
+      >
         ★
-      </StarRatingWrapper>
-    )
+      </StarRatingWrapper>,
+    );
   }
 
-  return <>{stars}</>
-}
+  return <>{stars}</>;
+};
 
 StarRating.defaultProps = {
   fontSize: '12px',
   rating: 0,
-  getRating: (number) => number
-}
+  getRating: number => number,
+};
 
-export default StarRating
+export default StarRating;

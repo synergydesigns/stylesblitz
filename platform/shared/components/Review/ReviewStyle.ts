@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { color, font } from 'globals'
+import styled from 'styled-components';
+import { color, font } from 'shared/global';
 
 export const ReviewContainer = styled.div`
   padding: 15px 0;
@@ -50,18 +50,18 @@ export const ReviewContainer = styled.div`
   .replies {
     margin-left: 12px;
   }
-`
+`;
 
 export const ReviewerImage = styled.div`
   display: flex;
   align-self: flex-start;
-`
+`;
 
 export const ReviewText = styled.p`
   font: normal 14px/18px ${font.semiPrimary};
   color: ${color.reviewLightGray};
   margin-bottom: 5px;
-`
+`;
 
 export const ReplyContainer = styled.div`
   display: flex;
@@ -75,4 +75,4 @@ export const ReplyContainer = styled.div`
     font: bold 10px/14px ${font.secondary};
     color: ${color.pitchBlack};
   }
-`
+`;

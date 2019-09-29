@@ -1,69 +1,45 @@
 {
-	"env": {
-		"browser": true,
-		"node": true,
-		"mocha": true,
-		"es6": true
-	},
-	"settings": {
-    "react": {
-      "createClass": "createReactClass",
-                        
-      "pragma": "React",
-      "version": "detect",
-      "flowVersion": "0.53"
+    "env": {
+        "browser": true,
+        "es6": true
     },
-    "propWrapperFunctions": [
-        "forbidExtraProps",
-        {"property": "freeze", "object": "Object"},
-        {"property": "myFavoriteWrapper"}
+    "parser": "@typescript-eslint/parser",
+    "extends":["eslint:recommended", "airbnb"],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
     ],
-    "linkComponents": [
-      "Hyperlink",
-      {"name": "Link", "linkAttribute": "to"}
-    ]
-  },
-	"extends": [
-		"standard",
-		"plugin:react/recommended"
-	],
-	"globals": {
-		"Atomics": "readonly",
-		"SharedArrayBuffer": "readonly"
-	},
-	"parserOptions": {
-		"ecmaFeatures": {
-			"modules": true,
-			"jsx": true,
-			"generators": false,
-			"objectLiteralDuplicateProperties": false
-		},
-		"ecmaVersion": 2018,
-		"sourceType": "module"
-	},
-	"plugins": [
-		"react"
-	],
-	"rules": {
-		"react/jsx-no-bind": [
-			"error",
-			{
-				"allowArrowFunctions": true,
-				"allowBind": false,
-				"ignoreRefs": true
-			}
-		],
-		"react/no-did-update-set-state": "error",
-		"react/no-unknown-property": "error",
-		"react/no-unused-prop-types": "error",
-		"react/prop-types": "error",
-		"react/react-in-jsx-scope": "error",
-		"prefer-destructuring": [
-			"error",
-			{
-				"array": true,
-				"object": true
-			}
-		]
-	}
+    "rules": {
+        "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }],
+        "import/no-unresolved": "off",
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "error",
+        "no-useless-constructor": "off",
+        "@typescript-eslint/no-useless-constructor": "error",
+        "react/destructuring-assignment": "off",
+        "react/prop-types": "off",
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true, "optionalDependencies": false, "peerDependencies": false}]
+    },
+    "settings": {
+        "import/extensions": [".js",".jsx",".ts",".tsx"],
+        "import/parsers": {
+          "@typescript-eslint/parser": [".ts",".tsx"]
+         },
+         "import/resolver": {
+             "node": {
+                 "extensions": [".js",".jsx",".ts",".tsx"]
+             }
+         }
+    }
 }

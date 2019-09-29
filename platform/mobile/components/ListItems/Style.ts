@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { color, font } from '../../../shared/global'
+import styled from 'styled-components';
+import { color, font } from '../../../shared/global';
 
 export const CarouselListWrapper = styled.div<{ height: number }>`
   .swiper-slide {
@@ -11,7 +11,7 @@ export const CarouselListWrapper = styled.div<{ height: number }>`
     border: 1px solid ${color.secondary};
     width: 90%;
   }
-`
+`;
 export const CarouselListHeader = styled.div<{ marginTop: number }>`
   text-transform: capitalize;
   display: flex;
@@ -25,11 +25,11 @@ export const CarouselListHeader = styled.div<{ marginTop: number }>`
     font: bold 14px/18px ${font.secondary};
     color: ${color.primary}
   }
-`
+`;
 
 export const CarouselListHeaderTitle = styled.div`
   display: flex;
-`
+`;
 
 export const CarouselListTooltip = styled.div`
   width: 30px;
@@ -53,7 +53,7 @@ export const CarouselListTooltip = styled.div`
     border-bottom: 5px solid transparent; 
     border-right: 5px solid ${color.primary};
   }
-`
+`;
 
 export const Item = styled.div`
   height: 490px;
@@ -69,7 +69,7 @@ export const Item = styled.div`
     font: normal 14px/19px ${font.primary};
      margin-top: 8px;
   }
-`
+`;
 
 export const ItemImage = styled.div<{ src: string, width: number, height: number }>`
   position: absolute;
@@ -79,4 +79,4 @@ export const ItemImage = styled.div<{ src: string, width: number, height: number
   z-index: 3;
   right: 0;
   display: block;
-`
+`;

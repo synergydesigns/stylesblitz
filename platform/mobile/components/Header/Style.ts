@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { color } from '../../../shared/global'
+import styled from 'styled-components';
+import { color } from '../../../shared/global';
 
 export const HeaderWrapper = styled.div`
   position: fixed;
@@ -15,7 +15,7 @@ export const HeaderWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0px 20px;
-`
+`;
 
 export const HeaderButton = styled.button`
   width: 122px;
@@ -33,4 +33,4 @@ export const HeaderButton = styled.button`
     background: ${color.primary};
     border: none;
   }
-`
+`;

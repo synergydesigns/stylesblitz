@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { font, color } from 'globals'
+import styled from 'styled-components';
+import { font, color } from 'shared/global';
 
 export const ServiceListItemContainer = styled.div`
   width: 100%;
@@ -14,7 +14,7 @@ export const ServiceListItemContainer = styled.div`
   &:last-child {
     margin-bottom: 0px;
   }
-`
+`;
 
 export const ServiceListItemDetails = styled.div`
   margin-left: 10px;
@@ -56,4 +56,4 @@ export const ServiceListItemDetails = styled.div`
     bottom: 15px;
     cursor: pointer;
   }
-`
+`;

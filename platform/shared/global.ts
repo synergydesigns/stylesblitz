@@ -28,8 +28,8 @@ export const color: Color = {
   yellow: '#FFE975',
   starGreen: '#59C957',
   commentDarkGray: '#999999',
-  reviewLightGray: '#B0B0B0'
-}
+  reviewLightGray: '#B0B0B0',
+};
 
 interface ZIndex {
   modalOverlay: number,
@@ -38,8 +38,8 @@ interface ZIndex {
 
 export const zIndex: ZIndex = {
   modalOverlay: 9,
-  modal: 10
-}
+  modal: 10,
+};
 
 interface Font {
   primary: string,
@@ -51,4 +51,4 @@ export const font: Font = {
   primary: '"Avenir Next", sans-serif',
   semiPrimary: 'Nunito, sans-serif',
   secondary: 'Montserrat, sans-serif',
-}
+};

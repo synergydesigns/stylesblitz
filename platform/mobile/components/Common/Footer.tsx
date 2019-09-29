@@ -1,7 +1,6 @@
 import React from 'react';
 import { FootLinks, FooterWrapper, FooterSocial } from './Style';
-import Arrow from '../../../shared/icons/Arrow'
-import HomeInput from './HomeInput'
+import HomeInput from './HomeInput';
 
 const Footer: React.FC = () => (
   <FooterWrapper>
@@ -19,12 +18,12 @@ const Footer: React.FC = () => (
     </FootLinks>
     <FooterSocial>
       <h1>social</h1>
-      <img src="/static/images/mobile/social/facebook.png" />
-      <img src="/static/images/mobile/social/twitter.png" />
-      <img src="/static/images/mobile/social/instagram.png" />
+      <img alt="facebook" src="/static/images/mobile/social/facebook.png" />
+      <img alt="twitter" src="/static/images/mobile/social/twitter.png" />
+      <img alt="instagram" src="/static/images/mobile/social/instagram.png" />
     </FooterSocial>
     <p>2019 LookBlitz. All rights reserved</p>
   </FooterWrapper>
-)
+);
 
-export default Footer
+export default Footer;

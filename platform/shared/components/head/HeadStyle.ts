@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import 'antd-mobile/dist/antd-mobile.css'
-import 'antd/dist/antd.css'
+import 'antd-mobile/dist/antd-mobile.css';
+import 'antd/dist/antd.css';
 import 'react-id-swiper/lib/styles/css/swiper.css';
 
 export default createGlobalStyle`

@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
-import { userData, userDataVariables } from '../../types/userData'
+import { userData, userDataVariables } from '../../types/userData';
 
 const GET_USER = gql`
   query userData($id: String!) {
@@ -17,10 +16,10 @@ const GET_USER = gql`
 const user = (id) => {
   const { loading, error, data } = useQuery<userData, userDataVariables>(
     GET_USER,
-    { variables: { id } }
+    { variables: { id } },
   );
 
-  return [loading, data, error]
-}
+  return [loading, data, error];
+};
 
-export default user
+export default user;

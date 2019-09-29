@@ -1,7 +1,7 @@
-import * as React from 'react'
+import * as React from 'react';
 
-import FullPageGallery from  './FullPageGallery'
-import Layout from '../layout'
+import FullPageGallery from './FullPageGallery';
+import Layout from '../layout';
 
 const Gallery: React.FC = () => (
   <Layout
@@ -12,6 +12,6 @@ const Gallery: React.FC = () => (
   >
     <FullPageGallery />
   </Layout>
-)
+);
 
-export default Gallery
+export default Gallery;

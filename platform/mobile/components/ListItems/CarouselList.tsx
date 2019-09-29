@@ -1,14 +1,14 @@
-import * as React from 'react'
+import * as React from 'react';
 import dynamic from 'next/dynamic';
+
+import * as Style from './Style';
 
 const Swiper = dynamic(
   () => import('react-id-swiper'),
   {
-    ssr: false
-  }
+    ssr: false,
+  },
 );
-
-import * as Style from './Style'
 
 type Slider = {
   name?: string
@@ -26,7 +26,9 @@ type Props = {
   showBorder: boolean
 }
 
-const CarouselList: React.FC<Props> = ({ items, itemHeight, itemWidth, ...props }) => {
+const CarouselList: React.FC<Props> = ({
+  items, itemHeight, itemWidth, ...props
+}) => {
   const params = {
     slidesPerView: 2,
     spaceBetween: 10,
@@ -35,26 +37,28 @@ const CarouselList: React.FC<Props> = ({ items, itemHeight, itemWidth, ...props 
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
-    }
+    },
   };
 
   return (
     <Style.CarouselListWrapper height={itemHeight}>
-      <Style.CarouselListHeader marginTop={props.marginTop} >
+      <Style.CarouselListHeader marginTop={props.marginTop}>
         <Style.CarouselListHeaderTitle>
           <h1>{props.headerText}</h1>
-          {props.itemsCount || props.itemsCount === 0 && <Style.CarouselListTooltip>
+          {(props.itemsCount || props.itemsCount) === 0 && (
+          <Style.CarouselListTooltip>
             {props.itemsCount}
-            <div className='arrow-left' />
-          </Style.CarouselListTooltip>}
+            <div className="arrow-left" />
+          </Style.CarouselListTooltip>
+          )}
         </Style.CarouselListHeaderTitle>
         {props.itemsCount && <h3>show more</h3>}
       </Style.CarouselListHeader>
       <Swiper {...params}>
-        { 
-          items.map(({ name, subHeader, image }, index) => (
-            <Style.Item key={index}>
-              <img  src={image} />
+        {
+          items.map(({ name, subHeader, image }) => (
+            <Style.Item key={name}>
+              <img src={image} alt={image} />
               <h1>{name}</h1>
               <h3>{subHeader}</h3>
             </Style.Item>
@@ -63,7 +67,7 @@ const CarouselList: React.FC<Props> = ({ items, itemHeight, itemWidth, ...props 
       </Swiper>
       {props.showBorder && <hr />}
     </Style.CarouselListWrapper>
-  )
-}
+  );
+};
 
-export default CarouselList
+export default CarouselList;

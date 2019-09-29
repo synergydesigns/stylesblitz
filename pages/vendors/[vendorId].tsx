@@ -1,5 +1,5 @@
-import * as React from 'react'
-import MobileDetect from 'mobile-detect'
+import * as React from 'react';
+import MobileDetect from 'mobile-detect';
 import dynamic from 'next/dynamic';
 
 const MobileVendor = dynamic(() => import('../../platform/mobile/pages/vendors/profile/VendorProfile'));
@@ -11,8 +11,8 @@ interface Props {
 }
 
 const Vendor: React.FC<Props> = (props) => {
-  const md = new MobileDetect(props.userAgent)
-  return md.mobile() ? <MobileVendor /> : <div>desktop</div>
-}
+  const md = new MobileDetect(props.userAgent);
+  return md.mobile() ? <MobileVendor /> : <div>desktop</div>;
+};
 
-export default Vendor
+export default Vendor;

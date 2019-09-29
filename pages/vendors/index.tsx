@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react';
 
 interface Props {
   userAgent: string,
@@ -6,8 +6,6 @@ interface Props {
   search: Object
 }
 
-const Vendor: React.FC<Props> = (props) => {
-  return <h1>Vendor listing</h1> 
-}
+const Vendor: React.FC<Props> = () => <h1>Vendor listing</h1>;
 
-export default Vendor
+export default Vendor;

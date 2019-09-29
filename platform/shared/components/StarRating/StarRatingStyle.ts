@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color } from 'globals'
+import { color as baseColor } from 'shared/global';
 
 export const StarRatingWrapper = styled.label<{ color: string, fontSize: string, defaultColor: string }>`
   position: relative;
@@ -22,9 +22,11 @@ export const StarRatingWrapper = styled.label<{ color: string, fontSize: string,
   &.is-disabled:hover {
     cursor: default;
   }
-`
+`;
 
 StarRatingWrapper.defaultProps = {
-  defaultColor: color.lightGray,
-  color: color.starGreen
-}
+  defaultColor: baseColor.lightGray,
+  color: baseColor.starGreen,
+};
+
+export default StarRatingWrapper;

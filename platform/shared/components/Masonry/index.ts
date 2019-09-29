@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Masonry = styled.div<{ columnCount?: number, maxWidth?: string }>`
   max-width: ${({ maxWidth }) => maxWidth};
@@ -6,12 +6,12 @@ export const Masonry = styled.div<{ columnCount?: number, maxWidth?: string }>`
   row-gap: 3px;
   column-count: ${({ columnCount }) => columnCount};
   position: relative;
-`
+`;
 
 Masonry.defaultProps = {
   columnCount: 3,
-  maxWidth: '768px'
-}
+  maxWidth: '768px',
+};
 
 export const MasonryItem = styled.div`
   background: #fff;
@@ -22,4 +22,4 @@ export const MasonryItem = styled.div`
   & > img, div {
     width: 100%;
   }
-`
+`;

@@ -1,20 +1,20 @@
-import React from 'react'
-import App, { Container } from 'next/app'
+import React from 'react';
+import App, { Container } from 'next/app';
 
-import withApolloClient from '../lib/apollo.client'
 
-import { ApolloProvider } from 'react-apollo'
-import { ApolloProvider as ApolloHooksProvider } from '@apollo/react-hooks'
+import { ApolloProvider } from 'react-apollo';
+import { ApolloProvider as ApolloHooksProvider } from '@apollo/react-hooks';
+import withApolloClient from '../lib/apollo.client';
 
 export class MyApp extends App<any> {
-  render () {
+  render() {
     const {
       Component,
       pageProps,
       apolloClient,
-      query = { param: {}, search: {}},
-      userAgent
-    } = this.props
+      query = { param: {}, search: {} },
+      userAgent,
+    } = this.props;
 
     return (
       <Container>
@@ -26,11 +26,11 @@ export class MyApp extends App<any> {
               search={query.search}
               userAgent={userAgent}
             />
-          </ApolloHooksProvider >
+          </ApolloHooksProvider>
         </ApolloProvider>
       </Container>
-    )
+    );
   }
 }
 
-export default withApolloClient(MyApp)
+export default withApolloClient(MyApp);

@@ -1,20 +1,14 @@
-import React, { useState } from 'react'
-import ImagePicker from 'antd-mobile/lib/image-picker'
-import SegmentedControl from 'antd-mobile/lib/segmented-control'
-import WingBlank from 'antd-mobile/lib/wing-blank'
+import React, { useState } from 'react';
+import ImagePicker from 'antd-mobile/lib/image-picker';
+import WingBlank from 'antd-mobile/lib/wing-blank';
 
 const CustomImagePicker: React.FC = () => {
-  const [files, setFiles] = useState([])
-  const [multiple, setMultiple] = useState(true)
+  const [files, setFiles] = useState([]);
+  const [multiple] = useState(true);
 
-  const onChange = (files, type, index) => {
-    setFiles(files)
-  }
-
-  const onSegmentChange = (e) => {
-    const index = e.nativeEvent.selectedSegmentIndex
-    setMultiple(index === 1)
-  }
+  const onChange = (loadedFiles) => {
+    setFiles(loadedFiles);
+  };
 
   return (
     <WingBlank>
@@ -26,6 +20,6 @@ const CustomImagePicker: React.FC = () => {
       />
     </WingBlank>
   );
-}
+};
 
-export default CustomImagePicker
+export default CustomImagePicker;

@@ -1,4 +1,6 @@
-@color-text-base: #323645;
+@base-color: #3477dc;
+
+@color-text-base: @base-color;
 @color-text-paragraph: #323645;
 @color-link: @brand-primary;
 @fill-base: #fff;
@@ -11,8 +13,8 @@
 
 @opacity-disabled: 0.3;
 
-@brand-primary: #3477DC;
-@brand-primary-tap: #7CA8E9;
+@brand-primary: @base-color;
+@brand-primary-tap: #7ca8e9;
 @brand-success: #D5F6DE;
 @brand-warning: #F8EDD3;
 @brand-error: #F96A6A;;
@@ -20,8 +22,8 @@
 @brand-wait: #108ee9;
 
 
-@primary-color: #3477DC; // primary color for all components
-@link-color: #3477DC; // link color
+@primary-color: @base-color; // primary color for all components
+@link-color: @base-color; // link color
 @success-color: #52c41a; // success state color
 @warning-color: #faad14; // warning state color
 @error-color: #f5222d; // error state color

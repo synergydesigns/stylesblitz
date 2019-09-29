@@ -1,8 +1,8 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
-import Reset from 'reset-styles'
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import Reset from 'reset-styles';
 
-import Review from './Review'
+import Review from './Review';
 
 storiesOf('Shared|Review', module)
   .add('default', () => (
@@ -10,4 +10,4 @@ storiesOf('Shared|Review', module)
       <Reset />
       <Review />
     </>
-  ))
+  ));

@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-import Search from './Search'
-import Layout from '../layout'
+import Search from './Search';
+import Layout from '../layout';
 
 const SearchPage: React.FC = () => (
-  <Layout title="Search" showHeader={false} showFooter={false} showNav={true}>
+  <Layout title="Search" showHeader={false} showFooter={false} showNav>
     <Search />
   </Layout>
-)
+);
 
-export default SearchPage
+export default SearchPage;

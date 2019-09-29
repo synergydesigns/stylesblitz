@@ -1,10 +1,10 @@
-import styled from 'styled-components'
-import { font } from 'globals'
+import styled from 'styled-components';
+import { font } from 'shared/global';
 
 export const ServiceListingWrapper = styled.div`
   width: 100%;
   padding: 20px;
-`
+`;
 
 export const CategoryList = styled.div`
   background-color: #F5F5F5;
@@ -17,4 +17,4 @@ export const CategoryList = styled.div`
     font: normal 14px/18px ${font.primary};
     text-transform: capitalize;
   }
-`
+`;

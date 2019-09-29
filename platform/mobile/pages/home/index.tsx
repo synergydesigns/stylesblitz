@@ -1,39 +1,38 @@
-import * as React from 'react'
+import * as React from 'react';
 
-import Hero from './HomeHero'
-import HomeVendorHero from './HomeVendor'
-import Header from '../../components/Header'
-import CarouselList from '../../components/ListItems/CarouselList'
-import Layout from '../layout'
+import Hero from './HomeHero';
+import HomeVendorHero from './HomeVendor';
+import CarouselList from '../../components/ListItems/CarouselList';
+import Layout from '../layout';
 
 
 const items = [
   {
     name: 'nail polish',
     subHeader: '12th Street, Bode Thomas, Lagos.',
-    image: '/static/images/thumbnail/legs.jpg'
+    image: '/static/images/thumbnail/legs.jpg',
   },
   {
     name: 'facial treatment',
     subHeader: 'Mombasa house, Allen Avenue, Ikeja, Lagos',
-    image: '/static/images/thumbnail/lady.jpg'
+    image: '/static/images/thumbnail/lady.jpg',
   },
   {
     name: 'madonna spa',
     subHeader: '12th Street, Bode Thomas, Lagos.',
-    image: '/static/images/thumbnail/legs.jpg'
+    image: '/static/images/thumbnail/legs.jpg',
   },
   {
     name: 'massage',
     subHeader: 'Mombasa house, Allen Avenue, Ikeja, Lagos',
-    image: '/static/images/thumbnail/lady.jpg'
+    image: '/static/images/thumbnail/lady.jpg',
   },
   {
     name: 'hair grooming',
     subHeader: '12th Street, Bode Thomas, Lagos.',
-    image: '/static/images/thumbnail/legs.jpg'
+    image: '/static/images/thumbnail/legs.jpg',
   },
-]
+];
 
 const categories = {
   itemWidth: 320,
@@ -42,8 +41,8 @@ const categories = {
   itemsCount: 108,
   items,
   marginTop: 40,
-  showBorder: false
-}
+  showBorder: false,
+};
 
 const popular = {
   itemWidth: 320,
@@ -52,8 +51,8 @@ const popular = {
   itemsCount: 108,
   items,
   marginTop: 30,
-  showBorder: true
-}
+  showBorder: true,
+};
 
 const services = {
   itemWidth: 270,
@@ -66,40 +65,40 @@ const services = {
     {
       name: 'nail polish',
       subHeader: '32 vendors',
-      image: '/static/images/thumbnail/cream.jpg'
+      image: '/static/images/thumbnail/cream.jpg',
     },
     {
       name: 'facial treatment',
       subHeader: '11 vendors',
-      image: '/static/images/thumbnail/nails.jpg'
+      image: '/static/images/thumbnail/nails.jpg',
     },
     {
       name: 'madonna spa',
       subHeader: '67 vendors',
-      image: '/static/images/thumbnail/cream.jpg'
+      image: '/static/images/thumbnail/cream.jpg',
     },
     {
       name: 'massage',
       subHeader: '30 vendors',
-      image: '/static/images/thumbnail/nails.jpg'
+      image: '/static/images/thumbnail/nails.jpg',
     },
     {
       name: 'hair grooming',
       subHeader: '18 vendors',
-      image: '/static/images/thumbnail/cream.jpg'
+      image: '/static/images/thumbnail/cream.jpg',
     },
-  ]
-}
+  ],
+};
 
 
 const Home: React.FC = () => (
   <Layout title="homepage">
     <Hero />
-    <CarouselList { ...services } />
-    <CarouselList { ...popular } />
-    <CarouselList { ...categories } />
+    <CarouselList {...services} />
+    <CarouselList {...popular} />
+    <CarouselList {...categories} />
     <HomeVendorHero />
   </Layout>
-)
+);
 
-export default Home
+export default Home;

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const ProfileImage = styled.div<{ width?: string, height?: string, image: string }>`
   width: ${({ width }) => width};
@@ -7,13 +7,13 @@ export const ProfileImage = styled.div<{ width?: string, height?: string, image:
   background-position: center;
   background-size: cover;
   border-radius: 100px;
-`
+`;
 
 ProfileImage.defaultProps = {
   width: '60px',
-  height: '60px'
-}
+  height: '60px',
+};
 
 export const Image = styled(ProfileImage)`
   border-radius: 0px;
-`
+`;

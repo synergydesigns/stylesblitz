@@ -1,7 +1,7 @@
-import styled from 'styled-components'
-import Drawer from 'antd/lib/drawer'
+import styled from 'styled-components';
+import Drawer from 'antd/lib/drawer';
 
-import { color } from '../../../shared/global'
+import { color } from '../../../shared/global';
 
 export const SearchWrapper = styled.div`
   width: 320px;
@@ -53,7 +53,7 @@ export const SearchWrapper = styled.div`
   .ant-select-dropdown-menu .ant-select-dropdown-menu-item-active {
     background-color: green;
   }
-`
+`;
 
 export const RecentSearchWrapper = styled.div`
   margin: 0 auto;
@@ -81,7 +81,7 @@ export const RecentSearchWrapper = styled.div`
     margin-bottom: 16px;
     color: #505050;
   }
-`
+`;
 
 
 export const SearchResultWrapper = styled.div`
@@ -135,7 +135,7 @@ export const SearchResultWrapper = styled.div`
       margin-right: 0;
     }
   }
-`
+`;
 
 export const FilterSort = styled.div`
   width: 320px;
@@ -188,7 +188,7 @@ export const FilterSort = styled.div`
     text-align: center;
     margin-top: 16px;
   }
-`
+`;
 export const FilterSearchWrapper = styled.div`
   width: 268px;
   height: 40px;
@@ -239,7 +239,7 @@ export const FilterSearchWrapper = styled.div`
   .ant-select-dropdown-menu .ant-select-dropdown-menu-item-active {
     background-color: green;
   }
-`
+`;
 
 export const DrawerWrapper = styled(Drawer)`
   .ant-drawer-content-wrapper {
@@ -247,7 +247,7 @@ export const DrawerWrapper = styled(Drawer)`
       padding: 0;
     }
   }
-`
+`;
 
 export const Button = styled.button`
   width: 120px;
@@ -264,7 +264,7 @@ export const Button = styled.button`
   line-height: 22px;
   margin: 0 auto;
   margin-top: 28px;
-`
+`;
 
 export const DateTimePickerWrapper = styled.div`
   margin-left: 17px;
@@ -273,7 +273,7 @@ export const DateTimePickerWrapper = styled.div`
     padding-left: 10px;
     background: #f5f5f5;
   }
-`
+`;
 export const SortListItemWrapper = styled.div<{ active: boolean }>`
   .mobile-icon {
     margin-top: 7px;
@@ -285,4 +285,4 @@ export const SortListItemWrapper = styled.div<{ active: boolean }>`
     font-size: 14px;
     color: #505050;
   }
-`
+`;

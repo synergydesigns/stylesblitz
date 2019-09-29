@@ -3,10 +3,10 @@ module.exports = {
   setupFiles: [
     'react-app-polyfill/jsdom',
     '<rootDir>/.jest/register-context.js',
-    '<rootDir>/.jest/setup.js'
+    '<rootDir>/.jest/setup.js',
   ],
   transform: {
-    '.(ts|tsx|js)': 'ts-jest'
+    '.(ts|tsx|js)': 'ts-jest',
   },
   testPathIgnorePatterns: ['/node_modules/', '/lib/'],
   testRegex: '(/test/.*|\\.(test|spec))\\.(ts|tsx|js)$',
@@ -14,7 +14,7 @@ module.exports = {
   testEnvironment: 'jsdom',
   globals: {
     'ts-jest': {
-      babelConfig: true
-    }
-  }
-}
+      babelConfig: true,
+    },
+  },
+};

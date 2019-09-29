@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
 
-import HeroDot from 'shared/icons/HeroDot'
-import HomeInput from '../../components/Common/HomeInput'
-import { HeroContainer, HeroHeading, HeroSubHeader, HeroImage } from './HomeStyle'
+import HeroDot from 'shared/icons/HeroDot';
+import HomeInput from '../../components/Common/HomeInput';
+import {
+  HeroContainer, HeroHeading, HeroSubHeader, HeroImage,
+} from './HomeStyle';
 
 const Hero: React.FC = () => (
   <HeroContainer>
@@ -20,6 +22,6 @@ const Hero: React.FC = () => (
       <HomeInput />
     </div>
   </HeroContainer>
-)
+);
 
-export default Hero
+export default Hero;
