@@ -1,8 +1,8 @@
 import React from 'react';
 
 interface Props {
-  width: string,
-  height: string
+  width?: string,
+  height?: string
 }
 
 const Cart: React.FC<Props> = ({ width, height }) => (
