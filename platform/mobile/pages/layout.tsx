@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react'
+import React, { Fragment } from 'react';
 
-import Layout from '../components/Common/Layout'
-import  { MainWrapper, HeaderSpace } from './styles/MobileGlobalStyle'
-import Header from '../components/Header'
-import NavBar from '../components/Common/NavBar'
-import Footer from '../components/Common/Footer'
+import Layout from '../components/Common/Layout';
+import { MainWrapper, HeaderSpace } from './styles/MobileGlobalStyle';
+import Header from '../components/Header';
+import NavBar from '../components/Common/NavBar';
+import Footer from '../components/Common/Footer';
 
 interface Props {
   showFooter?: boolean
@@ -14,29 +14,27 @@ interface Props {
   title: string
 }
 
-const MobileLayout: React.FC<Props> = ({ children, ...props }) => {
-  return (
-    <Layout title={props.title}>
-      { props.showHeader && (
-          <Fragment>
-            <Header />
-            <HeaderSpace/>
-          </Fragment>
-        ) 
+const MobileLayout: React.FC<Props> = ({ children, ...props }) => (
+  <Layout title={props.title}>
+    { props.showHeader && (
+      <Fragment>
+        <Header />
+        <HeaderSpace />
+      </Fragment>
+    )
       }
-      <MainWrapper>
-        {children}
-        {props.showFooter && <Footer />}
-      </MainWrapper>
-      {props.showNav && <NavBar />}
-    </Layout>
-  )
-}
+    <MainWrapper>
+      {children}
+      {props.showFooter && <Footer />}
+    </MainWrapper>
+    {props.showNav && <NavBar />}
+  </Layout>
+);
 
 MobileLayout.defaultProps = {
   showFooter: true,
   showHeader: true,
-  showNav: true
-}
+  showNav: true,
+};
 
-export default MobileLayout
+export default MobileLayout;

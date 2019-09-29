@@ -1,10 +1,8 @@
-import * as React from 'react'
-import Gallery from 'platform/mobile/pages/gallery'
+import * as React from 'react';
+import Gallery from 'platform/mobile/pages/gallery';
 
-const GalleryPage: React.FC = () => {
-  return (
-    <Gallery />
-  )
-}
+const GalleryPage: React.FC = () => (
+  <Gallery />
+);
 
-export default Gallery
+export default GalleryPage;

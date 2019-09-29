@@ -1,5 +1,11 @@
 {
   "cSpell.words": [
     "Swiper"
+  ],
+  "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      { "language": "typescript", "autoFix": true },
+      { "language": "typescriptreact", "autoFix": true }
   ]
 }

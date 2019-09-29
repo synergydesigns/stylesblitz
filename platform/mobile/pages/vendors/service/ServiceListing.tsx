@@ -2,55 +2,53 @@ import React from 'react';
 import WhiteSpace from 'antd-mobile/lib/white-space';
 
 import shortId from 'lib/utils/shortId';
-import { ListItem } from 'shared/components/Service'
-import { ServiceListingWrapper } from './ServiceListenStyle'
-import { H1 } from 'shared/components/Text'
-import CategoryCarousel from './Carousel/CarouselCategories'
+import { ListItem } from 'shared/components/Service';
+import { H1 } from 'shared/components/Text';
+import { ServiceListingWrapper } from './ServiceListenStyle';
+import CategoryCarousel from './Carousel/CarouselCategories';
 
 const services = Array(10).fill(1).map(() => ({
   image: 'https://picsum.photos/id/237/200/300',
   name: 'Weavon Fixing',
   price: 12000,
-  duration: 233
-}))
+  duration: 233,
+}));
 
 const categories = [
   {
-    name: 'all'
+    name: 'all',
   },
   {
-    name: 'braiding'
+    name: 'braiding',
   },
   {
-    name: 'weavon'
+    name: 'weavon',
   },
   {
-    name: 'wigs'
+    name: 'wigs',
   },
   {
-    name: 'fixing'
+    name: 'fixing',
   },
   {
-    name: 'make up'
+    name: 'make up',
   },
   {
-    name: 'barbing'
+    name: 'barbing',
   },
-]
+];
 
 
-const ServiceListing: React.FC = () => {
-  return (
-    <ServiceListingWrapper>
-      <H1 size="18px">Services</H1>
-      <WhiteSpace size="lg" />
-      <CategoryCarousel categories={categories} />
-      <WhiteSpace size="xl" />
-      {
-        services.map((item, index) => <ListItem { ...item } key={shortId(index)} />)
+const ServiceListing: React.FC = () => (
+  <ServiceListingWrapper>
+    <H1 size="18px">Services</H1>
+    <WhiteSpace size="lg" />
+    <CategoryCarousel categories={categories} />
+    <WhiteSpace size="xl" />
+    {
+        services.map((item, index) => <ListItem {...item} key={shortId(index)} />)
       }
-    </ServiceListingWrapper>
-  )
-}
+  </ServiceListingWrapper>
+);
 
-export default ServiceListing
+export default ServiceListing;

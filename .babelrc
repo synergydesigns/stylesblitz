@@ -1,0 +1,19 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    ["babel-plugin-styled-components"],
+    [
+      "import", {
+        "libraryName": "antd",
+        "style": true
+      }
+    ],
+    [
+      "import", {
+        "libraryName": "antd-mobile",
+        "style": true
+      },
+      "antd-mobile"
+    ]
+  ]
+}

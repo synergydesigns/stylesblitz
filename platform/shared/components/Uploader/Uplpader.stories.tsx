@@ -1,9 +1,7 @@
-import React from 'react'
-import { storiesOf } from '@storybook/react'
+import React from 'react';
+import { storiesOf } from '@storybook/react';
 
-import ImagePicker from './ImagePicker'
+import ImagePicker from './ImagePicker';
 
 storiesOf('Shared|UpLoader/ImagePicker', module)
-  .add('Image picker', () => 
-    <ImagePicker />
-  )
+  .add('Image picker', () => <ImagePicker />);

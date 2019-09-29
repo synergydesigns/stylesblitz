@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { font, color } from '../../../shared/global'
+import styled from 'styled-components';
+import { font, color } from '../../../shared/global';
 
 export const HeroContainer = styled.section`
   position: relative;
@@ -24,7 +24,7 @@ export const HeroContainer = styled.section`
       padding-left: 20px;
     }
   }
-`
+`;
 
 export const HeroImage = styled.img<{ width?: string, height?: string, src: string, top?: string}>`
   position: absolute;
@@ -38,7 +38,7 @@ export const HeroImage = styled.img<{ width?: string, height?: string, src: stri
   z-index: 3;
   top: ${({ top }) => top};
   right: 0;
-`
+`;
 
 export const HeroHeading = styled.h1`
   position: relative;
@@ -51,14 +51,14 @@ export const HeroHeading = styled.h1`
   &::before {
     display: block;
     content: '';
-    background: ${color.yellow};
+    background: ${color.secondary};
     position: absolute;
     z-index: -1;
     bottom: -3px;
     width: 102%;
     height: 18px;
   }
-`
+`;
 
 export const HeroSubHeader = styled.h2`
   position: absolute;
@@ -69,12 +69,12 @@ export const HeroSubHeader = styled.h2`
   font: 600 18px/20px ${font.primary};
   font-style: normal;
   color: ${color.black};
-`
+`;
 
 export const HomeVendorWrapper = styled.div`
   width: 100%;
   height: 240px;
-  background: ${color.yellow};
+  background: ${color.secondary};
   color: ${color.black};
   padding: 40px 20px;
   position: relative;
@@ -92,7 +92,7 @@ export const HomeVendorWrapper = styled.div`
     top: 0;
     right: 0;
   }
-`
+`;
 
 export const HomeVendorButton = styled.button`
   width: 227px;
@@ -109,4 +109,4 @@ export const HomeVendorButton = styled.button`
     font: bold 16px/22px ${font.semiPrimary};
     color: ${color.black};
   }
-`
+`;

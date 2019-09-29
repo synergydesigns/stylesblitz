@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { color, font } from 'globals'
+import styled from 'styled-components';
+import { color, font } from 'shared/global';
 
 export const VendProfileHeader = styled.div`
   padding-top: 50px;
@@ -9,7 +9,7 @@ export const VendProfileHeader = styled.div`
     top: 20px;
     left: 20px;
   }
-`
+`;
 
 export const TextWithIcon = styled.div`
   color: ${color.black};
@@ -25,7 +25,7 @@ export const TextWithIcon = styled.div`
     font: normal 14px/19px ${font.semiPrimary};
     text-transform: capitalize;
   }
-`
+`;
 
 export const FullProfile = styled.div`
   display: flex;
@@ -40,14 +40,14 @@ export const FullProfile = styled.div`
     font: bold 10px/14px ${font.primary};
     text-transform: uppercase;
   }
-`
+`;
 
 export const OpeningHoursContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;
 
 export const OpeningContainer = styled.div`
   width: 50%;
@@ -55,7 +55,7 @@ export const OpeningContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${color.yellow};
+  background-color: ${color.secondary};
 
   h1 {
     text-transform: uppercase;
@@ -68,10 +68,10 @@ export const OpeningContainer = styled.div`
   &:first-child {
     border-right: 1px solid #ffffff;
   }
-`
+`;
 
 export const ProfileInfo = styled.div`
   display: block;
   width: 100%;
   text-align: center;
-`
+`;

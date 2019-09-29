@@ -1,9 +1,9 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const VendorGalleryWrapper = styled.div`
   display: flex;
   justify-content: center;
-`
+`;
 
 export const FullPageGalleryWrapper = styled.div`
   display: flex;
@@ -64,5 +64,4 @@ export const FullPageGalleryWrapper = styled.div`
       align-items: center;
     }
   }
-`
-
+`;

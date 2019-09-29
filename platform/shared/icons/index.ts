@@ -1,16 +1,17 @@
-export {default as Hamburger } from './Hamburger'
-export {default as Arrow } from './Arrow'
-export {default as DynamicLines } from './DynamicLines'
-export {default as HeroDot } from './HeroDot'
-export {default as Home } from './Home'
-export {default as Search } from './Search'
-export {default as User } from './User'
-export {default as Logo } from './Logo'
-export {default as Location } from './Location'
-export {default as Chevron } from './Chevron'
-export {default as Review } from './Review'
-export {default as Service } from './Services'
-export {default as Gallery } from './Gallery'
-export {default as Clock } from './Clock'
-export {default as Thumbs } from './Thumbs'
-export { Rotate } from './RotateIcon'
+export { default as Hamburger } from './Hamburger';
+export { default as Arrow } from './Arrow';
+export { default as DynamicLines } from './DynamicLines';
+export { default as HeroDot } from './HeroDot';
+export { default as Home } from './Home';
+export { default as Search } from './Search';
+export { default as User } from './User';
+export { default as Logo } from './Logo';
+export { default as Location } from './Location';
+export { default as Chevron } from './Chevron';
+export { default as Review } from './Review';
+export { default as Service } from './Services';
+export { default as Gallery } from './Gallery';
+export { default as Clock } from './Clock';
+export { default as Thumbs } from './Thumbs';
+export { default as Cart } from './Cart';
+export { Rotate } from './RotateIcon';

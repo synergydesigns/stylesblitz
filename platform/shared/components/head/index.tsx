@@ -1,14 +1,12 @@
-import React, { useEffect } from 'react'
-import NextHead from 'next/head'
-import GlobalStyle from './HeadStyle'
+import React, { useEffect } from 'react';
+import NextHead from 'next/head';
+import GlobalStyle from './HeadStyle';
 
-import 'antd-mobile/dist/antd-mobile.css'
-import 'antd/dist/antd.css'
-import 'react-id-swiper/lib/styles/css/swiper.css'
+import 'react-id-swiper/lib/styles/css/swiper.css';
 
-const defaultDescription = ''
-const defaultOGURL = ''
-const defaultOGImage = ''
+const defaultDescription = '';
+const defaultOGURL = '';
+const defaultOGImage = '';
 
 interface Props {
   title: string,
@@ -20,14 +18,14 @@ interface Props {
 const Head: React.FC<Props> = (props: any) => {
   useEffect(() => {
     if ('addEventListener' in document) {
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', () => {
         (window as any).FastClick.attach(document.body);
       }, false);
     }
-    if(!(window as any).Promise) {
-      document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
+    if (!(window as any).Promise) {
+      document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"></script>');
     }
-  })
+  });
 
   return (
     <>
@@ -45,7 +43,7 @@ const Head: React.FC<Props> = (props: any) => {
         <link rel="icon" href="/static/favicon.ico" />
         <link rel="stylesheet" href="/static/css/reset.css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Source+Sans+Pro:200,300,400" rel="stylesheet" />
-        <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
+        <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js" />
         <meta property="og:url" content={props.url || defaultOGURL} />
         <meta property="og:title" content={props.title || ''} />
         <meta
@@ -61,8 +59,8 @@ const Head: React.FC<Props> = (props: any) => {
       </NextHead>
       <GlobalStyle />
     </>
-  )
-}
+  );
+};
 
 
-export default Head
+export default Head;

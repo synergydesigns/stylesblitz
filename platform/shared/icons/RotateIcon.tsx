@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export enum Rotate {
   RIGHT = 'right',
@@ -14,20 +14,23 @@ export interface Props {
   height?: string
   className?: string
   fill?: string
+  // children?: React.ElementType
 }
 
 const getAngleDegree = (angle: string) => {
-  switch(angle) {
+  switch (angle) {
     case Rotate.RIGHT:
-      return '-90deg'
+      return '-90deg';
     case Rotate.LEFT:
-      return '90deg'
+      return '90deg';
     case Rotate.UP:
-      return '180deg'
+      return '180deg';
     case Rotate.DOWN:
-      return '0deg'
+      return '0deg';
+    default:
+      return '90deg';
   }
-}
+};
 
 const ChevronWrapper = styled.span<Props>`
   position: relative;
@@ -41,20 +44,20 @@ const ChevronWrapper = styled.span<Props>`
     top: 0;
     left: 0;
   }
-`
+`;
 
-const Chevron: React.FC<Props> = (props) => (
+const Chevron: React.FC<Props> = ({ children, ...props }) => (
   <ChevronWrapper {...props}>
-    {props.children}
+    {children}
   </ChevronWrapper>
-)
+);
 
 
 Chevron.defaultProps = {
   rotate: Rotate.DOWN,
   width: '10',
   height: '6',
-  className: ''
-}
+  className: '',
+};
 
-export default React.memo(Chevron)
+export default React.memo(Chevron);

@@ -1,4 +1,10 @@
 const path = require('path');
+const lessToJS = require('less-vars-to-js')
+const fs = require('fs')
+
+const themeVariables = lessToJS(
+  fs.readFileSync(path.resolve(__dirname, '../static/themes/antd-defaults.less'), 'utf8')
+)
 
 module.exports = ({ config, mode }) => {
   config.module.rules.push(
@@ -13,7 +19,21 @@ module.exports = ({ config, mode }) => {
       test: /\.scss$/,
       loaders: ['style-loader', 'css-loader', 'sass-loader'],
       include: path.resolve(__dirname, '../') 
-    }
+    },
+    {
+      test: /\.less$/,
+      use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'less-loader', options: {
+              modifyVars: themeVariables,
+              javascriptEnabled: true
+            }
+          },
+      ],
+      include: /node_modules/,
+  },
   );
   config.resolve.extensions.push('.ts', '.tsx');
   config.resolve.alias.globals = path.resolve(__dirname, '../platform/shared/global.ts')

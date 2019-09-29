@@ -3,7 +3,7 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 
 import 'antd-mobile/dist/antd-mobile.css'
-import 'react-id-swiper/lib/styles/scss/swiper.scss'
+import 'react-id-swiper/lib/styles/css/swiper.css';
 
 // automatically import all files ending in *.stories.js
 const req = require.context('../platform', true, /.stories.tsx$/);
