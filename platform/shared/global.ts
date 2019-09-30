@@ -14,6 +14,7 @@ interface Color {
   reviewLightGray: string
   pitchBlack: string
   lightBlue: string
+  lightBlueShadeOne: string
 }
 
 export const color: Color = {
@@ -31,6 +32,7 @@ export const color: Color = {
   commentDarkGray: '#999999',
   reviewLightGray: '#B0B0B0',
   lightBlue: '#D3E2F7',
+  lightBlueShadeOne: '#E9F0FB',
 };
 
 interface ZIndex {

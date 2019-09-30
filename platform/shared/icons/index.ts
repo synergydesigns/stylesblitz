@@ -15,4 +15,5 @@ export { default as Clock } from './Clock';
 export { default as Thumbs } from './Thumbs';
 export { default as Cart } from './Cart';
 export { default as DefaultAvatar } from './DefaultAvatar';
+export { default as Circle } from './Circle';
 export { Rotate } from './RotateIcon';
