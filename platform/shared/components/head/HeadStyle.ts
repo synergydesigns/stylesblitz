@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
-import 'antd-mobile/dist/antd-mobile.css';
-import 'antd/dist/antd.css';
 import 'react-id-swiper/lib/styles/css/swiper.css';
+
+import { font } from 'shared/global';
 
 export default createGlobalStyle`
 
@@ -82,7 +82,7 @@ export default createGlobalStyle`
     font-weight: normal;
   }
   body, h1, h2, h3, h4, h5, h6, p, ol, ul, input[type=text], input[type=email], button {
-    font-family: "system"
+    font-family: ${font.primary}
   }
   *, *:before, *:after {
     box-sizing: inherit;

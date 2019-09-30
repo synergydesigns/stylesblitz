@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import NextHead from 'next/head';
 import GlobalStyle from './HeadStyle';
 
-import 'react-id-swiper/lib/styles/css/swiper.css';
-
 const defaultDescription = '';
 const defaultOGURL = '';
 const defaultOGImage = '';
