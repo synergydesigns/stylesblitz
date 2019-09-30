@@ -14,4 +14,5 @@ export { default as Gallery } from './Gallery';
 export { default as Clock } from './Clock';
 export { default as Thumbs } from './Thumbs';
 export { default as Cart } from './Cart';
+export { default as DefaultAvatar } from './DefaultAvatar';
 export { Rotate } from './RotateIcon';
