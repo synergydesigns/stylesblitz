@@ -81,7 +81,8 @@ export default createGlobalStyle`
     padding: 0;
     font-weight: normal;
   }
-  body, h1, h2, h3, h4, h5, h6, p, ol, ul, input[type=text], input[type=email], button {
+
+  body, h1, h2, h3, h4, h5, h6, p, ol, ul, input[type=text], input[type=email], button, textarea, input[type=search] {
     font-family: ${font.primary}
   }
   *, *:before, *:after {

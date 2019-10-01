@@ -10,13 +10,11 @@ const ListItem = styled(List.Item)`
     color: ${color.black};
     font: 500 16px/22px ${font.primary};
     padding-top: 0px;
-    font-style: meduim;
   }
 
   &.am-list-item .am-list-line-multiple {
-    color: green
-    /* padding-top: 5px; */
-    /* padding-bottom: 5px; */
+    color: green;
+    padding: 0;
   }
 
   &.am-list-item .am-list-line .am-list-extra {
