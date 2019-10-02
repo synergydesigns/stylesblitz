@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import ImagePicker from 'antd-mobile/lib/image-picker';
-import WingBlank from 'antd-mobile/lib/wing-blank';
+import { WingBlank, ImagePicker } from 'antd-mobile';
 
 const CustomImagePicker: React.FC = () => {
   const [files, setFiles] = useState([]);

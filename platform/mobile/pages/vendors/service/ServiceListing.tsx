@@ -1,5 +1,5 @@
 import React from 'react';
-import WhiteSpace from 'antd-mobile/lib/white-space';
+import { WhiteSpace } from 'antd-mobile';
 
 import shortId from 'lib/utils/shortId';
 import { ListItem } from 'shared/components/Service';
