@@ -12,7 +12,7 @@ const DefaultAvatar: React.FC<Props> = ({
   color1, color2, color4, color3,
 }) => (
   <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <mask id="mask0" maskUnits="userSpaceOnUse" width="50" height="50">
+    <mask id="mask0" x="0" y="0" width="50" height="50">
       <circle cx="25" cy="25" r="25" fill={color1} />
     </mask>
     <g mask="url(#mask0)">

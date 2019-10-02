@@ -51,6 +51,10 @@ const AutoComplete: React.FC<Props> = ({ data, onselect, onchange }) => {
     if (formValue.length > 0) {
       setShowDropDown(true);
     }
+
+    if (!formValue) {
+      setShowDropDown(false);
+    }
   };
 
   const onItemClicked = (selectedValue) => {

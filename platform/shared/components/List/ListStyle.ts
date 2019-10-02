@@ -53,6 +53,11 @@ const ListItem = styled(List.Item)`
     color: #9A9EAD;
     font: normal 14px/19px Avenir Next;
   }
+
+  .am-list-thumb {
+    height: 100%;
+    display: flex;
+  }
 `;
 
 export const Star = styled.div`
@@ -68,10 +73,10 @@ export const Star = styled.div`
 
 
 export const SimpleListItem = styled(ListItem)`
-  padding: 5px 0 5px 15px;,
   p {
     margin: 0;
   }
+
   .am-list-item-distance {
     .am-list-item-time {
       height: 25px;
@@ -111,6 +116,10 @@ export const SimpleListItem = styled(ListItem)`
   
   .am-list-extra {
     height: 100%;
+  }
+
+  .am-list-arrow {
+    padding-left: 15px;
   }
 `;
 

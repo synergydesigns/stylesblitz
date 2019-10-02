@@ -6,7 +6,6 @@ import { color, font } from 'shared/global';
 export default styled(SearchBar)`
   &.am-search {
     padding: 0px;
-    
   }
 
   &.am-search.am-search-start .am-search-input input[type="search"] {
