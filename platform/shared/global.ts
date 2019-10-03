@@ -4,6 +4,7 @@ interface Color {
   primary: string
   secondary: string
   black: string
+  blue: string
   lightGray: string
   darkGray: string
   white: string
@@ -26,6 +27,7 @@ export const color: Color = {
   lightGray: '#aaaaaa',
   darkGray: '#D1D1D1',
   white: '#ffffff',
+  blue:'#3477DC',
   darkBlue: '#0D112B',
   yellow: '#FFE975',
   starGreen: '#59C957',
