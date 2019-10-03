@@ -13,6 +13,8 @@ interface Color {
   commentDarkGray: string
   reviewLightGray: string
   pitchBlack: string
+  lightBlue: string
+  lightBlueShadeOne: string
 }
 
 export const color: Color = {
@@ -29,6 +31,8 @@ export const color: Color = {
   starGreen: '#59C957',
   commentDarkGray: '#999999',
   reviewLightGray: '#B0B0B0',
+  lightBlue: '#D3E2F7',
+  lightBlueShadeOne: '#E9F0FB',
 };
 
 interface ZIndex {
@@ -48,7 +52,9 @@ interface Font {
 }
 
 export const font: Font = {
-  primary: '"Avenir Next", sans-serif',
+  primary: `'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+  'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol'`,
   semiPrimary: 'Nunito, sans-serif',
   secondary: 'Montserrat, sans-serif',
 };

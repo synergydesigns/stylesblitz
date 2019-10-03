@@ -1,6 +1,5 @@
 import React from 'react';
-import Flex from 'antd-mobile/lib/flex';
-import WhiteSpace from 'antd-mobile/lib/white-space';
+import { WhiteSpace, Flex } from 'antd-mobile';
 import Link from 'next/link';
 
 import { ProfileImage } from 'shared/components/Image';

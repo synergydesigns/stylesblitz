@@ -1,6 +1,5 @@
 import React from 'react';
-import Flex from 'antd-mobile/lib/flex';
-import WhiteSpace from 'antd-mobile/lib/white-space';
+import { Flex, WhiteSpace } from 'antd-mobile';
 
 import shortId from 'lib/utils/shortId';
 import { Masonry, MasonryItem } from 'shared/components/Masonry';

@@ -2,7 +2,6 @@ import { configure, addParameters } from '@storybook/react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 
-import 'antd-mobile/dist/antd-mobile.css'
 import 'react-id-swiper/lib/styles/css/swiper.css';
 
 // automatically import all files ending in *.stories.js
