@@ -1,20 +1,15 @@
 /* eslint-disable react/no-danger */
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 
 import escapeRegExp from 'lib/utils/escapeRegExp';
 import AutoCompleteInput, {
   DropDown, DropDownItem,
 } from './AutoCompleteStyle';
 
-
-interface Props {
-  data: string[]
-  onselect?: () => void
-  onchange?: () => void
-}
-
-interface DropDownProps extends Props {
+interface DropDownProps {
   value: string
+  datasource: string[]
+  onselect?: (value: string) => void
 }
 
 
@@ -32,7 +27,6 @@ const AutoCompleteDropDown: React.FC<DropDownProps> = ({ datasource, onselect, v
     ).map(data => (
       <DropDownItem
         onClick={() => onselect(data)}
-        loading="false"
       >
         <div dangerouslySetInnerHTML={{ __html: matchAndReplaceText(data, value) }} />
       </DropDownItem>
@@ -40,7 +34,17 @@ const AutoCompleteDropDown: React.FC<DropDownProps> = ({ datasource, onselect, v
   </DropDown>
 );
 
-const AutoComplete: React.FC<Props> = ({ data, onselect, onchange }) => {
+interface Props {
+  data: string[]
+  onselect?: (value: string) => void
+  onchange?: (value: string) => void
+  style?: React.CSSProperties
+}
+
+
+const AutoComplete: React.FC<Props> = ({
+  data, onselect, onchange, style,
+}) => {
   const [datasource] = useState(data);
   const [value, setValue] = useState('');
   const [showDropDown, setShowDropDown] = useState(false);
@@ -64,13 +68,13 @@ const AutoComplete: React.FC<Props> = ({ data, onselect, onchange }) => {
   };
 
   return (
-    <>
+    <Fragment>
       <AutoCompleteInput
-        dataSource={datasource}
         showCancelButton={false}
         placeholder="Find a service"
         onChange={onChange}
         value={value}
+        style={style}
       />
       {
         showDropDown
@@ -82,7 +86,7 @@ const AutoComplete: React.FC<Props> = ({ data, onselect, onchange }) => {
           />
         )
       }
-    </>
+    </Fragment>
   );
 };
 
