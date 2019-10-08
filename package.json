@@ -4,14 +4,15 @@
   "description": "styleblitz client",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && tsc --project tsconfig.server.json",
+    "dev": "yarn schema && next dev",
+    "build": "yarn schema && next build",
     "start": "cross-env NODE_ENV=production node dist/index.js",
     "storybook": "start-storybook -p 6006  -s ./ -p 9001",
     "build-storybook": "build-storybook",
     "lint": "node_modules/.bin/eslint . --ext .js,.tsx,.ts",
     "test": "jest test",
-    "apollo:generate": "apollo codegen:generate --target typescript --excludes=node_modules/* --includes=platform/shared/graphql/**/*.ts --endpoint http://127.0.0.1:3001/graphql  --tagName=gql --outputFlat=platform/shared/types --passthroughCustomScalars --customScalarsPrefix blitz"
+    "schema:download": "apollo client:download-schema schema.json  --endpoint=http://127.0.0.1:3001/graphql ",
+    "schema": "graphql-codegen --config codegen.yml"
   },
   "author": "",
   "license": "ISC",
@@ -45,8 +46,13 @@
     "swiper": "^4.5.0"
   },
   "devDependencies": {
+    "@apollo/react-common": "^3.1.2",
     "@babel/core": "^7.3.3",
     "@babel/preset-env": "^7.4.5",
+    "@graphql-codegen/cli": "^1.8.1",
+    "@graphql-codegen/typescript": "1.8.1",
+    "@graphql-codegen/typescript-operations": "1.8.1",
+    "@graphql-codegen/typescript-react-apollo": "^1.8.1",
     "@storybook/addon-a11y": "^5.1.9",
     "@storybook/addon-actions": "^5.1.9",
     "@storybook/addon-info": "^5.1.9",
@@ -72,6 +78,7 @@
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-less": "^1.0.1",
     "apollo": "^2.17.3",
+    "apollo-server": "^2.9.5",
     "babel-loader": "^8.0.5",
     "babel-plugin-import": "^1.12.2",
     "babel-plugin-require-context-hook": "^1.0.0",

@@ -1,0 +1,17 @@
+overwrite: true
+schema: "http://localhost:3001/graphql"
+documents: "platform/shared/graphql/**/*.ts"
+generates:
+  ./platform/shared/graphql/typings.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      namingConvention:
+        namingConvention:
+          typeNames: change-case#camelCase
+          enumValues: change-case#upperCase
+      withHOC: false
+      withHooks: true
+      withComponent: false
