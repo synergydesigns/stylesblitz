@@ -4,7 +4,8 @@
   "description": "styleblitz client",
   "main": "index.js",
   "scripts": {
-    "dev": "yarn schema && next dev",
+    "dev": "next dev",
+    "dev:schema": "yarn schema && next dev",
     "build": "yarn schema && next build",
     "start": "cross-env NODE_ENV=production node dist/index.js",
     "storybook": "start-storybook -p 6006  -s ./ -p 9001",
@@ -12,7 +13,8 @@
     "lint": "node_modules/.bin/eslint . --ext .js,.tsx,.ts",
     "test": "jest test",
     "schema:download": "apollo client:download-schema schema.json  --endpoint=http://127.0.0.1:3001/graphql ",
-    "schema": "graphql-codegen --config codegen.yml"
+    "schema": "graphql-codegen --config codegen.yml",
+    "server": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -95,6 +97,7 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-standard": "^4.0.0",
+    "faker": "^4.1.0",
     "import-fresh": "^3.0.0",
     "jest": "^24.8.0",
     "less": "^3.10.3",
