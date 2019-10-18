@@ -10,7 +10,7 @@ interface SimpleListProps {
 }
 
 interface WithDistanceProps extends SimpleListProps {
-  price: float
+  price: string
   distance: string
   vendor?: string
   time: string
@@ -19,7 +19,6 @@ interface WithDistanceProps extends SimpleListProps {
 
 SimpleListItem.defaultProps = {
   onClick: () => {},
-  price: 80000,
 };
 
 const SimpleList: React.FC<SimpleListProps> = ({ title }) => (

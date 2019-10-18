@@ -1,20 +1,29 @@
 import React from 'react';
-import { Button, NavBar, Icon } from 'antd-mobile';
+import { NavBar } from 'antd-mobile';
+import styled from 'styled-components';
 
-import { Cart } from 'shared/icons';
+import { Cart, Arrow } from 'shared/icons';
+
+const Nav = styled(NavBar)`
+  .am-navbar-left {
+    padding-left: 0px;
+  }
+
+  .am-navbar-right {
+    margin-right: 0;
+  }
+`;
 
 const SearchHeader: React.FC = () => (
-  <NavBar
-    mode="dark"
-    icon={<Icon type="left" />}
-    onLeftClick={() => console.info('onLeftClick')}
+  <Nav
+    mode="light"
+    icon={<Arrow />}
     rightContent={[
       <Cart key="0" />,
     ]}
   >
-Search
-    <Button type="primary">default</Button>
-  </NavBar>
+  Search
+  </Nav>
 );
 
 export default SearchHeader;

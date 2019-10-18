@@ -16,7 +16,7 @@ interface Options {
 
 function create(initialState: any, { getToken }: Options) {
   const httpLink = createHttpLink({
-    uri: 'http://127.0.0.1:3001/graphql',
+    uri: 'http://127.0.0.1:4000',
     fetch: isBrowser ? fetch : isoFetch,
   });
 

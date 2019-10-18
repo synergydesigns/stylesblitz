@@ -9,17 +9,20 @@ const ListItem = styled(List.Item)`
   .am-list-content {
     color: ${color.black};
     font: 500 16px/22px ${font.primary};
-    padding-top: 0px;
+    padding: 0px;
+  }
+
+  &.am-list-item {
+    padding-left: 0;
   }
 
   &.am-list-item .am-list-line-multiple {
-    color: green;
-    padding: 0;
+    padding: 5px 0;
   }
 
   &.am-list-item .am-list-line .am-list-extra {
     position: absolute;
-    right: 15px;
+    right: 0;
   }
 
   .am-list-item-label {
