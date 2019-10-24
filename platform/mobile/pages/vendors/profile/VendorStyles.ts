@@ -3,14 +3,17 @@ import { color, font } from 'shared/global';
 
 export const VendProfileHeader = styled.div`
   padding-top: 50px;
-  
-  .profile-header__back {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-  }
 `;
-
+export const BackDiv = styled.div`
+  position: absolute;
+  top: 20px;
+  left: 20px;
+`;
+export const LikeDiv = styled.div`
+  position: absolute;
+  top: 20px;
+  margin-left: 140px;
+`;
 export const TextWithIcon = styled.div`
   color: ${color.black};
   display: flex;
@@ -74,4 +77,14 @@ export const ProfileInfo = styled.div`
   display: block;
   width: 100%;
   text-align: center;
+`;
+
+export const BorderDiv = styled.div`
+margin-top: 70px;
+position: absolute;
+width: 330px;
+height: 118px;
+background: #FFFFFF;
+border-radius: 3px;
+text-align: center;
 `;

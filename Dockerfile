@@ -7,6 +7,6 @@ COPY . /var/www/lookblitz
 
 WORKDIR /var/www/lookblitz
 
-RUN curl -o- -L https://yarnpkg.com/install.sh | bash
+RUN curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.19.0
 
 RUN ["yarn", "install"]
