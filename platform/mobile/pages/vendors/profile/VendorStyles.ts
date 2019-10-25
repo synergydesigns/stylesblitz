@@ -12,7 +12,7 @@ export const BackDiv = styled.div`
 export const LikeDiv = styled.div`
   position: absolute;
   top: 20px;
-  margin-left: 140px;
+  right: 20px;
 `;
 export const TextWithIcon = styled.div`
   color: ${color.black};
