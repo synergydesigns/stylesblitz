@@ -7,14 +7,15 @@
     "dev": "next dev",
     "dev:schema": "yarn schema && next dev",
     "build": "yarn schema && next build",
-    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "start": "next start -p $PORT",
     "storybook": "start-storybook -p 6006  -s ./ -p 9001",
     "build-storybook": "build-storybook",
     "lint": "node_modules/.bin/eslint . --ext .js,.tsx,.ts",
     "test": "jest test",
     "schema:download": "apollo client:download-schema schema.json  --endpoint=http://127.0.0.1:3001/graphql ",
     "schema": "graphql-codegen --config codegen.yml",
-    "server": "node server.js"
+    "server": "node server.js",
+    "heroku-postbuild": "yarn run build"
   },
   "author": "",
   "license": "ISC",
