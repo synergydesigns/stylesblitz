@@ -20,5 +20,4 @@ yarn-error.log*
 
 
 #codegen typings
-platform/shared/graphql/typings.ts
 schema.json
