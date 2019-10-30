@@ -11,11 +11,11 @@ import {
 import { color } from '../../../shared/global';
 import { NavBarWrapper } from './TabStyle';
 
-type Props = {
+interface Props {
   router: SingletonRouter
 }
 
-const Tab: React.FC = ({ props }) => (
+const Tab: React.FC<Props> = props => (
   <NavBarWrapper>
     <TabBar
       unselectedTintColor="#949494"
