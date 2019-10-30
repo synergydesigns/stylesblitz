@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "dev:schema": "yarn schema && next dev",
-    "build": "yarn schema && next build",
+    "build": "next build",
     "start": "next start -p $PORT",
     "storybook": "start-storybook -p 6006  -s ./ -p 9001",
     "build-storybook": "build-storybook",
