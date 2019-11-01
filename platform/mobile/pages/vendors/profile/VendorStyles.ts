@@ -1,19 +1,20 @@
 import styled from 'styled-components';
 import { color, font } from 'shared/global';
 
+
+
 export const VendProfileHeader = styled.div`
   padding-top: 50px;
 `;
-export const BackDiv = styled.div`
+export const IconDiv = styled.div<{ top?: string, left?: string, right?: string }>`
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: ${({ top }) => top};
+  left: ${({ left }) => left};
+  right: ${({ right }) => right};
 `;
-export const LikeDiv = styled.div`
-  position: absolute;
-  top: 20px;
-  right: 20px;
-`;
+IconDiv.defaultProps = {
+  top: '20px',
+};
 export const TextWithIcon = styled.div`
   color: ${color.black};
   display: flex;
@@ -80,11 +81,13 @@ export const ProfileInfo = styled.div`
 `;
 
 export const BorderDiv = styled.div`
-margin-top: 70px;
-position: absolute;
-width: 330px;
-height: 118px;
-background: #FFFFFF;
-border-radius: 3px;
-text-align: center;
+  margin-top: 70px;
+  position: absolute;
+  width: 340px;
+  height: 118px;
+  background: #FFFFFF;
+  border-radius: 3px;
+  text-align: left;
+  padding-left: 24px;
+  padding-top: 13px;
 `;

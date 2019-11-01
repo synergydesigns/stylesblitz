@@ -9,8 +9,8 @@ export const ProfileImage = styled.div<{ width?: string, height?: string, image:
 `;
 
 ProfileImage.defaultProps = {
-  width: '3750px',
-  height: '286px',
+  width: '550px',
+  height: '328px',
 };
 
 export const Image = styled(ProfileImage)`

@@ -17,5 +17,5 @@ export { default as Cart } from './Cart';
 export { default as DefaultAvatar } from './DefaultAvatar';
 export { default as Circle } from './Circle';
 export { default as Like } from './Like';
-export { default as Back } from './Back';
+export { default as Back } from './BackArrow';
 export { Rotate } from './RotateIcon';

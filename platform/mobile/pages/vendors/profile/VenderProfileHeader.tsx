@@ -5,26 +5,26 @@ import Link from 'next/link';
 import { ProfileImage } from 'shared/components/Image';
 import { Back, Like } from 'shared/icons';
 import { P } from 'shared/components/Text';
-import { VendProfileHeader, BackDiv, LikeDiv, BorderDiv } from './VendorStyles';
+import { VendProfileHeader, IconDiv, BorderDiv} from './VendorStyles';
 
 const VendorProfileHeader: React.FC<{ url?: string, alt?: string }> = ({ url }) => (
   <VendProfileHeader>
     <Flex>
       <Link href="/">
-        <Flex.Item><BackDiv><Back /></BackDiv></Flex.Item>
+        <Flex.Item><IconDiv left="20px"><Back /></IconDiv></Flex.Item>
       </Link>
-      <Flex.Item><LikeDiv><Like /></LikeDiv></Flex.Item>
+      <Flex.Item><IconDiv right="20px"><Like /></IconDiv></Flex.Item>
     </Flex>
-    <Flex justify="center" align="center">
+    <Flex justify="center">
       <ProfileImage image={url} />
-      <BorderDiv>
-        <Flex justify="center">
-          <P size="23px" lineHeight="33px" weight="bold">Sara Noor Spa Services</P>
+      <BorderDiv >
+        <Flex>
+          <P size="24px" lineHeight="33px" weight="600">Sara Noor Spa Services</P>
         </Flex>
         <P size="10px">12 Joy Cresent, Lekki Phase 1, Lekki, Lagos.</P>
         <WhiteSpace size="sm" />
-        <Flex justify="center" align="center">
-          <P weight="normal"> Rating 4.0  /256 Reviews</P>
+        <Flex>
+          <P weight="bold"> Rating 4.0  /256 Reviews</P>
         </Flex>
         <WhiteSpace size="lg" />
       </BorderDiv>
