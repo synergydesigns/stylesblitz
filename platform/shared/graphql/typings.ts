@@ -66,6 +66,45 @@ export type AssetUploadOutput = {
   assetURL: Scalars['String'],
 };
 
+export type Autocomplete = {
+   __typename?: 'Autocomplete',
+  type?: Maybe<Scalars['String']>,
+  query?: Maybe<Scalars['String']>,
+  url?: Maybe<Scalars['String']>,
+};
+
+export type Cart = {
+   __typename?: 'Cart',
+  id: Scalars['ID'],
+  userId?: Maybe<Scalars['String']>,
+  vendorID?: Maybe<Scalars['String']>,
+  createdAt?: Maybe<Scalars['Timestamp']>,
+  updatedAt?: Maybe<Scalars['Timestamp']>,
+  cartType?: Maybe<CartType>,
+  type?: Maybe<Scalars['String']>,
+  quantity?: Maybe<Scalars['Int']>,
+};
+
+export type CartInput = {
+  vendorID: Scalars['String'],
+  quantity: Scalars['Int'],
+  type: Scalars['String'],
+  typeID: Scalars['String'],
+};
+
+export type CartType = {
+   __typename?: 'CartType',
+  product?: Maybe<Product>,
+  service?: Maybe<Service>,
+};
+
+export type CartUpdateInput = {
+  cartID: Scalars['String'],
+  quantity: Scalars['Int'],
+  type: Scalars['String'],
+  typeID: Scalars['String'],
+};
+
 export enum DurationType {
   Days = 'days',
   Hours = 'hours',
@@ -77,9 +116,13 @@ export type Mutation = {
   createAccount?: Maybe<Asset>,
   login?: Maybe<Scalars['String']>,
   createPresignedURL?: Maybe<Array<Maybe<AssetUploadOutput>>>,
+  createCart?: Maybe<Cart>,
+  updateCart?: Maybe<Cart>,
+  deleteCart?: Maybe<Scalars['Boolean']>,
   createVendorCategory?: Maybe<VendorCategory>,
   updateVendorCategory?: Maybe<VendorCategory>,
   deleteVendorCategory?: Maybe<Scalars['Boolean']>,
+  createProduct?: Maybe<Product>,
   createService?: Maybe<Service>,
   updateService?: Maybe<Service>,
   deleteService?: Maybe<Scalars['Boolean']>,
@@ -104,6 +147,21 @@ export type MutationCreatePresignedUrlArgs = {
 };
 
 
+export type MutationCreateCartArgs = {
+  input: CartInput
+};
+
+
+export type MutationUpdateCartArgs = {
+  input: CartUpdateInput
+};
+
+
+export type MutationDeleteCartArgs = {
+  cart_id: Scalars['ID']
+};
+
+
 export type MutationCreateVendorCategoryArgs = {
   input: VendorCategoryInput
 };
@@ -117,6 +175,11 @@ export type MutationUpdateVendorCategoryArgs = {
 
 export type MutationDeleteVendorCategoryArgs = {
   categoryId: Scalars['Int']
+};
+
+
+export type MutationCreateProductArgs = {
+  input: ProductInput
 };
 
 
@@ -135,11 +198,33 @@ export type MutationDeleteServiceArgs = {
   serviceId: Scalars['Int']
 };
 
+export type Product = {
+   __typename?: 'Product',
+  id: Scalars['ID'],
+  name?: Maybe<Scalars['String']>,
+  categoryId?: Maybe<Scalars['String']>,
+  vendorId?: Maybe<Scalars['String']>,
+  available?: Maybe<Scalars['Int']>,
+  hot?: Maybe<Scalars['Boolean']>,
+  brandId?: Maybe<Scalars['String']>,
+};
+
+export type ProductInput = {
+  Name: Scalars['String'],
+  Available: Scalars['Int'],
+  VendorID?: Maybe<Scalars['String']>,
+  CategoryID?: Maybe<Scalars['String']>,
+  BrandID?: Maybe<Scalars['String']>,
+};
+
 export type Query = {
    __typename?: 'Query',
   user?: Maybe<User>,
   getAsset?: Maybe<Asset>,
+  getSuggestions?: Maybe<Array<Maybe<Autocomplete>>>,
+  getAllCarts?: Maybe<Array<Maybe<Cart>>>,
   getAllCategories?: Maybe<Array<Maybe<VendorCategory>>>,
+  getProductsByVendor?: Maybe<Array<Maybe<Product>>>,
   getAllVendorService?: Maybe<Array<Maybe<Service>>>,
   searchServices?: Maybe<Array<Maybe<Service>>>,
 };
@@ -155,8 +240,23 @@ export type QueryGetAssetArgs = {
 };
 
 
+export type QueryGetSuggestionsArgs = {
+  query: Scalars['String']
+};
+
+
+export type QueryGetAllCartsArgs = {
+  user_id?: Maybe<Scalars['ID']>
+};
+
+
 export type QueryGetAllCategoriesArgs = {
   vendorId?: Maybe<Scalars['String']>
+};
+
+
+export type QueryGetProductsByVendorArgs = {
+  vendorID: Scalars['String']
 };
 
 
@@ -202,6 +302,15 @@ export type ServiceInputUpdate = {
   price?: Maybe<Scalars['Float']>,
   trending?: Maybe<Scalars['Boolean']>,
   CategoryId?: Maybe<Scalars['Int']>,
+};
+
+export type Shop = {
+   __typename?: 'Shop',
+  id: Scalars['ID'],
+  name?: Maybe<Scalars['String']>,
+  vendorId?: Maybe<Scalars['Int']>,
+  createdAt?: Maybe<Scalars['Timestamp']>,
+  updatedAt?: Maybe<Scalars['Timestamp']>,
 };
 
 export enum SortPrice {
@@ -260,6 +369,19 @@ export type VendorCategoryInputUpdate = {
   description?: Maybe<Scalars['String']>,
 };
 
+export type SuggestionsQueryVariables = {
+  query: Scalars['String']
+};
+
+
+export type SuggestionsQuery = (
+  { __typename?: 'Query' }
+  & { getSuggestions: Maybe<Array<Maybe<(
+    { __typename?: 'Autocomplete' }
+    & Pick<Autocomplete, 'type' | 'query' | 'url'>
+  )>>> }
+);
+
 export type SearchServicesQueryVariables = {
   name: Scalars['String']
 };
@@ -287,6 +409,41 @@ export type UserDataQuery = (
 );
 
 
+export const SuggestionsDocument = gql`
+    query suggestions($query: String!) {
+  getSuggestions(query: $query) {
+    type
+    query
+    url
+  }
+}
+    `;
+
+/**
+ * __useSuggestionsQuery__
+ *
+ * To run a query within a React component, call `useSuggestionsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useSuggestionsQuery` returns an object from Apollo Client that contains loading, error, and data properties 
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useSuggestionsQuery({
+ *   variables: {
+ *      query: // value for 'query'
+ *   },
+ * });
+ */
+export function useSuggestionsQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<SuggestionsQuery, SuggestionsQueryVariables>) {
+        return ApolloReactHooks.useQuery<SuggestionsQuery, SuggestionsQueryVariables>(SuggestionsDocument, baseOptions);
+      }
+export function useSuggestionsLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<SuggestionsQuery, SuggestionsQueryVariables>) {
+          return ApolloReactHooks.useLazyQuery<SuggestionsQuery, SuggestionsQueryVariables>(SuggestionsDocument, baseOptions);
+        }
+export type SuggestionsQueryHookResult = ReturnType<typeof useSuggestionsQuery>;
+export type SuggestionsLazyQueryHookResult = ReturnType<typeof useSuggestionsLazyQuery>;
+export type SuggestionsQueryResult = ApolloReactCommon.QueryResult<SuggestionsQuery, SuggestionsQueryVariables>;
 export const SearchServicesDocument = gql`
     query searchServices($name: String!) {
   searchServices(name: $name) {

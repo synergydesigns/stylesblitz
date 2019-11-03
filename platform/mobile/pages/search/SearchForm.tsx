@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Sticky } from 'react-sticky';
+import { useDebounce } from 'react-use';
 
 import Autocomplete from 'shared/components/Form/Input/AutoComplete';
-import { useSearchServicesQuery } from 'shared/graphql/typings';
+import { useSuggestionsLazyQuery } from 'shared/graphql/typings';
 
 const stickyStyle = {
   zIndex: 5,
@@ -14,10 +15,29 @@ const stickyStyle = {
 
 const SearchForm: React.FC = () => {
   const [value, setValue] = useState('');
+  const [debounceValue, setDebounceValue] = useState('');
+  const [loadSuggestions, { data }] = useSuggestionsLazyQuery();
 
-  useSearchServicesQuery({
-    variables: { name: value },
-  });
+  useDebounce(() => {
+    setDebounceValue(value);
+  }, 1000, [value]);
+
+  if (debounceValue) {
+    setDebounceValue('');
+    loadSuggestions({
+      variables: { query: debounceValue },
+    });
+  }
+
+  const suggestions = (data && data.getSuggestions) ? data.getSuggestions : [];
+
+  const formatedSuggestions = suggestions.map(suggestion => ({
+    label: suggestion.query, value: suggestion,
+  }));
+
+  const onselect = () => {
+    // handle selected value
+  };
 
   return (
     <Sticky topOffset={60}>
@@ -25,7 +45,8 @@ const SearchForm: React.FC = () => {
         <div style={{ ...style, ...stickyStyle }}>
           <Autocomplete
             onchange={setValue}
-            data={[].map(({ name }) => name)}
+            data={formatedSuggestions}
+            onselect={onselect}
           />
         </div>
       )}

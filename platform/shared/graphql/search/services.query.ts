@@ -8,9 +8,6 @@ export default gql`
       ID
       price
       name
-      rating
-      lat
-      lng
     }
   }
 `;

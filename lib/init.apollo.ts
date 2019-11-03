@@ -10,13 +10,13 @@ import isBrowser from './isBrowser';
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null;
 
 interface Options {
-  getToken: () => string
+getToken: () => string
   fetchOptions?: any
 }
 
 function create(initialState: any, { getToken }: Options) {
   const httpLink = createHttpLink({
-    uri: 'http://127.0.0.1:4000',
+    uri: 'http://127.0.0.1:3001/graphql',
     fetch: isBrowser ? fetch : isoFetch,
   });
 
