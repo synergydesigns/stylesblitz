@@ -6,12 +6,16 @@ import AutoCompleteInput, {
   DropDown, DropDownItem,
 } from './AutoCompleteStyle';
 
-interface DropDownProps {
-  value: string
-  datasource: string[]
-  onselect?: (value: string) => void
+interface DataSource {
+  label: string
+  value: any
 }
 
+interface DropDownProps {
+  value: string
+  datasource?: DataSource[]
+  onselect?: (label: string, value: any) => void
+}
 
 const matchAndReplaceText = (text: string, value: string) => text.replace(
   RegExp(escapeRegExp(value), 'gmi'),
@@ -23,29 +27,28 @@ const matchFound = (text: string, value: string) => RegExp(escapeRegExp(value), 
 const AutoCompleteDropDown: React.FC<DropDownProps> = ({ datasource, onselect, value }) => (
   <DropDown>
     {datasource.filter(
-      data => matchFound(data, value),
+      data => matchFound(data.label, value),
     ).map(data => (
       <DropDownItem
-        onClick={() => onselect(data)}
+        key={data.label}
+        onClick={() => onselect(data.label, data.value)}
       >
-        <div dangerouslySetInnerHTML={{ __html: matchAndReplaceText(data, value) }} />
+        <div dangerouslySetInnerHTML={{ __html: matchAndReplaceText(data.label, value) }} />
       </DropDownItem>
     ))}
   </DropDown>
 );
 
 interface Props {
-  data: string[]
+  data: DataSource[]
   onselect?: (value: string) => void
   onchange?: (value: string) => void
   style?: React.CSSProperties
 }
 
-
 const AutoComplete: React.FC<Props> = ({
   data, onselect, onchange, style,
 }) => {
-  const [datasource] = useState(data);
   const [value, setValue] = useState('');
   const [showDropDown, setShowDropDown] = useState(false);
 
@@ -61,8 +64,8 @@ const AutoComplete: React.FC<Props> = ({
     }
   };
 
-  const onItemClicked = (selectedValue) => {
-    setValue(selectedValue);
+  const onItemClicked = (label, selectedValue) => {
+    setValue(label);
     onselect(selectedValue);
     setShowDropDown(false);
   };
@@ -77,11 +80,11 @@ const AutoComplete: React.FC<Props> = ({
         style={style}
       />
       {
-        showDropDown
+        (showDropDown && Boolean(data.length))
         && (
           <AutoCompleteDropDown
             value={value}
-            datasource={datasource}
+            datasource={data}
             onselect={onItemClicked}
           />
         )
