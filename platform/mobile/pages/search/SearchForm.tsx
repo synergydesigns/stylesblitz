@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Sticky } from 'react-sticky';
 import { useDebounce } from 'react-use';
 
-import Autocomplete from 'shared/components/Form/Input/AutoComplete';
+import Autocomplete from 'platform/shared/components/Form/Input/AutoComplete/AutoComplete';
 import { useSuggestionsLazyQuery } from 'shared/graphql/typings';
 
 const stickyStyle = {

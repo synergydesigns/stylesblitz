@@ -72,3 +72,7 @@ export const DropDownItem = styled(List.Item)`
     font-weight: 600
   }
 `;
+
+export const AutoCompleteWrapper = styled.div<{width?: number}>`
+
+`;

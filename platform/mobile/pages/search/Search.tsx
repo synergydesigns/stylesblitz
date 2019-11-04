@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { StickyContainer } from 'react-sticky';
 
-// import userSearch from 'shared/graphql/search/searchService';
 import SearchHeader from './SearchHeader';
 import RecentSearch from './RecentSearch';
 import TopVendors from './TopVendors';
