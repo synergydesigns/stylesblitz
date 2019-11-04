@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { ProfileImage } from 'shared/components/Image';
 import { Back, Like } from 'shared/icons';
 import { P } from 'shared/components/Text';
-import { VendProfileHeader, IconDiv, BorderDiv} from './VendorStyles';
+import { VendProfileHeader, IconDiv, BorderDiv, Span} from './VendorStyles';
 
 const VendorProfileHeader: React.FC<{ url?: string, alt?: string }> = ({ url }) => (
   <VendProfileHeader>
@@ -21,12 +21,12 @@ const VendorProfileHeader: React.FC<{ url?: string, alt?: string }> = ({ url }) 
         <Flex>
           <P size="24px" lineHeight="33px" weight="600">Sara Noor Spa Services</P>
         </Flex>
-        <P size="10px">12 Joy Cresent, Lekki Phase 1, Lekki, Lagos.</P>
-        <WhiteSpace size="sm" />
+        <P size="12px">12 Joy Cresent, Lekki Phase 1, Lekki, Lagos.</P>
+        <WhiteSpace size="xs"/>
         <Flex>
-          <P weight="bold"> Rating 4.0  /256 Reviews</P>
-        </Flex>
-        <WhiteSpace size="lg" />
+        <P><Span> Rating 4.0</Span>  /256 Reviews</P>
+        <WhiteSpace size="lg"/>
+          </Flex>
       </BorderDiv>
     </Flex>
   </VendProfileHeader>

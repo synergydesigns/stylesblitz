@@ -15,6 +15,11 @@ export const IconDiv = styled.div<{ top?: string, left?: string, right?: string 
 IconDiv.defaultProps = {
   top: '20px',
 };
+
+export const Span = styled.span`
+  font-weight: 600;
+  margin-right: 18px;
+`;
 export const TextWithIcon = styled.div`
   color: ${color.black};
   display: flex;
@@ -81,7 +86,7 @@ export const ProfileInfo = styled.div`
 `;
 
 export const BorderDiv = styled.div`
-  margin-top: 70px;
+  margin-top: 85px;
   position: absolute;
   width: 340px;
   height: 118px;
