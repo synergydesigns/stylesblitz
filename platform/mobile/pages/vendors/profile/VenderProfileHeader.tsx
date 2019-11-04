@@ -3,40 +3,37 @@ import { WhiteSpace, Flex } from 'antd-mobile';
 import Link from 'next/link';
 
 import { ProfileImage } from 'shared/components/Image';
-import { Location, Arrow } from 'shared/icons';
-import { H1 } from 'shared/components/Text';
-import StarRating from 'shared/components/StarRating';
-import ProfileDropDown from './ProfileDropDown';
-import { VendProfileHeader, TextWithIcon } from './VendorStyles';
+import { Back, Like } from 'shared/icons';
+import { P } from 'shared/components/Text';
+import { VendProfileHeader, IconDiv, BorderDiv, Span} from './VendorStyles';
 
 const VendorProfileHeader: React.FC<{ url?: string, alt?: string }> = ({ url }) => (
   <VendProfileHeader>
-    <Link href="/">
-      <Arrow className="profile-header__back" />
-    </Link>
-    <Flex justify="center" align="center">
-      <ProfileImage image={url} />
+    <Flex>
+      <Link href="/">
+        <Flex.Item><IconDiv left="20px"><Back /></IconDiv></Flex.Item>
+      </Link>
+      <Flex.Item><IconDiv right="20px"><Like /></IconDiv></Flex.Item>
     </Flex>
-    <WhiteSpace />
     <Flex justify="center">
-      <H1 size="18px" showBackGround>Utopia Hair Studio</H1>
+      <ProfileImage image={url} />
+      <BorderDiv >
+        <Flex>
+          <P size="24px" lineHeight="33px" weight="600">Sara Noor Spa Services</P>
+        </Flex>
+        <P size="12px">12 Joy Cresent, Lekki Phase 1, Lekki, Lagos.</P>
+        <WhiteSpace size="xs"/>
+        <Flex>
+        <P><Span> Rating 4.0</Span>  /256 Reviews</P>
+        <WhiteSpace size="lg"/>
+          </Flex>
+      </BorderDiv>
     </Flex>
-    <WhiteSpace />
-    <TextWithIcon>
-      <Location />
-      <p>198, Benson Street, Victoria Island, Lagos</p>
-    </TextWithIcon>
-    <WhiteSpace size="sm" />
-    <Flex justify="center" align="center">
-      <StarRating />
-    </Flex>
-    <WhiteSpace size="lg" />
-    <ProfileDropDown />
   </VendProfileHeader>
 );
 
 VendorProfileHeader.defaultProps = {
-  url: 'https://picsum.photos/id/26/450/450',
+  url: 'https://res.cloudinary.com/djdqvlwbl/image/upload/v1571954738/Rectangle_xdw4ih.png',
   alt: 'profile Image',
 };
 

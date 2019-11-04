@@ -60,6 +60,21 @@ H3.defaultProps = {
   size: '2em',
 };
 
+export const P = styled.p<Props>`
+  font: ${({
+    size, lineHeight, weight, font,
+  }) => `${weight} ${size}/${lineHeight} ${font}`};
+`;
+  P.defaultProps = {
+    size: '12px',
+    lineHeight: '16px',
+    weight: 'light',
+    font: fonts.primary,
+    backgroundColor: colors.secondary,
+    showBackGround: false,
+    color: colors.black,
+ };
+
 export default {
   H1,
 };

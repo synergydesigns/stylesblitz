@@ -1,23 +1,18 @@
 import * as React from 'react';
 import {
   Tabs,
-  WhiteSpace,
   Flex,
 } from 'antd-mobile';
 
-import { color } from 'shared/global';
-import * as Icon from 'shared/icons';
-
+import { P } from 'shared/components/Text';
 import Layout from '../../layout';
 import VendorProfileHeader from './VenderProfileHeader';
-import ServiceListing from '../service/ServiceListing';
-import VendorGallery from '../gallery/VendorGallery';
-import VendorReview from '../reviews/VendorReview';
 
 const tabs = [
-  { title: <Icon.Service /> },
-  { title: <Icon.Review /> },
-  { title: <Icon.Gallery /> },
+  { title: <P size="14px" lineHeight="20px"> Service </P> },
+  { title: <P size="14px" lineHeight="20px"> Shop </P> },
+  { title: <P size="14px" lineHeight="20px"> Gallery </P> },
+  { title: <P size="14px" lineHeight="20px"> About </P> },
 ];
 
 const VendorProfile: React.FC = () => (
@@ -28,20 +23,22 @@ const VendorProfile: React.FC = () => (
     title="Vendor profile page"
   >
     <VendorProfileHeader />
-    <WhiteSpace size="xl" />
     <Tabs
       tabs={tabs}
       initialPage={1}
-      tabBarUnderlineStyle={{ borderColor: color.primary, top: 0, bottom: 'inherit' }}
+      tabBarUnderlineStyle={{ borderColor: '#F96A6A' }}
     >
       <Flex justify="center">
-        <ServiceListing />
+        <p>Services</p>
       </Flex>
       <Flex justify="center">
-        <VendorReview />
+        <p>Shop</p>
       </Flex>
       <Flex justify="center">
-        <VendorGallery />
+        <p>Gallery</p>
+      </Flex>
+      <Flex justify="center">
+        <p>About</p>
       </Flex>
     </Tabs>
   </Layout>
