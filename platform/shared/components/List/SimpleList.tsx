@@ -2,7 +2,7 @@ import React from 'react';
 import { Flex } from 'antd-mobile';
 
 import Circle from 'shared/icons/Circle';
-import { SimpleListItem, Star, PriceWithStar } from './ListStyle';
+import { SimpleListItem, Price, Span, SimpleListItemContainer } from './ListStyle';
 
 interface SimpleListProps {
   title: string
@@ -13,8 +13,8 @@ interface WithDistanceProps extends SimpleListProps {
   price: string
   distance: string
   vendor?: string
-  time: string
-  rating: number
+  time?: string
+  rating: string
 }
 
 SimpleListItem.defaultProps = {
@@ -36,43 +36,37 @@ SimpleList.defaultProps = {
 };
 
 export const WithDistance: React.FC<WithDistanceProps> = ({
-  price, title, vendor, time, distance, rating,
+  price, title, distance, rating,
 }) => (
+  <SimpleListItemContainer>
   <SimpleListItem
     arrow="empty"
     multipleLine
     onClick={() => {}}
     extra={(
-      <PriceWithStar>
-        { <p className="am-list-item-price">{price}</p> }
-        <Star>
-          {`✩ ${rating}`}
-        </Star>
-      </PriceWithStar>
+        <Price><p>${price}</p></Price>
     )}
   >
     <Flex>
       <Flex.Item>
-        {title}
-        { vendor && (
-          <p className="am-list-item-vendor">
-            By
-            {' '}
-            { vendor }
-          </p>
-        )}
+        <p className="am-list-item-title">{title}</p>
         <Flex className="am-list-item-distance" justify="start" align="center">
-          <p className="am-list-item-time">{ time }</p>
-          <Circle />
           <p className="am-list-item-more">
+          <span className="weight">
             {distance}
             {' '}
-            away
+            mins away
+            <Span><Circle width='3.05' height='3' fill='#6C7480' /></Span>
+            </span>
+          { rating }
+          {' '} 
+          / 16 Reviews
           </p>
         </Flex>
       </Flex.Item>
     </Flex>
   </SimpleListItem>
+  </SimpleListItemContainer>
 );
 
 WithDistance.defaultProps = {

@@ -73,7 +73,19 @@ export const Star = styled.div`
   align-items: center;
   color: ${color.primary};
 `;
+export const SimpleListItemContainer = styled.div`
+  width: 100%;
+  height: 75px;
+  position: relative;
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #E5E5E5;
+  margin-bottom: 20px;
 
+  &:last-child {
+    margin-bottom: 0px;
+  }
+`;
 
 export const SimpleListItem = styled(ListItem)`
   p {
@@ -100,6 +112,7 @@ export const SimpleListItem = styled(ListItem)`
     }
 
     .am-list-item-more {
+      font: normal 12px/16px '#6C7480';
       margin-left: 0px;
     }
   }
@@ -111,10 +124,10 @@ export const SimpleListItem = styled(ListItem)`
   }
 
   .am-list-item-price {
-    font: 500 16px/22px ${font.primary};
+    font: normal 20px/20px Balthazar;
     color: ${color.black};
     position: absolute:
-    top: 0;
+    right: 22px;
   }
   
   .am-list-extra {
@@ -124,6 +137,15 @@ export const SimpleListItem = styled(ListItem)`
   .am-list-arrow {
     padding-left: 15px;
   }
+  
+  .am-list-item-title {
+    font: normal 14px/19px ${font.primary};    
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .weight{
+    font-weight:500;
+  }
 `;
 
 export const PriceWithStar = styled.div`
@@ -132,6 +154,12 @@ export const PriceWithStar = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-end;
+`;
+export const Span = styled.span`
+  margin-left: 7px;
+  margin-right: 7px;
+  top: -1px;
+  position: relative;
 `;
 
 export default ListItem;
