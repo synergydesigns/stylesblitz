@@ -7,6 +7,7 @@ import {
 import { P } from 'shared/components/Text';
 import Layout from '../../layout';
 import VendorProfileHeader from './VenderProfileHeader';
+import ServiceListing from '../service/ServiceListing';
 
 const tabs = [
   { title: <P size="14px" lineHeight="20px"> Service </P> },
@@ -29,7 +30,7 @@ const VendorProfile: React.FC = () => (
       tabBarUnderlineStyle={{ borderColor: '#F96A6A' }}
     >
       <Flex justify="center">
-        <p>Services</p>
+    <ServiceListing />
       </Flex>
       <Flex justify="center">
         <p>Shop</p>

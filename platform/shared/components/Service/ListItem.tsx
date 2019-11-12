@@ -1,36 +1,36 @@
 import React from 'react';
 
-import { Clock } from 'shared/icons';
+import { FullStop } from 'shared/icons';
 import { Image } from '../Image';
-import { ServiceListItemContainer, ServiceListItemDetails } from './ServiceStyle';
+import { ServiceListItemContainer, ServiceListItemDetails, Span } from './ServiceStyle';
 
 interface Props {
-  image: string
   name: string
   price: number
   duration: number
+  rating: string
 }
 
 const ServiceListItem: React.FC<Props> = ({
-  image, name, price, duration,
+  name, price, duration, rating
 }) => (
   <ServiceListItemContainer>
-    <Image image={image} width="100px" height="60px" />
     <ServiceListItemDetails>
       <h1 className="service-listitem__title">{ name }</h1>
-      <div className="service-listitem__time">
-        <Clock />
-        <p>
+        <p className="service-listitem__time">
+        <span className="weight">
           {duration}
           {' '}
-          hrs
+          mins away
+          <Span><FullStop /></Span>
+          </span>
+          { rating }
+          {' '} 
+          / 16 Reviews
         </p>
-      </div>
       <p className="service-listitem__price">
-        ₦
-        { price }
-      </p>
-      <button type="button" className="service-listitem__book">book</button>
+        $
+        { price }</p>
     </ServiceListItemDetails>
   </ServiceListItemContainer>
 );

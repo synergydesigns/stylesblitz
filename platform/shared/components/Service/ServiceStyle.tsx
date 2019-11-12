@@ -19,41 +19,30 @@ export const ServiceListItemContainer = styled.div`
 export const ServiceListItemDetails = styled.div`
   margin-left: 10px;
 
-  h1, p {
-    margin: 0px;
-  }
-
   .service-listitem__title {
-    font: normal 16px/22px ${font.semiPrimary};
+    font: normal 14px/19px ${font.primary};
+    font-weight: 600;
+    margin-bottom: 8px;
   }
 
   .service-listitem__time {
-    font: normal 12px/16px ${font.primary};
-    color: #999999;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    
-    p {
-      margin-left: 5px;
-    }
+    font: normal 12px/16px '#6C7480';
+    padding-bottom: 10px;
   }
 
   .service-listitem__price {
-    font: normal 12px/16px ${font.primary};
-    color: ${color.primary};
-  }
-
-  .service-listitem__book {
-    font: normal 14px/19px ${font.semiPrimary};
-    background-color: ${color.primary};
-    color: ${color.white};
-    width: 80px;
-    height: 30px;
-    border: none;
+    font: normal 20px/20px Balthazar;
     position: absolute;
-    right: 0px;
-    bottom: 15px;
-    cursor: pointer;
+    right: 22px;
+    bottom: 45px;
   }
+  .weight{
+    font-weight:500;
+  }
+`;
+export const Span = styled.span`
+  margin-left: 8.13px;
+  margin-right: 8.1px;
+  top: -2px;
+  position: relative;
 `;
