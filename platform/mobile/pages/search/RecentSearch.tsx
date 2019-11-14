@@ -6,7 +6,7 @@ import { SearchSectionContainer } from './SearchStyle';
 
 const RecentSearch: React.FC = () => (
   <SearchSectionContainer>
-    <Flex justify="between">
+    <Flex className="search-section__header" justify="between">
       <h1>recent</h1>
       <p>clear recent</p>
     </Flex>

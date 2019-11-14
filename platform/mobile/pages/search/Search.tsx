@@ -6,10 +6,12 @@ import SearchHeader from './SearchHeader';
 import RecentSearch from './RecentSearch';
 import TopVendors from './TopVendors';
 import Services from './Services';
-import SearchFrom from './SearchForm';
+import SearchFrom from './Suggestions/SearchForm';
 
 const SearchContainer = styled.div`
-  padding: 0px 22px;
+  .am-list-item, .search-section__header {
+    padding: 0px 22px;
+  }
 `;
 
 const Search: React.FC = () => (

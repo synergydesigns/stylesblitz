@@ -7,46 +7,53 @@ import { Props } from './interface';
 
 
 const AutoComplete: React.FC<Props> = ({
-  data, onselect, onchange, style,
+  data, onselect, onchange, style, onfocus, onblur, fullPage, loading, ...props
 }) => {
   const [value, setValue] = useState('');
-  const [showDropDown, setShowDropDown] = useState(false);
+  const [focused, setFocused] = useState(false);
 
   const onChange = (formValue) => {
     setValue(formValue);
     onchange(formValue);
-    if (formValue.length > 0) {
-      setShowDropDown(true);
-    }
-
-    if (!formValue) {
-      setShowDropDown(false);
-    }
   };
 
   const onItemClicked = (label, selectedValue) => {
     setValue(label);
     onselect(selectedValue);
-    setShowDropDown(false);
   };
 
+  const onFocus = () => {
+    setFocused(true);
+    if (onfocus) {
+      onfocus();
+    }
+  };
+
+  const onBlur = () => {
+    setFocused(false);
+    if (onblur) {
+      onblur();
+    }
+  };
   return (
-    <AutoCompleteWrapper style={style}>
+    <AutoCompleteWrapper style={{ ...style, width: props.width }}>
       <AutoCompleteInput
         showCancelButton={false}
-        placeholder="Find a service"
+        placeholder={props.placeholder}
         onChange={onChange}
         value={value}
+        onFocus={onFocus}
+        onBlur={onBlur}
       />
       {
-        (showDropDown && Boolean(data.length))
-        && (
-          <AutoCompleteDropDown
-            value={value}
-            datasource={data}
-            onselect={onItemClicked}
-          />
-        )
+        <AutoCompleteDropDown
+          value={value}
+          datasource={data}
+          onselect={onItemClicked}
+          focused={focused}
+          fullPage={fullPage}
+          loading={loading}
+        />
       }
     </AutoCompleteWrapper>
   );
@@ -55,6 +62,8 @@ const AutoComplete: React.FC<Props> = ({
 AutoComplete.defaultProps = {
   onselect: () => {},
   onchange: () => {},
+  placeholder: '',
+  width: '80%',
 };
 
 export default AutoComplete;

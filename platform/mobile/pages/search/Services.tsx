@@ -1,4 +1,5 @@
 import React from 'react';
+import { Flex } from 'antd-mobile';
 
 import shortId from 'lib/utils/shortId';
 import { WithDistance } from 'shared/components/List/SimpleList';
@@ -6,7 +7,9 @@ import { SearchSectionContainer } from './SearchStyle';
 
 const RecentSearch: React.FC = () => (
   <SearchSectionContainer>
-    <h1>services</h1>
+    <Flex className="search-section__header">
+      <h1>services</h1>
+    </Flex>
     <div className="search-list">
       {
         Array(10).fill(1).map(

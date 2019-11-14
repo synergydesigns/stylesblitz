@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { font, color } from '../../../shared/global';
+import { font, color, zIndex } from '../../../shared/global';
 
 export const FooterWrapper = styled.footer`
   padding: 30px 20px 60px 20px;
@@ -83,7 +83,7 @@ export const NavBarWrapper = styled.div`
   width: 100%;
   bottom: 0;
   left: 0;
-  z-index: 4;
+  z-index: ${zIndex.navBar};
   .am-tab-bar-bar  {
     background: ${color.primary}
   }

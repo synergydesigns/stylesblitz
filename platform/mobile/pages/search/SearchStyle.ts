@@ -22,7 +22,6 @@ export const SearchSectionContainer = styled.section`
         margin-bottom: 0;
       }
     }
-
   }
 `;
 
