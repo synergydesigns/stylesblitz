@@ -9,6 +9,10 @@ interface Props {
   weight?: string
   font?: string
   showBackGround?: boolean
+  align?: string
+  verticalAlign?: string
+  marginTop?: string
+  marginButtom?: string
 }
 
 export const H1 = styled.h1<Props>`
@@ -64,6 +68,11 @@ export const P = styled.p<Props>`
   font: ${({
     size, lineHeight, weight, font,
   }) => `${weight} ${size}/${lineHeight} ${font}`};
+  text-align: ${({ align }) => align}
+  vertical-align: ${({ verticalAlign }) => verticalAlign}
+  margin-top: ${({ marginTop }) => marginTop}
+  margin-buttom: ${({ marginButtom }) => marginButtom}
+
 `;
   P.defaultProps = {
     size: '12px',

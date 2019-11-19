@@ -2,7 +2,7 @@ import React from 'react';
 import { Flex } from 'antd-mobile';
 
 import Circle from 'shared/icons/Circle';
-import { SimpleListItem, Price, Span, SimpleListItemContainer } from './ListStyle';
+import { SimpleListItem, Span, SimpleListItemContainer } from './ListStyle';
 
 interface SimpleListProps {
   title: string
@@ -44,7 +44,7 @@ export const WithDistance: React.FC<WithDistanceProps> = ({
     multipleLine
     onClick={() => {}}
     extra={(
-        <Price><p>${price}</p></Price>
+        <p className="am-list-item-price">${price}</p>
     )}
   >
     <Flex>
