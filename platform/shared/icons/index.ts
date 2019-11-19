@@ -20,3 +20,7 @@ export { default as Like } from './Like';
 export { default as Back } from './BackArrow';
 export { default as FullStop } from './FullStop';
 export { Rotate } from './RotateIcon';
+export { default as Calender } from './Calender';
+export { default as Booking } from './Booking';
+export { default as Plus } from './Plus';
+
