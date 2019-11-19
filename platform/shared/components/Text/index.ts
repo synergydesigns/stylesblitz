@@ -72,7 +72,6 @@ export const P = styled.p<Props>`
   vertical-align: ${({ verticalAlign }) => verticalAlign}
   margin-top: ${({ marginTop }) => marginTop}
   margin-buttom: ${({ marginButtom }) => marginButtom}
-
 `;
   P.defaultProps = {
     size: '12px',

@@ -2,7 +2,7 @@ import * as React from 'react';
 import MobileDetect from 'mobile-detect';
 import dynamic from 'next/dynamic';
 
-const MobileServiceDetails = dynamic(() => import('../../../../platform/mobile/pages/vendors/service/ServiceDetails'));
+const MobileServiceDetails = dynamic(() => import('platform/mobile/pages/vendors/service/ServiceDetails'));
 
 interface Props {
   userAgent: string,

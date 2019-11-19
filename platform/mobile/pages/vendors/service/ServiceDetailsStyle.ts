@@ -22,17 +22,6 @@ IconDiv.defaultProps = {
   top: '20px',
 };
 
-export const BorderDiv = styled.div`
-  margin-top: 85px;
-  position: absolute;
-  width: 340px;
-  height: 118px;
-  background: #FFFFFF;
-  border-radius: 3px;
-  text-align: left;
-  padding-left: 24px;
-  padding-top: 13px;
-`;
 export const Div = styled.div<{ top?: string, left?: string, right?: string, position?: string, margintop?:string, marginbuttom?:string, marginright?:string }>`
   position: ${({ position }) => position};
   top: ${({ top }) => top};
@@ -52,10 +41,10 @@ Span.defaultProps = {
 };
 
 export const Services = styled.div`
-  border-top: 1px solid #E5E5E5;
+  border-top: 1px solid ${color.stroke};
   margin-left: 23px;
   margin-right: 22px;
 `
 export const Bookings = styled.div`
-  border-top: 1px solid #E5E5E5;
+  border-top: 1px solid ${color.stroke};
 `

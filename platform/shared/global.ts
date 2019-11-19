@@ -16,6 +16,7 @@ interface Color {
   pitchBlack: string
   lightBlue: string
   lightBlueShadeOne: string
+  stroke: string
 }
 
 export const color: Color = {
@@ -35,6 +36,7 @@ export const color: Color = {
   reviewLightGray: '#B0B0B0',
   lightBlue: '#D3E2F7',
   lightBlueShadeOne: '#E9F0FB',
+  stroke: '#F0F0F0'
 };
 
 interface ZIndex {
