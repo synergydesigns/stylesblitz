@@ -8,7 +8,6 @@ export interface DropDownProps {
   datasource?: DataSource[]
   onselect?: (label: string, value: any) => void
   fullPage?: boolean
-  focused: boolean
   loading?: boolean
 }
 

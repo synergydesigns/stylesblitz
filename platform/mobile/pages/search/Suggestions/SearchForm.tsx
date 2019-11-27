@@ -29,7 +29,6 @@ const stickyStyle: style = {
 
 const SearchForm: React.FC = () => {
   const [value, setValue] = useState('');
-  const [width, setWidth] = useState('90%');
   const [offset, setOffSet] = useState(60);
   const [debounceValue, setDebounceValue] = useState('');
   const [loadSuggestions, { data }] = useSuggestionsLazyQuery();
@@ -57,13 +56,12 @@ const SearchForm: React.FC = () => {
 
   const onfocus = () => {
     setOffSet(0);
-    setWidth('100%');
   };
 
   const onblur = () => {
-    // setWidth('90%');
     setOffSet(60);
   };
+
   return (
     <Sticky topOffset={offset}>
       {({ style }) => (
@@ -75,7 +73,7 @@ const SearchForm: React.FC = () => {
             onfocus={onfocus}
             onblur={onblur}
             placeholder="Find a service"
-            width={width}
+            width="90%"
           />
         </div>
       )}

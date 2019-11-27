@@ -1,6 +1,5 @@
 import { configure, addParameters } from '@storybook/react';
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-
+import { INITIAL_VIEWPORTS, DEFAULT_VIEWPORT } from '@storybook/addon-viewport';
 
 import 'swiper/css/swiper.css';
 
@@ -27,6 +26,13 @@ const viewports = {
   },
 };
 
-addParameters({ viewport: { ...INITIAL_VIEWPORTS, ...viewports } });
+
+addParameters({
+  viewport: {
+    viewports: { ...INITIAL_VIEWPORTS, ...viewports },
+    defaultViewport: 'iphone6',
+  },
+});
+
 configure(loadStories, module);
 

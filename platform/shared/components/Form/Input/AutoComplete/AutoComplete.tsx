@@ -1,5 +1,5 @@
 /* eslint-disable react/no-danger */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import AutoCompleteInput, { AutoCompleteWrapper } from './AutoCompleteStyle';
 import AutoCompleteDropDown from './AutoCompleteDropDown';
@@ -7,34 +7,33 @@ import { Props } from './interface';
 
 
 const AutoComplete: React.FC<Props> = ({
-  data, onselect, onchange, style, onfocus, onblur, fullPage, loading, ...props
+  data, onselect, onchange, style, fullPage, loading, ...props
 }) => {
   const [value, setValue] = useState('');
-  const [focused, setFocused] = useState(false);
+  const [source, setSource] = useState(data);
 
   const onChange = (formValue) => {
     setValue(formValue);
     onchange(formValue);
   };
 
+  useEffect(() => {
+    setSource(data);
+  }, [data]);
+
   const onItemClicked = (label, selectedValue) => {
     setValue(label);
+    setSource([]);
     onselect(selectedValue);
   };
 
   const onFocus = () => {
-    setFocused(true);
-    if (onfocus) {
-      onfocus();
-    }
+
   };
 
   const onBlur = () => {
-    setFocused(false);
-    if (onblur) {
-      onblur();
-    }
   };
+
   return (
     <AutoCompleteWrapper style={{ ...style, width: props.width }}>
       <AutoCompleteInput
@@ -48,9 +47,8 @@ const AutoComplete: React.FC<Props> = ({
       {
         <AutoCompleteDropDown
           value={value}
-          datasource={data}
+          datasource={source}
           onselect={onItemClicked}
-          focused={focused}
           fullPage={fullPage}
           loading={loading}
         />
@@ -63,7 +61,7 @@ AutoComplete.defaultProps = {
   onselect: () => {},
   onchange: () => {},
   placeholder: '',
-  width: '80%',
+  width: '100%',
 };
 
 export default AutoComplete;
