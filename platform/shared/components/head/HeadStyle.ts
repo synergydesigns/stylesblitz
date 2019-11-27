@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import 'react-id-swiper/lib/styles/css/swiper.css';
+import 'swiper/css/swiper.css';
 
 import { font } from 'shared/global';
 

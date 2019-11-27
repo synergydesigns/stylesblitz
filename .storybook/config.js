@@ -2,7 +2,7 @@ import { configure, addParameters } from '@storybook/react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 
-import 'react-id-swiper/lib/styles/css/swiper.css';
+import 'swiper/css/swiper.css';
 
 // automatically import all files ending in *.stories.js
 const req = require.context('../platform', true, /.stories.tsx$/);

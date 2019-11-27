@@ -42,11 +42,12 @@ export default styled(SearchBar)`
   }
 `;
 
-export const DropDown = styled.div`
+export const DropDown = styled.div<{ customHeight: string }>`
   background-color: ${color.white};
   box-shadow: 0px 4px 70px rgba(0, 0, 0, 0.05);
   border-radius: 3px;
   transition: .5s;
+  height: ${({ customHeight }) => customHeight};
 `;
 
 export const DropDownItem = styled(List.Item)`
