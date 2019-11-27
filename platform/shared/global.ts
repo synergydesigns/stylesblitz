@@ -27,7 +27,7 @@ export const color: Color = {
   lightGray: '#aaaaaa',
   darkGray: '#D1D1D1',
   white: '#ffffff',
-  blue:'#3477DC',
+  blue: '#3477DC',
   darkBlue: '#0D112B',
   yellow: '#FFE975',
   starGreen: '#59C957',
@@ -40,11 +40,13 @@ export const color: Color = {
 interface ZIndex {
   modalOverlay: number,
   modal: number
+  navBar: number
 }
 
 export const zIndex: ZIndex = {
   modalOverlay: 9,
   modal: 10,
+  navBar: 100,
 };
 
 interface Font {

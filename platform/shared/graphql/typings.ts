@@ -126,6 +126,8 @@ export type Mutation = {
   createService?: Maybe<Service>,
   updateService?: Maybe<Service>,
   deleteService?: Maybe<Scalars['Boolean']>,
+  addSuggestion?: Maybe<Array<Maybe<Suggestion>>>,
+  addTodo?: Maybe<Scalars['Boolean']>,
 };
 
 
@@ -198,6 +200,16 @@ export type MutationDeleteServiceArgs = {
   serviceId: Scalars['Int']
 };
 
+
+export type MutationAddSuggestionArgs = {
+  input?: Maybe<Array<Maybe<SuggestionInput>>>
+};
+
+
+export type MutationAddTodoArgs = {
+  name?: Maybe<Scalars['String']>
+};
+
 export type Product = {
    __typename?: 'Product',
   id: Scalars['ID'],
@@ -227,6 +239,8 @@ export type Query = {
   getProductsByVendor?: Maybe<Array<Maybe<Product>>>,
   getAllVendorService?: Maybe<Array<Maybe<Service>>>,
   searchServices?: Maybe<Array<Maybe<Service>>>,
+  todos?: Maybe<Array<Maybe<Todo>>>,
+  visibilityFilter?: Maybe<Scalars['Boolean']>,
 };
 
 
@@ -323,6 +337,26 @@ export enum SortRating {
   Lowest = 'LOWEST'
 }
 
+export type Suggestion = {
+   __typename?: 'Suggestion',
+  type?: Maybe<Scalars['String']>,
+  query?: Maybe<Scalars['String']>,
+  url?: Maybe<Scalars['String']>,
+};
+
+export type SuggestionInput = {
+  type?: Maybe<Scalars['String']>,
+  query?: Maybe<Scalars['String']>,
+  url?: Maybe<Scalars['String']>,
+};
+
+
+export type Todo = {
+   __typename?: 'Todo',
+  id?: Maybe<Scalars['String']>,
+  name?: Maybe<Scalars['String']>,
+  completed?: Maybe<Scalars['Boolean']>,
+};
 
 export type User = {
    __typename?: 'User',
@@ -369,6 +403,29 @@ export type VendorCategoryInputUpdate = {
   description?: Maybe<Scalars['String']>,
 };
 
+export type SearchServicesQueryVariables = {
+  name: Scalars['String']
+};
+
+
+export type SearchServicesQuery = (
+  { __typename?: 'Query' }
+  & { searchServices: Maybe<Array<Maybe<(
+    { __typename?: 'Service' }
+    & Pick<Service, 'ID' | 'price' | 'name'>
+  )>>> }
+);
+
+export type AddSuggestionsMutationVariables = {
+  name: Scalars['String']
+};
+
+
+export type AddSuggestionsMutation = (
+  { __typename?: 'Mutation' }
+  & Pick<Mutation, 'addTodo'>
+);
+
 export type SuggestionsQueryVariables = {
   query: Scalars['String']
 };
@@ -382,16 +439,25 @@ export type SuggestionsQuery = (
   )>>> }
 );
 
-export type SearchServicesQueryVariables = {
+export type AddTodoMutationVariables = {
   name: Scalars['String']
 };
 
 
-export type SearchServicesQuery = (
+export type AddTodoMutation = (
+  { __typename?: 'Mutation' }
+  & Pick<Mutation, 'addTodo'>
+);
+
+export type Unnamed_1_QueryVariables = {};
+
+
+export type Unnamed_1_Query = (
   { __typename?: 'Query' }
-  & { searchServices: Maybe<Array<Maybe<(
-    { __typename?: 'Service' }
-    & Pick<Service, 'ID' | 'price' | 'name'>
+  & Pick<Query, 'visibilityFilter'>
+  & { todos: Maybe<Array<Maybe<(
+    { __typename: 'Todo' }
+    & Pick<Todo, 'id' | 'name' | 'completed'>
   )>>> }
 );
 
@@ -409,41 +475,6 @@ export type UserDataQuery = (
 );
 
 
-export const SuggestionsDocument = gql`
-    query suggestions($query: String!) {
-  getSuggestions(query: $query) {
-    type
-    query
-    url
-  }
-}
-    `;
-
-/**
- * __useSuggestionsQuery__
- *
- * To run a query within a React component, call `useSuggestionsQuery` and pass it any options that fit your needs.
- * When your component renders, `useSuggestionsQuery` returns an object from Apollo Client that contains loading, error, and data properties 
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useSuggestionsQuery({
- *   variables: {
- *      query: // value for 'query'
- *   },
- * });
- */
-export function useSuggestionsQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<SuggestionsQuery, SuggestionsQueryVariables>) {
-        return ApolloReactHooks.useQuery<SuggestionsQuery, SuggestionsQueryVariables>(SuggestionsDocument, baseOptions);
-      }
-export function useSuggestionsLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<SuggestionsQuery, SuggestionsQueryVariables>) {
-          return ApolloReactHooks.useLazyQuery<SuggestionsQuery, SuggestionsQueryVariables>(SuggestionsDocument, baseOptions);
-        }
-export type SuggestionsQueryHookResult = ReturnType<typeof useSuggestionsQuery>;
-export type SuggestionsLazyQueryHookResult = ReturnType<typeof useSuggestionsLazyQuery>;
-export type SuggestionsQueryResult = ApolloReactCommon.QueryResult<SuggestionsQuery, SuggestionsQueryVariables>;
 export const SearchServicesDocument = gql`
     query searchServices($name: String!) {
   searchServices(name: $name) {
@@ -479,6 +510,101 @@ export function useSearchServicesLazyQuery(baseOptions?: ApolloReactHooks.LazyQu
 export type SearchServicesQueryHookResult = ReturnType<typeof useSearchServicesQuery>;
 export type SearchServicesLazyQueryHookResult = ReturnType<typeof useSearchServicesLazyQuery>;
 export type SearchServicesQueryResult = ApolloReactCommon.QueryResult<SearchServicesQuery, SearchServicesQueryVariables>;
+export const AddSuggestionsDocument = gql`
+    mutation addSuggestions($name: String!) {
+  addTodo(name: $name) @client
+}
+    `;
+export type AddSuggestionsMutationFn = ApolloReactCommon.MutationFunction<AddSuggestionsMutation, AddSuggestionsMutationVariables>;
+
+/**
+ * __useAddSuggestionsMutation__
+ *
+ * To run a mutation, you first call `useAddSuggestionsMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useAddSuggestionsMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [addSuggestionsMutation, { data, loading, error }] = useAddSuggestionsMutation({
+ *   variables: {
+ *      name: // value for 'name'
+ *   },
+ * });
+ */
+export function useAddSuggestionsMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<AddSuggestionsMutation, AddSuggestionsMutationVariables>) {
+        return ApolloReactHooks.useMutation<AddSuggestionsMutation, AddSuggestionsMutationVariables>(AddSuggestionsDocument, baseOptions);
+      }
+export type AddSuggestionsMutationHookResult = ReturnType<typeof useAddSuggestionsMutation>;
+export type AddSuggestionsMutationResult = ApolloReactCommon.MutationResult<AddSuggestionsMutation>;
+export type AddSuggestionsMutationOptions = ApolloReactCommon.BaseMutationOptions<AddSuggestionsMutation, AddSuggestionsMutationVariables>;
+export const SuggestionsDocument = gql`
+    query suggestions($query: String!) {
+  getSuggestions(query: $query) {
+    type
+    query
+    url
+  }
+}
+    `;
+
+/**
+ * __useSuggestionsQuery__
+ *
+ * To run a query within a React component, call `useSuggestionsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useSuggestionsQuery` returns an object from Apollo Client that contains loading, error, and data properties 
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useSuggestionsQuery({
+ *   variables: {
+ *      query: // value for 'query'
+ *   },
+ * });
+ */
+export function useSuggestionsQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<SuggestionsQuery, SuggestionsQueryVariables>) {
+        return ApolloReactHooks.useQuery<SuggestionsQuery, SuggestionsQueryVariables>(SuggestionsDocument, baseOptions);
+      }
+export function useSuggestionsLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<SuggestionsQuery, SuggestionsQueryVariables>) {
+          return ApolloReactHooks.useLazyQuery<SuggestionsQuery, SuggestionsQueryVariables>(SuggestionsDocument, baseOptions);
+        }
+export type SuggestionsQueryHookResult = ReturnType<typeof useSuggestionsQuery>;
+export type SuggestionsLazyQueryHookResult = ReturnType<typeof useSuggestionsLazyQuery>;
+export type SuggestionsQueryResult = ApolloReactCommon.QueryResult<SuggestionsQuery, SuggestionsQueryVariables>;
+export const AddTodoDocument = gql`
+    mutation addTodo($name: String!) {
+  addTodo(name: $name) @client
+}
+    `;
+export type AddTodoMutationFn = ApolloReactCommon.MutationFunction<AddTodoMutation, AddTodoMutationVariables>;
+
+/**
+ * __useAddTodoMutation__
+ *
+ * To run a mutation, you first call `useAddTodoMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useAddTodoMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [addTodoMutation, { data, loading, error }] = useAddTodoMutation({
+ *   variables: {
+ *      name: // value for 'name'
+ *   },
+ * });
+ */
+export function useAddTodoMutation(baseOptions?: ApolloReactHooks.MutationHookOptions<AddTodoMutation, AddTodoMutationVariables>) {
+        return ApolloReactHooks.useMutation<AddTodoMutation, AddTodoMutationVariables>(AddTodoDocument, baseOptions);
+      }
+export type AddTodoMutationHookResult = ReturnType<typeof useAddTodoMutation>;
+export type AddTodoMutationResult = ApolloReactCommon.MutationResult<AddTodoMutation>;
+export type AddTodoMutationOptions = ApolloReactCommon.BaseMutationOptions<AddTodoMutation, AddTodoMutationVariables>;
 export const UserDataDocument = gql`
     query userData($id: String!) {
   user(id: $id) {

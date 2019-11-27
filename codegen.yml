@@ -3,6 +3,7 @@ schema: "./schema.json"
 documents: "platform/shared/graphql/**/*.ts"
 generates:
   ./platform/shared/graphql/typings.ts:
+    schema: "platform/shared/graphql/**/*.gql"
     plugins:
       - typescript
       - typescript-operations

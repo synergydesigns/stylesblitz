@@ -1,0 +1,15 @@
+type Suggestion {
+  type: String
+  query: String
+  url: String
+}
+
+input SuggestionInput {
+  type: String
+  query: String
+  url: String
+}
+
+extend type Mutation {
+  addSuggestion(input: [SuggestionInput]): [Suggestion]
+}

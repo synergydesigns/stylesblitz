@@ -9,3 +9,11 @@ export default gql`
     }
   }
 `;
+
+export const getLocalSuggestions = gql`
+  suggestions @client {
+    type,
+    querr,
+    url
+  }
+`;

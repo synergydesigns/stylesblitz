@@ -1,0 +1,14 @@
+type Todo {
+  id: String
+  name: String
+  completed: Boolean
+}
+
+extend type Query {
+  todos: [Todo]
+  visibilityFilter: Boolean
+}
+
+extend type Mutation {
+  addTodo(name: String): Boolean
+}

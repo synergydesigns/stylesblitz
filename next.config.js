@@ -49,6 +49,11 @@ module.exports = withCSS(withLESS({
         test: /\.js(x)?$/,
         use: [{ loader: 'babel-loader' }],
       },
+      {
+        test: /\.(graphql|gql)$/,
+        exclude: /node_modules/,
+        loader: 'graphql-tag/loader',
+      },
     );
 
     config.resolve.alias.globals = path.resolve(__dirname, 'platform/shared/global.ts');

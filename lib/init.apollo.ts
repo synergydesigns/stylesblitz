@@ -5,6 +5,9 @@ import { setContext } from 'apollo-link-context';
 import { createHttpLink } from 'apollo-link-http';
 import isoFetch from 'isomorphic-unfetch';
 
+import resolvers from 'platform/shared/graphql/resolvers';
+import typeDefs from 'platform/shared/graphql/definitions';
+import defaults from 'platform/shared/graphql/defaults';
 import isBrowser from './isBrowser';
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | null = null;
@@ -16,7 +19,7 @@ getToken: () => string
 
 function create(initialState: any, { getToken }: Options) {
   const httpLink = createHttpLink({
-    uri: 'http://127.0.0.1:3001/graphql',
+    uri: 'http://127.0.0.1:4002/graphql',
     fetch: isBrowser ? fetch : isoFetch,
   });
 
@@ -30,13 +33,25 @@ function create(initialState: any, { getToken }: Options) {
     };
   });
 
-  // Check out https://github.com/zeit/next.js/pull/4611 if you want to use the AWSAppSyncClient
-  return new ApolloClient({
-    connectToDevTools: isBrowser,
+  const cache = new InMemoryCache();
+
+  const client = new ApolloClient({
+    connectToDevTools: true,
     ssrMode: !isBrowser, // Disables forceFetch on the server (so queries are only run once)
     link: authLink.concat(httpLink),
-    cache: new InMemoryCache().restore(initialState || {}),
+    cache,
+    resolvers,
+    typeDefs,
   });
+
+  cache.writeData({ data: defaults });
+
+  client.onResetStore(() => {
+    cache.writeData({ data: defaults });
+    return Promise.resolve();
+  });
+
+  return client;
 }
 
 export default function initApollo(initialState: any, options: Options) {
