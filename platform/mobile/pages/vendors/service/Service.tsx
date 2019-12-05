@@ -2,6 +2,7 @@ import React from 'react';
 import { WhiteSpace, Flex } from 'antd-mobile';
 import { Calender, Plus, Booking } from 'shared/icons';
 import { P } from 'shared/components/Text';
+import Link from 'next/link'
 import { IconDiv, Div, Span, Services, Bookings} from './ServiceDetailsStyle';
 
 const Service: React.FC<{ url?: string, alt?: string }> = ({ url }) => (
@@ -10,7 +11,9 @@ const Service: React.FC<{ url?: string, alt?: string }> = ({ url }) => (
       <Flex justify="between">
       <IconDiv left="20px"><Calender /></IconDiv>
       <IconDiv><Span>CHOOSE A DATE</Span></IconDiv>
+      <Link href={{ pathname: '/vendors/vendorId/services/serviceId/date' }}>
       <IconDiv right="20px"><Plus /></IconDiv>
+    </Link>
     </Flex>
     <WhiteSpace size="lg"/>
     <Bookings>
