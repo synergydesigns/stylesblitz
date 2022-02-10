@@ -107,7 +107,7 @@
     "less": "^3.10.3",
     "lodash-es": "^4.17.11",
     "net": "^1.0.2",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "null-loader": "^3.0.0",
     "react-app-polyfill": "^1.0.1",
     "react-test-renderer": "^16.8.6",
